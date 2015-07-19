@@ -1,0 +1,169 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectGuid>{78B6ADE2-F8B6-4719-A430-4275B84C8569}</ProjectGuid>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>ControlInsumos</RootNamespace>
+    <AssemblyName>ControlInsumos</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <PublishUrl>publicar\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Platform)' == 'x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <DebugSymbols>True</DebugSymbols>
+    <DebugType>Full</DebugType>
+    <Optimize>False</Optimize>
+    <CheckForOverflowUnderflow>True</CheckForOverflowUnderflow>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <DebugSymbols>False</DebugSymbols>
+    <DebugType>None</DebugType>
+    <Optimize>True</Optimize>
+    <CheckForOverflowUnderflow>False</CheckForOverflowUnderflow>
+    <DefineConstants>TRACE</DefineConstants>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.Targets" />
+  <ItemGroup>
+    <Reference Include="BaseDeDatosLite">
+      <HintPath>..\..\BaseDeDatosLite\BaseDeDatosLite\bin\Debug\BaseDeDatosLite.dll</HintPath>
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.SQLite">
+      <HintPath>..\..\..\..\..\..\Archivos de programa\System.Data.SQLite\2008\bin\System.Data.SQLite.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DAL\ArticuloDal.cs" />
+    <Compile Include="DAL\CentroCostoDal.cs" />
+    <Compile Include="DAL\CompraDal.cs" />
+    <Compile Include="DAL\Conn.cs" />
+    <Compile Include="DAL\EmpresaDal.cs" />
+    <Compile Include="DAL\ItemDal.cs" />
+    <Compile Include="DAL\RebajarStockDal.cs" />
+    <Compile Include="DLL\Articulo.cs" />
+    <Compile Include="DLL\CentroCosto.cs" />
+    <Compile Include="DLL\Compra.cs" />
+    <Compile Include="DLL\Empresa.cs" />
+    <Compile Include="DLL\Item.cs" />
+    <Compile Include="DLL\RebajarStock.cs" />
+    <Compile Include="GUI\MantenedorArticulo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\MantenedorArticulo.Designer.cs">
+      <DependentUpon>MantenedorArticulo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\MantenedorCompra.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\MantenedorCompra.Designer.cs">
+      <DependentUpon>MantenedorCompra.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\MantenedorItem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\MantenedorItem.Designer.cs">
+      <DependentUpon>MantenedorItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\MantenedorCC.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\MantenedorCC.Designer.cs">
+      <DependentUpon>MantenedorCC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\MantenedorEmpresa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\MantenedorEmpresa.Designer.cs">
+      <DependentUpon>MantenedorEmpresa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\RebajarStock.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\RebajarStock.Designer.cs">
+      <DependentUpon>RebajarStock.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SistemPrincipal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SistemPrincipal.Designer.cs">
+      <DependentUpon>SistemPrincipal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="GUI\MantenedorArticulo.resx">
+      <DependentUpon>MantenedorArticulo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\MantenedorCompra.resx">
+      <DependentUpon>MantenedorCompra.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\MantenedorEmpresa.resx">
+      <DependentUpon>MantenedorEmpresa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\MantenedorItem.resx">
+      <DependentUpon>MantenedorItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Mantenedor Locales.resx">
+      <DependentUpon>MantenedorCC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\RebajarStock.resx">
+      <DependentUpon>RebajarStock.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SistemPrincipal.resx">
+      <DependentUpon>SistemPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="app.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+</Project>
