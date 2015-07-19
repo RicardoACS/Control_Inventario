@@ -30,7 +30,7 @@ namespace ControlInsumos.DAL
 			try 
 			{
 			List<DLL.Empresa> listaEmp = new List<ControlInsumos.DLL.Empresa>();
-			SQLiteCommand sql = new SQLiteCommand("select * from empresas", conn.connection());
+			SQLiteCommand sql = new SQLiteCommand("SELECT * FROM empresas", conn.connection());
 			SQLiteDataReader reader = sql.ExecuteReader();
                while (reader.Read())
                {
@@ -50,7 +50,7 @@ namespace ControlInsumos.DAL
 		public int countEmp()
 		{		
 			int count = 0;
-			string sql = "select count(idEmpresa)+1  from empresas";
+			string sql = "SELECT count(idEmpresa)+1  FROM empresas";
 			count = int.Parse(b.selectstring(sql));
 			return count;
 				

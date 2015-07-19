@@ -33,7 +33,7 @@ namespace ControlInsumos.DAL
 			try 
 			{
 			List<DLL.CentroCosto> listaCC = new List<ControlInsumos.DLL.CentroCosto>();
-			SQLiteCommand sql = new SQLiteCommand("select * from centroCosto", conn.connection());
+			SQLiteCommand sql = new SQLiteCommand("SELECT * FROM centroCosto", conn.connection());
 			SQLiteDataReader reader = sql.ExecuteReader();
                while (reader.Read())
                {

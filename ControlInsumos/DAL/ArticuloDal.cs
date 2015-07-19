@@ -21,14 +21,14 @@ namespace ControlInsumos.DAL
 		BaseDeDatosLite b = new BaseDeDatosLite();
 		public int insertArt(DLL.Articulo a)
 		{	
-				string sql = "insert into articulo values(" + a.IdArticulo + ",'" + a.NombreArticulo + "');";
+				string sql = "INSERT INTO articulo VALUES(" + a.IdArticulo + ",'" + a.NombreArticulo + "');";
 				return b.executecommand(sql);
 						    
 		}
 		public int countArt()
 		{		
 			int count = 0;
-			string sql = "select count(idArticulo)+1  from articulo";
+			string sql = "SELECT count(idArticulo)+1  FROM articulo";
 			count = int.Parse(b.selectstring(sql));			
 			return count;
 				
@@ -38,7 +38,7 @@ namespace ControlInsumos.DAL
 			try 
 			{
 			List<DLL.Articulo> listaArt = new List<ControlInsumos.DLL.Articulo>();
-			SQLiteCommand sql = new SQLiteCommand("select * from articulo", conn.connection());
+			SQLiteCommand sql = new SQLiteCommand("SELECT * FROM articulo", conn.connection());
 			SQLiteDataReader reader = sql.ExecuteReader();
                while (reader.Read())
                {

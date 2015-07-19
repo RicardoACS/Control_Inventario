@@ -31,14 +31,14 @@ namespace ControlInsumos.DAL
 		}
 		public int updateCompra(String fecha, int idItem,int stock)
 		{			
-			string sql = "UPDATE compras SET cantidad = " + stock + " WHERE fecha = '" + fecha + "' and iditem = " + idItem +";";
+			string sql = "UPDATE compras SET cantidad = " + stock + " WHERE fecha = '" + fecha + "' AND iditem = " + idItem +";";
 			return b.executecommand(sql);
 			
 		}
 		public int consultaStock(String fecha, int idItem)
 		{
 			String sql = "SELECT cantidad from compras  " +
-						 "WHERE fecha = '" + fecha + "' and iditem = " + idItem + " ;";
+						 "WHERE fecha = '" + fecha + "' AND iditem = " + idItem + " ;";
 			return int.Parse(b.selectstring(sql));
 		}
 	}

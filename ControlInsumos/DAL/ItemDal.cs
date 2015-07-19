@@ -27,7 +27,7 @@ namespace ControlInsumos.DAL
 		public int countItem()
 		{
 			int count = 0;
-			string sql = "select count(idItem)+1 from item;";
+			string sql = "SELECT count(idItem)+1 FROM item;";
 			count = int.Parse(b.selectstring(sql));
 			return count;
 		}
@@ -36,7 +36,7 @@ namespace ControlInsumos.DAL
 			try 
 			{
 			List<DLL.Item> listaItem = new List<ControlInsumos.DLL.Item>();
-			SQLiteCommand sql = new SQLiteCommand("select * from item where idArticulo = " + idArt + ";", conn.connection());
+			SQLiteCommand sql = new SQLiteCommand("SELECT * FROM item WHERE idArticulo = " + idArt + ";", conn.connection());
 			SQLiteDataReader reader = sql.ExecuteReader();
                while (reader.Read())
                {
