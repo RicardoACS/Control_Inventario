@@ -1,10 +1,7 @@
 ﻿/*
- * Creado por SharpDevelop.
- * Usuario: crojo
- * Fecha: 03-07-2015
- * Hora: 15:53
- * 
- * Para cambiar esta plantilla use Herramientas | Opciones | Codificación | Editar Encabezados Estándar
+ * Usuario: Ricardo Carrasco
+ * Fecha: 30-06-2015
+ * Hora: 13:06
  */
 using System;
 

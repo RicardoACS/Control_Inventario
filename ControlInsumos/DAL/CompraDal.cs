@@ -1,10 +1,7 @@
 ﻿/*
- * Creado por SharpDevelop.
- * Usuario: crojo
+ * Usuario: Ricardo Carrasco
  * Fecha: 30-06-2015
  * Hora: 13:06
- * 
- * Para cambiar esta plantilla use Herramientas | Opciones | Codificación | Editar Encabezados Estándar
  */
 using System;
 
@@ -29,12 +26,22 @@ namespace ControlInsumos.DAL
 				"WHERE cantidad > 0 and i.idItem = " + item + ";";
 			return b.selectstring(sql);
 		}
+        public string fechaMinSinStock(int item)
+        {
+            string sql = "SELECT min(p.fecha) FROM compras p " +
+                "INNER JOIN item i " +
+                "ON p.idItem = i.idItem " +
+                "WHERE cantidad >= 0 and i.idItem = " + item + ";";
+            return b.selectstring(sql);
+        }
 		public int updateCompra(String fecha, int idItem,int stock)
 		{			
-			string sql = "UPDATE compras SET cantidad = " + stock + " WHERE fecha = '" + fecha + "' AND iditem = " + idItem +";";
+			string sql = "UPDATE compras SET cantidad = " + stock + 
+                         " WHERE fecha = '" + fecha + "' AND iditem = " + idItem +";";
 			return b.executecommand(sql);
 			
 		}
+
 		public int consultaStock(String fecha, int idItem)
 		{
 			String sql = "SELECT cantidad from compras  " +

@@ -1,10 +1,7 @@
 ﻿/*
- * Creado por SharpDevelop.
- * Usuario: crojo
- * Fecha: 17-06-2015
- * Hora: 17:48
- * 
- * Para cambiar esta plantilla use Herramientas | Opciones | Codificación | Editar Encabezados Estándar
+ * Usuario: Ricardo Carrasco
+ * Fecha: 30-06-2015
+ * Hora: 13:06
  */
 using System;
 using System.Collections.Generic;
@@ -58,7 +55,7 @@ namespace ControlInsumos
 		void TimerHoraTick(object sender, EventArgs e)
 		{
 			toolStripStatusLabel1.Text =  DateTime.Now.ToString("hh:mm");
-			toolStripStatusLabel2.Text =  DateTime.Now.ToString("dd/mm/yyyy");
+			toolStripStatusLabel2.Text =  DateTime.Now.ToString("dd/MM/yyyy");
 		}
 		
 		void DevolucionToolStripMenuItemClick(object sender, EventArgs e)
@@ -66,5 +63,10 @@ namespace ControlInsumos
 			GUI.formRebajarStock r = new ControlInsumos.GUI.formRebajarStock();
 			r.Show();
 		}
+
+        private void sistemaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Dispose();
+        }
 	}
 }

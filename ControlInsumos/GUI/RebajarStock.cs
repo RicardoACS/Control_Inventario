@@ -1,10 +1,7 @@
 ﻿/*
- * Creado por SharpDevelop.
- * Usuario: crojo
- * Fecha: 03-07-2015
- * Hora: 15:21
- * 
- * Para cambiar esta plantilla use Herramientas | Opciones | Codificación | Editar Encabezados Estándar
+ * Usuario: Ricardo Carrasco
+ * Fecha: 30-06-2015
+ * Hora: 13:06
  */
 using System;
 using System.Drawing;
@@ -43,14 +40,14 @@ namespace ControlInsumos.GUI
 			cboxItem.DataSource = itemDal.listItem(cboxArticulo.SelectedIndex+1);
 			cboxItem.DisplayMember = "Descripcion";
             cboxItem.ValueMember = "IdItem";
-            //cboxItem.SelectedIndex = -1;
+            cboxItem.SelectedIndex = -1;
 		}
 		public void cargarArticulo()
 		{
 			cboxArticulo.DataSource = artDal.listArt();
             cboxArticulo.DisplayMember = "NombreArticulo";
             cboxArticulo.ValueMember = "IdArticulo";
-            //cboxArticulo.SelectedIndex = -1;
+            cboxArticulo.SelectedIndex = -1;
 		}
 		public void cargarCC()
 		{
@@ -61,18 +58,51 @@ namespace ControlInsumos.GUI
 		}
 		public void rebajarStock()
 		{
-			DLL.RebajarStock r = new ControlInsumos.DLL.RebajarStock();
-			string fechaMin = compraDal.fechaMin(int.Parse(cboxItem.SelectedValue.ToString()));
-			int item = int.Parse(cboxItem.SelectedValue.ToString());
-			int stockP = compraDal.consultaStock(fechaMin,item);
-			r.IdRebajarStock = 1;
-			r.IdLocal = cboxCentroCosto.SelectedIndex+1;
-			r.IdItem = cboxItem.SelectedIndex+1;
-			r.Cantidad = int.Parse(txtCantidad.Text);
-			if (compraDal.updateCompra(fechaMin,int.Parse(cboxItem.SelectedValue.ToString()),stockP-int.Parse(txtCantidad.Text)) == 1)
-			{
-				MessageBox.Show("Update");
-			}
+            try
+            {
+                //Instancia Clase
+                DLL.RebajarStock r = new ControlInsumos.DLL.RebajarStock();
+                //Variables que sirve para conocer que se va a rebajar
+                string fechaMinima = compraDal.fechaMin(int.Parse(cboxItem.SelectedValue.ToString()));
+                if (fechaMinima.Length == 0)
+                {
+                    fechaMinima = compraDal.fechaMinSinStock(int.Parse(cboxItem.SelectedValue.ToString()));
+                }
+                int item = int.Parse(cboxItem.SelectedValue.ToString());
+                int stockProducto = compraDal.consultaStock(fechaMinima, item);
+                //Insert Rebaja
+                r.IdRebajarStock = 1;
+                r.IdLocal = cboxCentroCosto.SelectedIndex + 1;
+                r.IdItem = cboxItem.SelectedIndex + 1;
+                r.Cantidad = int.Parse(txtCantidad.Text);
+
+                //Rebajar Stock
+                if (stockProducto >= r.Cantidad)
+                {
+                    if (stockProducto >= 1)
+                    {
+                        if (compraDal.updateCompra(fechaMinima, int.Parse(cboxItem.SelectedValue.ToString()), stockProducto - int.Parse(txtCantidad.Text)) == 1)
+                        {
+                            MessageBox.Show("Update");
+                            dgvItems.DataSource = b.SelectDataTable(rebajaDal.loadDataGV(cboxItem.Text));
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("No le queda Stock de: " + cboxItem.Text);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("No puedes rebajar más este producto, solo puedes rebajar: " + stockProducto);
+                }
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("error: " + e.Message);
+            }
+            
+            
 		}
 		void BtnRebajarClick(object sender, EventArgs e)
 		{
