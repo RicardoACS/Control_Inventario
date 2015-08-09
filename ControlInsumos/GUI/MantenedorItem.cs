@@ -32,27 +32,34 @@ namespace ControlInsumos.GUI
 		{
 			try 
 			{
-				DLL.Item i = new ControlInsumos.DLL.Item();
-				i.IdItem 		= itemDal.countItem();
-				i.Descripcion 	= txtDescripcion.Text;
-				i.IdArticulo 	= int.Parse(cboxArticulo.SelectedValue.ToString());
+                if(txtDescripcion.Text.Length > 0)
+                {
+				    DLL.Item i = new ControlInsumos.DLL.Item();
+				    i.IdItem 		= itemDal.countItem();
+				    i.Descripcion 	= txtDescripcion.Text;
+				    i.IdArticulo 	= int.Parse(cboxArticulo.SelectedValue.ToString());
 				
-				int resultado = i.insertItem(i);
+				    int resultado = i.insertItem(i);
 				
-					switch (resultado) 
-					{
-						case  1 :
-							MessageBox.Show("Registro Correcto","Mantención Item",MessageBoxButtons.OK,MessageBoxIcon.Information);
-							limpiar();
-							break;
-						case 19: 
-							MessageBox.Show("Ya existe este Item","Mantención Item",MessageBoxButtons.OK,MessageBoxIcon.Warning);
-							break;
-					}
+					    switch (resultado) 
+					    {
+						    case  1 :
+							    MessageBox.Show("Registro Correcto","Mantención Item",MessageBoxButtons.OK,MessageBoxIcon.Information);
+							    limpiar();
+							    break;
+						    case 19: 
+							    MessageBox.Show("Ya existe este Item","Mantención Item",MessageBoxButtons.OK,MessageBoxIcon.Warning);
+							    break;
+					    }
+                }
+                else
+                {
+                    MessageBox.Show("Recuerde llenar todos los campos", "Mantención Item", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
 			} 
 			catch (NullReferenceException)
 			{
-				MessageBox.Show("Seleccione un Artículo correcto","Mantención Item",MessageBoxButtons.OK,MessageBoxIcon.Warning);
+				MessageBox.Show("Seleccione un Artículo","Mantención Item",MessageBoxButtons.OK,MessageBoxIcon.Warning);
 				cboxArticulo.Focus();
 			}
 			

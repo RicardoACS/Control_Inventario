@@ -89,6 +89,12 @@
     <Compile Include="DLL\Empresa.cs" />
     <Compile Include="DLL\Item.cs" />
     <Compile Include="DLL\RebajarStock.cs" />
+    <Compile Include="GUI\FormMantenedorCentroCosto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\FormMantenedorCentroCosto.Designer.cs">
+      <DependentUpon>FormMantenedorCentroCosto.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\MantenedorArticulo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -107,12 +113,6 @@
     <Compile Include="GUI\MantenedorItem.Designer.cs">
       <DependentUpon>MantenedorItem.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\MantenedorCC.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="GUI\MantenedorCC.Designer.cs">
-      <DependentUpon>MantenedorCC.cs</DependentUpon>
-    </Compile>
     <Compile Include="GUI\MantenedorEmpresa.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -125,6 +125,11 @@
     <Compile Include="GUI\RebajarStock.Designer.cs">
       <DependentUpon>RebajarStock.cs</DependentUpon>
     </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="SistemPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -133,6 +138,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="GUI\FormMantenedorCentroCosto.resx">
+      <DependentUpon>FormMantenedorCentroCosto.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\MantenedorArticulo.resx">
       <DependentUpon>MantenedorArticulo.cs</DependentUpon>
     </EmbeddedResource>
@@ -145,11 +153,12 @@
     <EmbeddedResource Include="GUI\MantenedorItem.resx">
       <DependentUpon>MantenedorItem.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\Mantenedor Locales.resx">
-      <DependentUpon>MantenedorCC.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="GUI\RebajarStock.resx">
       <DependentUpon>RebajarStock.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="SistemPrincipal.resx">
       <DependentUpon>SistemPrincipal.cs</DependentUpon>
@@ -167,5 +176,32 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>true</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\business.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\product.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\buyProduct.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\updateCarro.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\devolucionCarro.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\close.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\report.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\clock.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\calendar.ico" />
   </ItemGroup>
 </Project>

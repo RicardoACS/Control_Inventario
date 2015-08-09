@@ -25,21 +25,29 @@ namespace ControlInsumos.GUI
 		{
 			try 
 			{
-				DLL.Empresa e = new ControlInsumos.DLL.Empresa();
-				e.IdEmpresa = empresaDal.countEmp();
-				e.Nombre = txtNombre.Text;
-				int resultado = e.insertEmpresa(e);
+                if(txtNombre.Text.Length > 0 )
+                {            
+				    DLL.Empresa e = new ControlInsumos.DLL.Empresa();
+				    e.IdEmpresa = empresaDal.countEmp();
+				    e.Nombre = txtNombre.Text;
+				    int resultado = e.insertEmpresa(e);
 				
-				switch (resultado) 
-				{
-					case  1 :
-						MessageBox.Show("Registro Correcto","Mantención Empresas",MessageBoxButtons.OK,MessageBoxIcon.Information);
-						txtNombre.Clear();
-						break;
-					case 19: 
-						MessageBox.Show("Ya existe esta Empresa","Mantención Empresas",MessageBoxButtons.OK,MessageBoxIcon.Warning);
-						break;
-				}	
+				    switch (resultado) 
+				    {
+					    case  1 :
+						    MessageBox.Show("Registro Correcto","Mantención Empresas",MessageBoxButtons.OK,MessageBoxIcon.Information);
+						    txtNombre.Clear();
+						    break;
+					    case 19: 
+						    MessageBox.Show("Ya existe esta Empresa","Mantención Empresas",MessageBoxButtons.OK,MessageBoxIcon.Warning);
+						    break;
+				    }
+                }
+                else
+                {
+                    MessageBox.Show("Debe llenar el campo", "Mantención Empresas", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    txtNombre.Focus();
+                }
 			} 
 			catch (Exception)
 			{

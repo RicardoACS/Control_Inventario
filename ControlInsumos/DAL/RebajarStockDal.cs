@@ -16,8 +16,8 @@ namespace ControlInsumos.DAL
 		
 		public string loadDataGV(string item)
 		{
-			
-			string select = "SELECT i.descripcion , c.cantidad, c.fecha " +
+            //Cargará el DataView con los datos
+            string select = "SELECT i.descripcion AS 'Descripción' , c.cantidad AS 'Cantidad', c.fecha AS 'Fecha', c.precio AS 'Precio' " +
 				"FROM item i INNER JOIN compras c " +
 				"ON i.idItem = c.idItem INNER JOIN articulo a " +
 				"ON i.idArticulo = a.idArticulo " +
@@ -28,7 +28,12 @@ namespace ControlInsumos.DAL
 		
 		public int insertRebaja(DLL.RebajarStock r)
 		{
-			return 1;
+            //Insertará en la BD la rebaja, esto retornará un número el cual indicará el resultado de la consulta
+            string insert = "INSERT INTO rebajarStock VALUES (" + r.IdRebajarStock + "," + r.IdItem + "," + r.IdLocal + "," + r.Cantidad + ");";
+            return b.executecommand(insert);
+      
+			
 		}
+
 	}
 }

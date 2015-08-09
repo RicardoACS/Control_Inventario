@@ -37,6 +37,7 @@ namespace ControlInsumos
 		private void InitializeComponent()
 		{
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel3 = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel2 = new System.Windows.Forms.ToolStripStatusLabel();
@@ -65,35 +66,38 @@ namespace ControlInsumos
             // 
             // statusStrip1
             // 
+            this.statusStrip1.BackColor = System.Drawing.SystemColors.Window;
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripStatusLabel3,
             this.toolStripStatusLabel2,
             this.toolStripStatusLabel1});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 239);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 237);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(465, 23);
+            this.statusStrip1.Size = new System.Drawing.Size(465, 25);
             this.statusStrip1.TabIndex = 0;
             this.statusStrip1.Text = "statusStrip1";
             // 
             // toolStripStatusLabel3
             // 
             this.toolStripStatusLabel3.Name = "toolStripStatusLabel3";
-            this.toolStripStatusLabel3.Size = new System.Drawing.Size(0, 18);
+            this.toolStripStatusLabel3.Size = new System.Drawing.Size(0, 20);
             // 
             // toolStripStatusLabel2
             // 
             this.toolStripStatusLabel2.BorderSides = ((System.Windows.Forms.ToolStripStatusLabelBorderSides)((System.Windows.Forms.ToolStripStatusLabelBorderSides.Left | System.Windows.Forms.ToolStripStatusLabelBorderSides.Right)));
             this.toolStripStatusLabel2.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolStripStatusLabel2.Image = global::Control_Inventario.Properties.Resources.calendar;
             this.toolStripStatusLabel2.Name = "toolStripStatusLabel2";
-            this.toolStripStatusLabel2.Size = new System.Drawing.Size(41, 18);
+            this.toolStripStatusLabel2.Size = new System.Drawing.Size(57, 20);
             this.toolStripStatusLabel2.Text = "fecha";
             // 
             // toolStripStatusLabel1
             // 
             this.toolStripStatusLabel1.BorderSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.Right;
             this.toolStripStatusLabel1.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolStripStatusLabel1.Image = global::Control_Inventario.Properties.Resources.clock;
             this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
-            this.toolStripStatusLabel1.Size = new System.Drawing.Size(36, 18);
+            this.toolStripStatusLabel1.Size = new System.Drawing.Size(52, 20);
             this.toolStripStatusLabel1.Text = "Hora";
             // 
             // contextMenuStrip1
@@ -125,9 +129,11 @@ namespace ControlInsumos
             // 
             // salirToolStripMenuItem
             // 
+            this.salirToolStripMenuItem.Image = global::Control_Inventario.Properties.Resources.close;
             this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
-            this.salirToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.salirToolStripMenuItem.Size = new System.Drawing.Size(96, 22);
             this.salirToolStripMenuItem.Text = "Salir";
+            this.salirToolStripMenuItem.Click += new System.EventHandler(this.salirToolStripMenuItem_Click);
             // 
             // mantenedoresToolStripMenuItem
             // 
@@ -141,6 +147,7 @@ namespace ControlInsumos
             // 
             // EmpresaToolStripMenuItem
             // 
+            this.EmpresaToolStripMenuItem.Image = global::Control_Inventario.Properties.Resources.business;
             this.EmpresaToolStripMenuItem.Name = "EmpresaToolStripMenuItem";
             this.EmpresaToolStripMenuItem.Size = new System.Drawing.Size(170, 22);
             this.EmpresaToolStripMenuItem.Text = "Empresa";
@@ -148,6 +155,7 @@ namespace ControlInsumos
             // 
             // centroCostoToolStripMenuItem
             // 
+            this.centroCostoToolStripMenuItem.Image = global::Control_Inventario.Properties.Resources.business;
             this.centroCostoToolStripMenuItem.Name = "centroCostoToolStripMenuItem";
             this.centroCostoToolStripMenuItem.Size = new System.Drawing.Size(170, 22);
             this.centroCostoToolStripMenuItem.Text = "Centros de Costos";
@@ -159,12 +167,14 @@ namespace ControlInsumos
             this.articuloToolStripMenuItem,
             this.itemToolStripMenuItem,
             this.compraToolStripMenuItem});
+            this.aToolStripMenuItem.Image = global::Control_Inventario.Properties.Resources.product;
             this.aToolStripMenuItem.Name = "aToolStripMenuItem";
             this.aToolStripMenuItem.Size = new System.Drawing.Size(170, 22);
             this.aToolStripMenuItem.Text = "Producto";
             // 
             // articuloToolStripMenuItem
             // 
+            this.articuloToolStripMenuItem.Image = global::Control_Inventario.Properties.Resources.buyProduct;
             this.articuloToolStripMenuItem.Name = "articuloToolStripMenuItem";
             this.articuloToolStripMenuItem.Size = new System.Drawing.Size(117, 22);
             this.articuloToolStripMenuItem.Text = "Artículo";
@@ -172,6 +182,7 @@ namespace ControlInsumos
             // 
             // itemToolStripMenuItem
             // 
+            this.itemToolStripMenuItem.Image = global::Control_Inventario.Properties.Resources.buyProduct;
             this.itemToolStripMenuItem.Name = "itemToolStripMenuItem";
             this.itemToolStripMenuItem.Size = new System.Drawing.Size(117, 22);
             this.itemToolStripMenuItem.Text = "Item";
@@ -179,6 +190,7 @@ namespace ControlInsumos
             // 
             // compraToolStripMenuItem
             // 
+            this.compraToolStripMenuItem.Image = global::Control_Inventario.Properties.Resources.buyProduct;
             this.compraToolStripMenuItem.Name = "compraToolStripMenuItem";
             this.compraToolStripMenuItem.Size = new System.Drawing.Size(117, 22);
             this.compraToolStripMenuItem.Text = "Compra";
@@ -195,6 +207,7 @@ namespace ControlInsumos
             // 
             // devolucionToolStripMenuItem
             // 
+            this.devolucionToolStripMenuItem.Image = global::Control_Inventario.Properties.Resources.updateCarro;
             this.devolucionToolStripMenuItem.Name = "devolucionToolStripMenuItem";
             this.devolucionToolStripMenuItem.Size = new System.Drawing.Size(134, 22);
             this.devolucionToolStripMenuItem.Text = "Rebajar";
@@ -202,6 +215,7 @@ namespace ControlInsumos
             // 
             // devoluciónToolStripMenuItem1
             // 
+            this.devoluciónToolStripMenuItem1.Image = global::Control_Inventario.Properties.Resources.devolucionCarro;
             this.devoluciónToolStripMenuItem1.Name = "devoluciónToolStripMenuItem1";
             this.devoluciónToolStripMenuItem1.Size = new System.Drawing.Size(134, 22);
             this.devoluciónToolStripMenuItem1.Text = "Devolución";
@@ -217,12 +231,14 @@ namespace ControlInsumos
             // 
             // totalAFacturarToolStripMenuItem
             // 
+            this.totalAFacturarToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("totalAFacturarToolStripMenuItem.Image")));
             this.totalAFacturarToolStripMenuItem.Name = "totalAFacturarToolStripMenuItem";
             this.totalAFacturarToolStripMenuItem.Size = new System.Drawing.Size(161, 22);
             this.totalAFacturarToolStripMenuItem.Text = "Total a facturar";
             // 
             // stockDisponibleToolStripMenuItem
             // 
+            this.stockDisponibleToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("stockDisponibleToolStripMenuItem.Image")));
             this.stockDisponibleToolStripMenuItem.Name = "stockDisponibleToolStripMenuItem";
             this.stockDisponibleToolStripMenuItem.Size = new System.Drawing.Size(161, 22);
             this.stockDisponibleToolStripMenuItem.Text = "Stock disponible";
@@ -235,12 +251,16 @@ namespace ControlInsumos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(465, 262);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.menuStrip1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "MainForm";
-            this.Text = "ControlInsumos";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Control Inventario";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
             this.menuStrip1.ResumeLayout(false);

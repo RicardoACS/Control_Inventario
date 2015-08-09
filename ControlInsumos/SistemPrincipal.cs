@@ -17,11 +17,29 @@ namespace ControlInsumos
 	{
 		public MainForm()
 		{
-
 			InitializeComponent();
-			timerHora.Enabled = true;
+            cambiarColorMdi();
+			timerHora.Enabled = true;         
 		}
-		
+        MdiClient ctlMDI;
+        private void cambiarColorMdi()
+        {
+            foreach (Control ctl in this.Controls)
+            {
+                try
+                {
+                    // Attempt to cast the control to type MdiClient.
+                    ctlMDI = (MdiClient)ctl;
+
+                    // Set the BackColor of the MdiClient control.
+                    ctlMDI.BackColor = Color.Black;
+                }
+                catch (InvalidCastException)
+                {
+                    // Catch and ignore the error if casting failed.
+                }
+            }
+        }
 		void ArticuloToolStripMenuItemClick(object sender, EventArgs e)
 		{
 			GUI.formIngresarArticulo art = new ControlInsumos.GUI.formIngresarArticulo();
@@ -37,12 +55,12 @@ namespace ControlInsumos
 		void CompraToolStripMenuItemClick(object sender, EventArgs e)
 		{
 			GUI.fromIngresarCompra ingresarCompra = new ControlInsumos.GUI.fromIngresarCompra();
-			ingresarCompra.Show();
+			ingresarCompra.ShowDialog();
 		}
 		
 		void CentroCostoToolStripMenuItemClick(object sender, EventArgs e)
 		{
-			GUI.formMantenedorCC cc = new ControlInsumos.GUI.formMantenedorCC();
+            Control_Inventario.GUI.FormMantenedorCentroCosto cc = new Control_Inventario.GUI.FormMantenedorCentroCosto();
 			cc.Show();
 		}
 		
@@ -61,10 +79,15 @@ namespace ControlInsumos
 		void DevolucionToolStripMenuItemClick(object sender, EventArgs e)
 		{
 			GUI.formRebajarStock r = new ControlInsumos.GUI.formRebajarStock();
-			r.Show();
+			r.ShowDialog();
 		}
 
         private void sistemaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void salirToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Dispose();
         }

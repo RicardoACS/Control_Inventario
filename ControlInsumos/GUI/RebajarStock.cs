@@ -18,6 +18,7 @@ namespace ControlInsumos.GUI
 		{
 			InitializeComponent();
 		}
+        //Llamado DLL Base de datos
 		BaseDeDatosLite b = new BaseDeDatosLite();
 		
 		DAL.RebajarStockDal rebajaDal = new ControlInsumos.DAL.RebajarStockDal();
@@ -28,15 +29,19 @@ namespace ControlInsumos.GUI
 		
 		void RebajarStockLoad(object sender, EventArgs e)
 		{
-			dgvItems.DataSource = b.SelectDataTable(rebajaDal.loadDataGV(cboxItem.Text));			
+            //Carga de los elementos en la GUI
+			dgvItems.DataSource = b.SelectDataTable(rebajaDal.loadDataGV(cboxItem.Text));
+            //Elimina primera fila [*] del DataView
+            dgvItems.RowHeadersVisible = false;
 			cargarArticulo();
 			cargarItem();
 			cboxArticulo.Focus();
-			cargarCC();
+	    	cargarCC();
 		}
 		
 		public void cargarItem()
 		{
+            //Carga los item en el ComboBox
 			cboxItem.DataSource = itemDal.listItem(cboxArticulo.SelectedIndex+1);
 			cboxItem.DisplayMember = "Descripcion";
             cboxItem.ValueMember = "IdItem";
@@ -44,6 +49,7 @@ namespace ControlInsumos.GUI
 		}
 		public void cargarArticulo()
 		{
+            //Carga los Articulos en el ComboBox
 			cboxArticulo.DataSource = artDal.listArt();
             cboxArticulo.DisplayMember = "NombreArticulo";
             cboxArticulo.ValueMember = "IdArticulo";
@@ -51,6 +57,7 @@ namespace ControlInsumos.GUI
 		}
 		public void cargarCC()
 		{
+            //Carga los Centro de Costo en el ComboBox
 			cboxCentroCosto.DataSource = centroCostoDal.listCentroCosto();
             cboxCentroCosto.DisplayMember = "Nombre";
             cboxCentroCosto.ValueMember = "IdCC";
@@ -83,23 +90,24 @@ namespace ControlInsumos.GUI
                     {
                         if (compraDal.updateCompra(fechaMinima, int.Parse(cboxItem.SelectedValue.ToString()), stockProducto - int.Parse(txtCantidad.Text)) == 1)
                         {
-                            MessageBox.Show("Update");
+                            MessageBox.Show("Producto rebajado", "Rebajar Stock", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            rebajaDal.insertRebaja(r);
                             dgvItems.DataSource = b.SelectDataTable(rebajaDal.loadDataGV(cboxItem.Text));
                         }
                     }
                     else
                     {
-                        MessageBox.Show("No le queda Stock de: " + cboxItem.Text);
+                        MessageBox.Show("No le queda Stock de: " + cboxItem.Text,"Rebajar Stock",MessageBoxButtons.OK,MessageBoxIcon.Warning);
                     }
                 }
                 else
                 {
-                    MessageBox.Show("No puedes rebajar más este producto, solo puedes rebajar: " + stockProducto);
+                    MessageBox.Show("No puedes rebajar más este producto, solo puedes rebajar: " + stockProducto, "Rebajar Stock", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             }
             catch (Exception e)
             {
-                MessageBox.Show("error: " + e.Message);
+                MessageBox.Show("error: " + e.Message, "Rebajar Stock", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             
             
@@ -111,7 +119,7 @@ namespace ControlInsumos.GUI
 		
 		void BtnActualizarClick(object sender, EventArgs e)
 		{
-			
+            dgvItems.DataSource = b.SelectDataTable(rebajaDal.loadDataGV(cboxItem.Text));
 		}
 		
 		void BtnSalirClick(object sender, EventArgs e)
