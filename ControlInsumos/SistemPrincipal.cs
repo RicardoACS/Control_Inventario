@@ -91,5 +91,11 @@ namespace ControlInsumos
         {
             Dispose();
         }
+
+        private void insumosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Control_Inventario.GUI.Registro_Insumos r = new Control_Inventario.GUI.Registro_Insumos();
+            r.ShowDialog();
+        }
 	}
 }

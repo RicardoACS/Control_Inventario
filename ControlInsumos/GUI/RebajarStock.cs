@@ -42,10 +42,18 @@ namespace ControlInsumos.GUI
 		public void cargarItem()
 		{
             //Carga los item en el ComboBox
-			cboxItem.DataSource = itemDal.listItem(cboxArticulo.SelectedIndex+1);
-			cboxItem.DisplayMember = "Descripcion";
-            cboxItem.ValueMember = "IdItem";
-            cboxItem.SelectedIndex = -1;
+            try
+            {   
+                int id = int.Parse(cboxArticulo.SelectedValue.ToString());
+                cboxItem.DataSource = itemDal.listItem(id);
+			    cboxItem.DisplayMember = "Descripcion";
+                cboxItem.ValueMember = "IdItem";
+                cboxItem.SelectedIndex = -1;
+            }
+            catch(Exception)
+            {
+
+            }
 		}
 		public void cargarArticulo()
 		{
@@ -78,9 +86,16 @@ namespace ControlInsumos.GUI
                 int item = int.Parse(cboxItem.SelectedValue.ToString());
                 int stockProducto = compraDal.consultaStock(fechaMinima, item);
                 //Insert Rebaja
-                r.IdRebajarStock = 1;
-                r.IdLocal = cboxCentroCosto.SelectedIndex + 1;
-                r.IdItem = cboxItem.SelectedIndex + 1;
+                if(rebajaDal.countRebajaStock() <= 1)
+                {
+                    r.IdRebajarStock = rebajaDal.countRebajaStock();
+                }
+                else
+                {
+                    r.IdRebajarStock = rebajaDal.maxRebajaStock();
+                }                
+                r.IdLocal = int.Parse(cboxCentroCosto.SelectedValue.ToString());
+                r.IdItem = int.Parse(cboxItem.SelectedValue.ToString());
                 r.Cantidad = int.Parse(txtCantidad.Text);
 
                 //Rebajar Stock
@@ -99,6 +114,10 @@ namespace ControlInsumos.GUI
                     {
                         MessageBox.Show("No le queda Stock de: " + cboxItem.Text,"Rebajar Stock",MessageBoxButtons.OK,MessageBoxIcon.Warning);
                     }
+                }
+                else if(stockProducto <= 0)
+                {
+                    MessageBox.Show("Producto Agotado", "Rebajar Stock", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
                 else
                 {

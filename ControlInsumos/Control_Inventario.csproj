@@ -81,12 +81,14 @@
     <Compile Include="DAL\CompraDal.cs" />
     <Compile Include="DAL\Conn.cs" />
     <Compile Include="DAL\EmpresaDal.cs" />
+    <Compile Include="DLL\Insumo.cs" />
     <Compile Include="DAL\ItemDal.cs" />
     <Compile Include="DAL\RebajarStockDal.cs" />
     <Compile Include="DLL\Articulo.cs" />
     <Compile Include="DLL\CentroCosto.cs" />
     <Compile Include="DLL\Compra.cs" />
     <Compile Include="DLL\Empresa.cs" />
+    <Compile Include="DAL\InsumosDal.cs" />
     <Compile Include="DLL\Item.cs" />
     <Compile Include="DLL\RebajarStock.cs" />
     <Compile Include="GUI\FormMantenedorCentroCosto.cs">
@@ -94,6 +96,12 @@
     </Compile>
     <Compile Include="GUI\FormMantenedorCentroCosto.Designer.cs">
       <DependentUpon>FormMantenedorCentroCosto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Registro_Insumos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Registro_Insumos.designer.cs">
+      <DependentUpon>Registro_Insumos.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\MantenedorArticulo.cs">
       <SubType>Form</SubType>
@@ -140,6 +148,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="GUI\FormMantenedorCentroCosto.resx">
       <DependentUpon>FormMantenedorCentroCosto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Registro_Insumos.resx">
+      <DependentUpon>Registro_Insumos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\MantenedorArticulo.resx">
       <DependentUpon>MantenedorArticulo.cs</DependentUpon>

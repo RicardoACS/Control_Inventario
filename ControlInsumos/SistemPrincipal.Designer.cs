@@ -60,6 +60,24 @@ namespace ControlInsumos
             this.totalAFacturarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.stockDisponibleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.timerHora = new System.Windows.Forms.Timer(this.components);
+            this.insumosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.crearToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.modificarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.eliminarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.crearToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.modificarToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.eliminarToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.crearToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.modificarToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.eliminarToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.crearToolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
+            this.modificarToolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
+            this.eliminarToolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
+            this.ingresarToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.modificarToolStripMenuItem4 = new System.Windows.Forms.ToolStripMenuItem();
+            this.elimarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.itemToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.precioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -131,7 +149,7 @@ namespace ControlInsumos
             // 
             this.salirToolStripMenuItem.Image = global::Control_Inventario.Properties.Resources.close;
             this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
-            this.salirToolStripMenuItem.Size = new System.Drawing.Size(96, 22);
+            this.salirToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.salirToolStripMenuItem.Text = "Salir";
             this.salirToolStripMenuItem.Click += new System.EventHandler(this.salirToolStripMenuItem_Click);
             // 
@@ -147,6 +165,10 @@ namespace ControlInsumos
             // 
             // EmpresaToolStripMenuItem
             // 
+            this.EmpresaToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.crearToolStripMenuItem,
+            this.modificarToolStripMenuItem,
+            this.eliminarToolStripMenuItem});
             this.EmpresaToolStripMenuItem.Image = global::Control_Inventario.Properties.Resources.business;
             this.EmpresaToolStripMenuItem.Name = "EmpresaToolStripMenuItem";
             this.EmpresaToolStripMenuItem.Size = new System.Drawing.Size(170, 22);
@@ -155,6 +177,10 @@ namespace ControlInsumos
             // 
             // centroCostoToolStripMenuItem
             // 
+            this.centroCostoToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.crearToolStripMenuItem1,
+            this.modificarToolStripMenuItem1,
+            this.eliminarToolStripMenuItem1});
             this.centroCostoToolStripMenuItem.Image = global::Control_Inventario.Properties.Resources.business;
             this.centroCostoToolStripMenuItem.Name = "centroCostoToolStripMenuItem";
             this.centroCostoToolStripMenuItem.Size = new System.Drawing.Size(170, 22);
@@ -174,25 +200,37 @@ namespace ControlInsumos
             // 
             // articuloToolStripMenuItem
             // 
+            this.articuloToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.crearToolStripMenuItem2,
+            this.modificarToolStripMenuItem2,
+            this.eliminarToolStripMenuItem2});
             this.articuloToolStripMenuItem.Image = global::Control_Inventario.Properties.Resources.buyProduct;
             this.articuloToolStripMenuItem.Name = "articuloToolStripMenuItem";
-            this.articuloToolStripMenuItem.Size = new System.Drawing.Size(117, 22);
+            this.articuloToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.articuloToolStripMenuItem.Text = "Artículo";
             this.articuloToolStripMenuItem.Click += new System.EventHandler(this.ArticuloToolStripMenuItemClick);
             // 
             // itemToolStripMenuItem
             // 
+            this.itemToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.crearToolStripMenuItem3,
+            this.modificarToolStripMenuItem3,
+            this.eliminarToolStripMenuItem3});
             this.itemToolStripMenuItem.Image = global::Control_Inventario.Properties.Resources.buyProduct;
             this.itemToolStripMenuItem.Name = "itemToolStripMenuItem";
-            this.itemToolStripMenuItem.Size = new System.Drawing.Size(117, 22);
+            this.itemToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.itemToolStripMenuItem.Text = "Item";
             this.itemToolStripMenuItem.Click += new System.EventHandler(this.ItemToolStripMenuItemClick);
             // 
             // compraToolStripMenuItem
             // 
+            this.compraToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.ingresarToolStripMenuItem1,
+            this.modificarToolStripMenuItem4,
+            this.elimarToolStripMenuItem});
             this.compraToolStripMenuItem.Image = global::Control_Inventario.Properties.Resources.buyProduct;
             this.compraToolStripMenuItem.Name = "compraToolStripMenuItem";
-            this.compraToolStripMenuItem.Size = new System.Drawing.Size(117, 22);
+            this.compraToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.compraToolStripMenuItem.Text = "Compra";
             this.compraToolStripMenuItem.Click += new System.EventHandler(this.CompraToolStripMenuItemClick);
             // 
@@ -200,7 +238,8 @@ namespace ControlInsumos
             // 
             this.ingresarToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.devolucionToolStripMenuItem,
-            this.devoluciónToolStripMenuItem1});
+            this.devoluciónToolStripMenuItem1,
+            this.insumosToolStripMenuItem});
             this.ingresarToolStripMenuItem.Name = "ingresarToolStripMenuItem";
             this.ingresarToolStripMenuItem.Size = new System.Drawing.Size(48, 20);
             this.ingresarToolStripMenuItem.Text = "Stock";
@@ -209,7 +248,7 @@ namespace ControlInsumos
             // 
             this.devolucionToolStripMenuItem.Image = global::Control_Inventario.Properties.Resources.updateCarro;
             this.devolucionToolStripMenuItem.Name = "devolucionToolStripMenuItem";
-            this.devolucionToolStripMenuItem.Size = new System.Drawing.Size(134, 22);
+            this.devolucionToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.devolucionToolStripMenuItem.Text = "Rebajar";
             this.devolucionToolStripMenuItem.Click += new System.EventHandler(this.DevolucionToolStripMenuItemClick);
             // 
@@ -217,7 +256,7 @@ namespace ControlInsumos
             // 
             this.devoluciónToolStripMenuItem1.Image = global::Control_Inventario.Properties.Resources.devolucionCarro;
             this.devoluciónToolStripMenuItem1.Name = "devoluciónToolStripMenuItem1";
-            this.devoluciónToolStripMenuItem1.Size = new System.Drawing.Size(134, 22);
+            this.devoluciónToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
             this.devoluciónToolStripMenuItem1.Text = "Devolución";
             // 
             // informesToolStripMenuItem
@@ -246,6 +285,118 @@ namespace ControlInsumos
             // timerHora
             // 
             this.timerHora.Tick += new System.EventHandler(this.TimerHoraTick);
+            // 
+            // insumosToolStripMenuItem
+            // 
+            this.insumosToolStripMenuItem.Name = "insumosToolStripMenuItem";
+            this.insumosToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.insumosToolStripMenuItem.Text = "Insumos";
+            this.insumosToolStripMenuItem.Click += new System.EventHandler(this.insumosToolStripMenuItem_Click);
+            // 
+            // crearToolStripMenuItem
+            // 
+            this.crearToolStripMenuItem.Name = "crearToolStripMenuItem";
+            this.crearToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.crearToolStripMenuItem.Text = "Crear";
+            // 
+            // modificarToolStripMenuItem
+            // 
+            this.modificarToolStripMenuItem.Name = "modificarToolStripMenuItem";
+            this.modificarToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.modificarToolStripMenuItem.Text = "Modificar";
+            // 
+            // eliminarToolStripMenuItem
+            // 
+            this.eliminarToolStripMenuItem.Name = "eliminarToolStripMenuItem";
+            this.eliminarToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.eliminarToolStripMenuItem.Text = "Eliminar";
+            // 
+            // crearToolStripMenuItem1
+            // 
+            this.crearToolStripMenuItem1.Name = "crearToolStripMenuItem1";
+            this.crearToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.crearToolStripMenuItem1.Text = "Crear";
+            // 
+            // modificarToolStripMenuItem1
+            // 
+            this.modificarToolStripMenuItem1.Name = "modificarToolStripMenuItem1";
+            this.modificarToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.modificarToolStripMenuItem1.Text = "Modificar";
+            // 
+            // eliminarToolStripMenuItem1
+            // 
+            this.eliminarToolStripMenuItem1.Name = "eliminarToolStripMenuItem1";
+            this.eliminarToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.eliminarToolStripMenuItem1.Text = "Eliminar";
+            // 
+            // crearToolStripMenuItem2
+            // 
+            this.crearToolStripMenuItem2.Name = "crearToolStripMenuItem2";
+            this.crearToolStripMenuItem2.Size = new System.Drawing.Size(152, 22);
+            this.crearToolStripMenuItem2.Text = "Crear";
+            // 
+            // modificarToolStripMenuItem2
+            // 
+            this.modificarToolStripMenuItem2.Name = "modificarToolStripMenuItem2";
+            this.modificarToolStripMenuItem2.Size = new System.Drawing.Size(152, 22);
+            this.modificarToolStripMenuItem2.Text = "Modificar";
+            // 
+            // eliminarToolStripMenuItem2
+            // 
+            this.eliminarToolStripMenuItem2.Name = "eliminarToolStripMenuItem2";
+            this.eliminarToolStripMenuItem2.Size = new System.Drawing.Size(152, 22);
+            this.eliminarToolStripMenuItem2.Text = "Eliminar";
+            // 
+            // crearToolStripMenuItem3
+            // 
+            this.crearToolStripMenuItem3.Name = "crearToolStripMenuItem3";
+            this.crearToolStripMenuItem3.Size = new System.Drawing.Size(152, 22);
+            this.crearToolStripMenuItem3.Text = "Crear";
+            // 
+            // modificarToolStripMenuItem3
+            // 
+            this.modificarToolStripMenuItem3.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.itemToolStripMenuItem1,
+            this.precioToolStripMenuItem});
+            this.modificarToolStripMenuItem3.Name = "modificarToolStripMenuItem3";
+            this.modificarToolStripMenuItem3.Size = new System.Drawing.Size(152, 22);
+            this.modificarToolStripMenuItem3.Text = "Modificar";
+            // 
+            // eliminarToolStripMenuItem3
+            // 
+            this.eliminarToolStripMenuItem3.Name = "eliminarToolStripMenuItem3";
+            this.eliminarToolStripMenuItem3.Size = new System.Drawing.Size(152, 22);
+            this.eliminarToolStripMenuItem3.Text = "Eliminar";
+            // 
+            // ingresarToolStripMenuItem1
+            // 
+            this.ingresarToolStripMenuItem1.Name = "ingresarToolStripMenuItem1";
+            this.ingresarToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.ingresarToolStripMenuItem1.Text = "Ingresar";
+            // 
+            // modificarToolStripMenuItem4
+            // 
+            this.modificarToolStripMenuItem4.Name = "modificarToolStripMenuItem4";
+            this.modificarToolStripMenuItem4.Size = new System.Drawing.Size(152, 22);
+            this.modificarToolStripMenuItem4.Text = "Modificar";
+            // 
+            // elimarToolStripMenuItem
+            // 
+            this.elimarToolStripMenuItem.Name = "elimarToolStripMenuItem";
+            this.elimarToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.elimarToolStripMenuItem.Text = "Eliminar";
+            // 
+            // itemToolStripMenuItem1
+            // 
+            this.itemToolStripMenuItem1.Name = "itemToolStripMenuItem1";
+            this.itemToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.itemToolStripMenuItem1.Text = "Item";
+            // 
+            // precioToolStripMenuItem
+            // 
+            this.precioToolStripMenuItem.Name = "precioToolStripMenuItem";
+            this.precioToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.precioToolStripMenuItem.Text = "Precio";
             // 
             // MainForm
             // 
@@ -291,5 +442,23 @@ namespace ControlInsumos
 		private System.Windows.Forms.MenuStrip menuStrip1;
 		private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
 		private System.Windows.Forms.StatusStrip statusStrip1;
+        private System.Windows.Forms.ToolStripMenuItem crearToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem modificarToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem eliminarToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem crearToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem modificarToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem eliminarToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem crearToolStripMenuItem2;
+        private System.Windows.Forms.ToolStripMenuItem modificarToolStripMenuItem2;
+        private System.Windows.Forms.ToolStripMenuItem eliminarToolStripMenuItem2;
+        private System.Windows.Forms.ToolStripMenuItem crearToolStripMenuItem3;
+        private System.Windows.Forms.ToolStripMenuItem modificarToolStripMenuItem3;
+        private System.Windows.Forms.ToolStripMenuItem itemToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem precioToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem eliminarToolStripMenuItem3;
+        private System.Windows.Forms.ToolStripMenuItem ingresarToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem modificarToolStripMenuItem4;
+        private System.Windows.Forms.ToolStripMenuItem elimarToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem insumosToolStripMenuItem;
 	}
 }

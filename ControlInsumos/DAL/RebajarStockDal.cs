@@ -34,6 +34,20 @@ namespace ControlInsumos.DAL
       
 			
 		}
+        public int countRebajaStock()
+        {
+            int count = 0;
+            string sql = "SELECT COUNT(idRebajarStock)+1 FROM rebajarStock;";
+            count = int.Parse(b.selectstring(sql));
+            return count;
+        }
+        public int maxRebajaStock()
+        {
+            int count = 0;
+            string sql = "SELECT MAX(idRebajarStock)+1 FROM rebajarStock;";
+            count = int.Parse(b.selectstring(sql));
+            return count;
+        }
 
 	}
 }
