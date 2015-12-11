@@ -43,8 +43,17 @@ namespace ControlInsumos.GUI
 			try 
 			{
 				DLL.Compra c 		= new ControlInsumos.DLL.Compra();
+
+                if(compraDal.countCompra() <= 1)
+                {
+                    c.IdCompra = compraDal.countCompra();
+                }
+                else
+                {
+                    c.IdCompra = compraDal.maxCompra();
+                }
 				c.NumeroDoc 		= int.Parse(txtNumeroDoc.Text);
-				c.Fecha 			= txtFecha.Text;
+                c.Fecha             = dtFecha.Text;
 				c.IdArticulo 		= int.Parse(cboxArticulo.SelectedValue.ToString());
 				c.IdItem 			= int.Parse(cboxItem.SelectedValue.ToString());
 				c.Cantidad 			= int.Parse(txtCantidad.Text);
@@ -64,7 +73,7 @@ namespace ControlInsumos.GUI
 			catch (FormatException)
 			{
 				MessageBox.Show("Debe completar todos los valores numericos o\nArreglar la Fecha","Mantención Compras",MessageBoxButtons.OK,MessageBoxIcon.Warning);
-				txtFecha.Focus();
+                dtFecha.Focus();
 			}
 			catch(NullReferenceException)
 			{
@@ -74,36 +83,15 @@ namespace ControlInsumos.GUI
 		}
 		public void limpiar()
 		{
-			txtFecha.Clear();
-			txtNumeroDoc.Clear();
+			//txtNumeroDoc.Clear();
 			txtCantidad.Clear();
 			txtPrecio.Clear();
-			txtFecha.Focus();
-			cboxArticulo.SelectedIndex = -1;
-			cboxItem.Text = null;
+			dtFecha.Focus();
+			//cboxArticulo.SelectedIndex = -1;
+			//cboxItem.Text = null;
 		}
 		
-		void TxtFechaKeyPress(object sender, KeyPressEventArgs e)
-		{
-			if (Char.IsDigit(e.KeyChar))
-            {
-                e.Handled = false;
-            }
-            else if (Char.IsControl(e.KeyChar))
-            {
-                e.Handled = false;
-            }
-            else
-            {
-                e.Handled = true;
-            }
-            //Esto quiere decir si el largo de tu textbox es igual a 2 o 5 le agrega la -
-           if(txtFecha.Text.Length.Equals(2) || txtFecha.Text.Length.Equals(5))
-           {  	
-           		txtFecha.Text = "/" + txtFecha.Text;     
-           }
-           
-		}
+		
 		
 		
 		void CboxArticuloTextChanged(object sender, EventArgs e)
@@ -174,7 +162,7 @@ namespace ControlInsumos.GUI
 		{
 			if (e.KeyCode == Keys.Enter) 
 			{
-				this.SelectNextControl(txtFecha,true,true,true,true);		
+				this.SelectNextControl(dtFecha,true,true,true,true);		
 			}
 		}
 		

@@ -33,10 +33,11 @@ namespace Control_Inventario.GUI
 
         void RegistroInsumosLoad(object sender, EventArgs e)
         {
+            txtGuia.Focus();
             cargarDGV();
             cargarArticulo();
             cargarItem();
-            cboxArticulo.Focus();
+            txtGuia.Focus();
             cargarCC();
         }
         public void cargarDGV()
@@ -47,6 +48,10 @@ namespace Control_Inventario.GUI
             dgvRegistroInsumos.RowHeadersVisible = false;
             //Ancho de las columnas
             dgvRegistroInsumos.Columns[0].Width = 30;
+            dgvRegistroInsumos.Columns[1].Width = 68;
+            dgvRegistroInsumos.Columns[2].Width = 68;
+            dgvRegistroInsumos.Columns[4].Width = 68;
+            dgvRegistroInsumos.Columns[5].Width = 85;
         }
         public void cargarItem()
         {
@@ -104,12 +109,34 @@ namespace Control_Inventario.GUI
                 i.IdArticulo = int.Parse(cboxArticulo.SelectedValue.ToString());
                 i.IdItem = int.Parse(cboxItem.SelectedValue.ToString());
                 i.IdLocal = int.Parse(cboxCentroCosto.SelectedValue.ToString());
-                insumosDal.insertInsumo(i);
+                int res = insumosDal.insertInsumo(i);
+
+                switch (res)
+                {
+                    case 1: cargarDGV();
+                        break;
+                    default: MessageBox.Show("Error: " + res, "Registros Insumos", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        break;
+                }
+
+                
+            }
+            catch(FormatException)
+            {
+                MessageBox.Show("Debe Completar todos campos de forma correcta", "Registros Insumos", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtGuia.Focus();
+            }
+            catch(NullReferenceException )
+            {
+                MessageBox.Show("Debe seleccionar Articulo, Item y Local", "Registros Insumos", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                cboxArticulo.Focus();
             }
             catch(Exception e)
             {
-
+                MessageBox.Show("Indique este error: " + e.Message + " al administrador", "Registros Insumos", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtGuia.Focus();
             }
+
             
         }
 

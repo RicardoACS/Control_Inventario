@@ -13,6 +13,7 @@ namespace ControlInsumos.DLL
 	/// </summary>
 	public class Compra
 	{
+        private int idCompra;
 		private int numeroDoc;
 		private string fecha;
 		private int idArticulo;
@@ -23,7 +24,11 @@ namespace ControlInsumos.DLL
 		{
 			
 		}
-		
+        public int IdCompra
+        {
+            get { return idCompra; }
+            set { idCompra = value; }
+        }
 		public int NumeroDoc {
 			get { return numeroDoc; }
 			set { numeroDoc = value; }

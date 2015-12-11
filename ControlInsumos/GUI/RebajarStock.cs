@@ -9,70 +9,70 @@ using System.Windows.Forms;
 
 namespace ControlInsumos.GUI
 {
-	/// <summary>
-	/// Description of RebajarStock.
-	/// </summary>
-	public partial class formRebajarStock : Form
-	{
-		public formRebajarStock()
-		{
-			InitializeComponent();
-		}
+    /// <summary>
+    /// Description of RebajarStock.
+    /// </summary>
+    public partial class formRebajarStock : Form
+    {
+        public formRebajarStock()
+        {
+            InitializeComponent();
+        }
         //Llamado DLL Base de datos
-		BaseDeDatosLite b = new BaseDeDatosLite();
-		
-		DAL.RebajarStockDal rebajaDal = new ControlInsumos.DAL.RebajarStockDal();
-		DAL.ArticuloDal artDal = new ControlInsumos.DAL.ArticuloDal();
-		DAL.ItemDal itemDal = new ControlInsumos.DAL.ItemDal();
-		DAL.CentroCostoDal centroCostoDal = new ControlInsumos.DAL.CentroCostoDal();
-		DAL.CompraDal compraDal = new ControlInsumos.DAL.CompraDal();
-		
-		void RebajarStockLoad(object sender, EventArgs e)
-		{
+        BaseDeDatosLite b = new BaseDeDatosLite();
+
+        DAL.RebajarStockDal rebajaDal = new ControlInsumos.DAL.RebajarStockDal();
+        DAL.ArticuloDal artDal = new ControlInsumos.DAL.ArticuloDal();
+        DAL.ItemDal itemDal = new ControlInsumos.DAL.ItemDal();
+        DAL.CentroCostoDal centroCostoDal = new ControlInsumos.DAL.CentroCostoDal();
+        DAL.CompraDal compraDal = new ControlInsumos.DAL.CompraDal();
+
+        void RebajarStockLoad(object sender, EventArgs e)
+        {
             //Carga de los elementos en la GUI
-			dgvItems.DataSource = b.SelectDataTable(rebajaDal.loadDataGV(cboxItem.Text));
+            dgvItems.DataSource = b.SelectDataTable(rebajaDal.loadDataGV(cboxItem.Text));
             //Elimina primera fila [*] del DataView
             dgvItems.RowHeadersVisible = false;
-			cargarArticulo();
-			cargarItem();
-			cboxArticulo.Focus();
-	    	cargarCC();
-		}
-		
-		public void cargarItem()
-		{
+            cargarArticulo();
+            cargarItem();
+            cboxArticulo.Focus();
+            cargarCC();
+        }
+
+        public void cargarItem()
+        {
             //Carga los item en el ComboBox
             try
-            {   
+            {
                 int id = int.Parse(cboxArticulo.SelectedValue.ToString());
                 cboxItem.DataSource = itemDal.listItem(id);
-			    cboxItem.DisplayMember = "Descripcion";
+                cboxItem.DisplayMember = "Descripcion";
                 cboxItem.ValueMember = "IdItem";
                 cboxItem.SelectedIndex = -1;
             }
-            catch(Exception)
+            catch (Exception)
             {
 
             }
-		}
-		public void cargarArticulo()
-		{
+        }
+        public void cargarArticulo()
+        {
             //Carga los Articulos en el ComboBox
-			cboxArticulo.DataSource = artDal.listArt();
+            cboxArticulo.DataSource = artDal.listArt();
             cboxArticulo.DisplayMember = "NombreArticulo";
             cboxArticulo.ValueMember = "IdArticulo";
             cboxArticulo.SelectedIndex = -1;
-		}
-		public void cargarCC()
-		{
+        }
+        public void cargarCC()
+        {
             //Carga los Centro de Costo en el ComboBox
-			cboxCentroCosto.DataSource = centroCostoDal.listCentroCosto();
+            cboxCentroCosto.DataSource = centroCostoDal.listCentroCosto();
             cboxCentroCosto.DisplayMember = "Nombre";
             cboxCentroCosto.ValueMember = "IdCC";
             cboxCentroCosto.SelectedValue = -1;
-		}
-		public void rebajarStock()
-		{
+        }
+        public void rebajarStock()
+        {
             try
             {
                 //Instancia Clase
@@ -86,17 +86,18 @@ namespace ControlInsumos.GUI
                 int item = int.Parse(cboxItem.SelectedValue.ToString());
                 int stockProducto = compraDal.consultaStock(fechaMinima, item);
                 //Insert Rebaja
-                if(rebajaDal.countRebajaStock() <= 1)
+                if (rebajaDal.countRebajaStock() <= 1)
                 {
                     r.IdRebajarStock = rebajaDal.countRebajaStock();
                 }
                 else
                 {
                     r.IdRebajarStock = rebajaDal.maxRebajaStock();
-                }                
+                }
                 r.IdLocal = int.Parse(cboxCentroCosto.SelectedValue.ToString());
                 r.IdItem = int.Parse(cboxItem.SelectedValue.ToString());
                 r.Cantidad = int.Parse(txtCantidad.Text);
+                r.Fecha = DateTime.Now.ToString("dd/MM/yyyy");
 
                 //Rebajar Stock
                 if (stockProducto >= r.Cantidad)
@@ -112,10 +113,10 @@ namespace ControlInsumos.GUI
                     }
                     else
                     {
-                        MessageBox.Show("No le queda Stock de: " + cboxItem.Text,"Rebajar Stock",MessageBoxButtons.OK,MessageBoxIcon.Warning);
+                        MessageBox.Show("No le queda Stock de: " + cboxItem.Text, "Rebajar Stock", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     }
                 }
-                else if(stockProducto <= 0)
+                else if (stockProducto <= 0)
                 {
                     MessageBox.Show("Producto Agotado", "Rebajar Stock", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
@@ -128,37 +129,37 @@ namespace ControlInsumos.GUI
             {
                 MessageBox.Show("error: " + e.Message, "Rebajar Stock", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            
-            
-		}
-		void BtnRebajarClick(object sender, EventArgs e)
-		{
-			rebajarStock();
-		}
-		
-		void BtnActualizarClick(object sender, EventArgs e)
-		{
+
+
+        }
+        void BtnRebajarClick(object sender, EventArgs e)
+        {
+            rebajarStock();
+        }
+
+        void BtnActualizarClick(object sender, EventArgs e)
+        {
             dgvItems.DataSource = b.SelectDataTable(rebajaDal.loadDataGV(cboxItem.Text));
-		}
-		
-		void BtnSalirClick(object sender, EventArgs e)
-		{
-			Dispose();
-		}
-		
-		void Label4Click(object sender, EventArgs e)
-		{
-			
-		}
-		
-		void CboxArticuloTextChanged(object sender, EventArgs e)
-		{			
-			cargarItem();
-		}
-		
-		void CboxItemTextChanged(object sender, EventArgs e)
-		{
-			dgvItems.DataSource = b.SelectDataTable(rebajaDal.loadDataGV(cboxItem.Text));
-		}
-	}
+        }
+
+        void BtnSalirClick(object sender, EventArgs e)
+        {
+            Dispose();
+        }
+
+        void Label4Click(object sender, EventArgs e)
+        {
+
+        }
+
+        void CboxArticuloTextChanged(object sender, EventArgs e)
+        {
+            cargarItem();
+        }
+
+        void CboxItemTextChanged(object sender, EventArgs e)
+        {
+            dgvItems.DataSource = b.SelectDataTable(rebajaDal.loadDataGV(cboxItem.Text));
+        }
+    }
 }

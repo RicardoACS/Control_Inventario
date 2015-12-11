@@ -85,7 +85,7 @@ namespace Control_Inventario.GUI
             this.dtFechaGuia.Location = new System.Drawing.Point(12, 84);
             this.dtFechaGuia.Name = "dtFechaGuia";
             this.dtFechaGuia.Size = new System.Drawing.Size(195, 20);
-            this.dtFechaGuia.TabIndex = 15;
+            this.dtFechaGuia.TabIndex = 1;
             // 
             // label6
             // 
@@ -99,9 +99,10 @@ namespace Control_Inventario.GUI
             // txtGuia
             // 
             this.txtGuia.Location = new System.Drawing.Point(12, 43);
+            this.txtGuia.MaxLength = 20;
             this.txtGuia.Name = "txtGuia";
             this.txtGuia.Size = new System.Drawing.Size(195, 20);
-            this.txtGuia.TabIndex = 12;
+            this.txtGuia.TabIndex = 0;
             // 
             // label5
             // 
@@ -128,15 +129,16 @@ namespace Control_Inventario.GUI
             this.cboxArticulo.Location = new System.Drawing.Point(12, 126);
             this.cboxArticulo.Name = "cboxArticulo";
             this.cboxArticulo.Size = new System.Drawing.Size(195, 21);
-            this.cboxArticulo.TabIndex = 1;
+            this.cboxArticulo.TabIndex = 2;
             this.cboxArticulo.SelectedIndexChanged += new System.EventHandler(this.cboxArticulo_SelectedIndexChanged);
             // 
             // txtCantidad
             // 
             this.txtCantidad.Location = new System.Drawing.Point(12, 264);
+            this.txtCantidad.MaxLength = 20;
             this.txtCantidad.Name = "txtCantidad";
             this.txtCantidad.Size = new System.Drawing.Size(195, 20);
-            this.txtCantidad.TabIndex = 4;
+            this.txtCantidad.TabIndex = 5;
             // 
             // btnActualizar
             // 
@@ -144,7 +146,7 @@ namespace Control_Inventario.GUI
             this.btnActualizar.Location = new System.Drawing.Point(24, 311);
             this.btnActualizar.Name = "btnActualizar";
             this.btnActualizar.Size = new System.Drawing.Size(64, 23);
-            this.btnActualizar.TabIndex = 8;
+            this.btnActualizar.TabIndex = 6;
             this.btnActualizar.Text = "Actualizar";
             this.btnActualizar.UseVisualStyleBackColor = true;
             this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
@@ -165,7 +167,7 @@ namespace Control_Inventario.GUI
             this.btnRebajar.Name = "btnRebajar";
             this.btnRebajar.Size = new System.Drawing.Size(55, 23);
             this.btnRebajar.TabIndex = 7;
-            this.btnRebajar.Text = "Rebajar";
+            this.btnRebajar.Text = "Asignar";
             this.btnRebajar.UseVisualStyleBackColor = true;
             this.btnRebajar.Click += new System.EventHandler(this.btnRebajar_Click);
             // 
@@ -195,7 +197,7 @@ namespace Control_Inventario.GUI
             this.cboxCentroCosto.Location = new System.Drawing.Point(12, 212);
             this.cboxCentroCosto.Name = "cboxCentroCosto";
             this.cboxCentroCosto.Size = new System.Drawing.Size(195, 21);
-            this.cboxCentroCosto.TabIndex = 3;
+            this.cboxCentroCosto.TabIndex = 4;
             // 
             // cboxItem
             // 
@@ -204,22 +206,21 @@ namespace Control_Inventario.GUI
             this.cboxItem.Location = new System.Drawing.Point(12, 168);
             this.cboxItem.Name = "cboxItem";
             this.cboxItem.Size = new System.Drawing.Size(195, 21);
-            this.cboxItem.TabIndex = 2;
+            this.cboxItem.TabIndex = 3;
             this.cboxItem.SelectedIndexChanged += new System.EventHandler(this.cboxItem_SelectedIndexChanged);
             // 
             // dgvRegistroInsumos
             // 
             this.dgvRegistroInsumos.CausesValidation = false;
             this.dgvRegistroInsumos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvRegistroInsumos.Enabled = false;
             this.dgvRegistroInsumos.ImeMode = System.Windows.Forms.ImeMode.Off;
             this.dgvRegistroInsumos.Location = new System.Drawing.Point(240, 12);
             this.dgvRegistroInsumos.MultiSelect = false;
             this.dgvRegistroInsumos.Name = "dgvRegistroInsumos";
-            this.dgvRegistroInsumos.ReadOnly = true;
             this.dgvRegistroInsumos.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
+            this.dgvRegistroInsumos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvRegistroInsumos.Size = new System.Drawing.Size(422, 346);
-            this.dgvRegistroInsumos.TabIndex = 101;
+            this.dgvRegistroInsumos.TabIndex = 0;
             // 
             // Registro_Insumos
             // 
@@ -228,7 +229,10 @@ namespace Control_Inventario.GUI
             this.ClientSize = new System.Drawing.Size(675, 371);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.dgvRegistroInsumos);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "Registro_Insumos";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Insumos";
             this.Load += new System.EventHandler(this.RegistroInsumosLoad);
             this.groupBox1.ResumeLayout(false);

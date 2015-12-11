@@ -104,6 +104,7 @@ namespace ControlInsumos.GUI
             // txtCantidad
             // 
             this.txtCantidad.Location = new System.Drawing.Point(17, 179);
+            this.txtCantidad.MaxLength = 20;
             this.txtCantidad.Name = "txtCantidad";
             this.txtCantidad.Size = new System.Drawing.Size(195, 20);
             this.txtCantidad.TabIndex = 4;
@@ -111,7 +112,7 @@ namespace ControlInsumos.GUI
             // btnRebajar
             // 
             this.btnRebajar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRebajar.Location = new System.Drawing.Point(17, 229);
+            this.btnRebajar.Location = new System.Drawing.Point(148, 229);
             this.btnRebajar.Name = "btnRebajar";
             this.btnRebajar.Size = new System.Drawing.Size(55, 23);
             this.btnRebajar.TabIndex = 7;
@@ -174,7 +175,7 @@ namespace ControlInsumos.GUI
             // btnSalir
             // 
             this.btnSalir.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSalir.Location = new System.Drawing.Point(148, 229);
+            this.btnSalir.Location = new System.Drawing.Point(6, 229);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(64, 23);
             this.btnSalir.TabIndex = 9;

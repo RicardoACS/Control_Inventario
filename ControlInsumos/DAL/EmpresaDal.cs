@@ -49,8 +49,25 @@ namespace ControlInsumos.DAL
 			int count = 0;
 			string sql = "SELECT count(idEmpresa)+1  FROM empresas";
 			count = int.Parse(b.selectstring(sql));
-			return count;
-				
+			return count;			
 		}
+        public int maxEmp()
+        {
+            int max = 0;
+            string sql = "SELECT MAX(idEmpresa)+1  FROM empresas";
+            max = int.Parse(b.selectstring(sql));
+            return max;
+        }
+
+        public int updateNombreEmpresa(DLL.Empresa e)
+        {
+            string sql = "UPDATE empresas SET nombreEmpresa = '" + e.Nombre + "' WHERE idEmpresa = " + e.IdEmpresa + ";";
+            return b.executecommand(sql);
+        }
+        public int deleteEmpresa(int id)
+        {
+            string sql = "DELETE FROM empresas WHERE idEmpresa = " + id +";";
+            return b.executecommand(sql);
+        }
 	}
 }

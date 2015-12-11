@@ -97,6 +97,18 @@
     <Compile Include="GUI\FormMantenedorCentroCosto.Designer.cs">
       <DependentUpon>FormMantenedorCentroCosto.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\MantenedorEmpresa_Eliminar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\MantenedorEmpresa_Eliminar.Designer.cs">
+      <DependentUpon>MantenedorEmpresa_Eliminar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\MantenedorEmpresa_Modificar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\MantenedorEmpresa_Modificar.Designer.cs">
+      <DependentUpon>MantenedorEmpresa_Modificar.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\Registro_Insumos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -148,6 +160,12 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="GUI\FormMantenedorCentroCosto.resx">
       <DependentUpon>FormMantenedorCentroCosto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\MantenedorEmpresa_Eliminar.resx">
+      <DependentUpon>MantenedorEmpresa_Eliminar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\MantenedorEmpresa_Modificar.resx">
+      <DependentUpon>MantenedorEmpresa_Modificar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Registro_Insumos.resx">
       <DependentUpon>Registro_Insumos.cs</DependentUpon>

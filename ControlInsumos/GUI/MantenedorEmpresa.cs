@@ -28,7 +28,15 @@ namespace ControlInsumos.GUI
                 if(txtNombre.Text.Length > 0 )
                 {            
 				    DLL.Empresa e = new ControlInsumos.DLL.Empresa();
-				    e.IdEmpresa = empresaDal.countEmp();
+                    if (empresaDal.countEmp() <= 1)
+                    {
+                        e.IdEmpresa = empresaDal.countEmp();
+                    }
+                    else
+                    {
+                        e.IdEmpresa = empresaDal.maxEmp();
+                    }
+				    
 				    e.Nombre = txtNombre.Text;
 				    int resultado = e.insertEmpresa(e);
 				

@@ -125,7 +125,7 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(100, 23);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Centro Costo";
+            this.label1.Text = "N° Centro Costo";
             // 
             // FormMantenedorCentroCosto
             // 

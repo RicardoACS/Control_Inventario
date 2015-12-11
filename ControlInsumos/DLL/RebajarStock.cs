@@ -16,11 +16,13 @@ namespace ControlInsumos.DLL
 		private int idItem;
 		private int idLocal;
 		private int cantidad;
+        private string fecha;
 		
 		public RebajarStock()
 		{
 			
 		}
+        
 		
 		public RebajarStock(int idRebajarStock, int idItem, int idLocal, int cantidad)
 		{
@@ -29,7 +31,13 @@ namespace ControlInsumos.DLL
 			this.idLocal = idLocal;
 			this.cantidad = cantidad;
 		}
-		
+
+        public string Fecha
+        {
+            get { return fecha; }
+            set { fecha = value; }
+        }
+
 		public int IdRebajarStock {
 			get { return idRebajarStock; }
 			set { idRebajarStock = value; }

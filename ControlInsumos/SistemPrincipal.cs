@@ -32,7 +32,7 @@ namespace ControlInsumos
                     ctlMDI = (MdiClient)ctl;
 
                     // Set the BackColor of the MdiClient control.
-                    ctlMDI.BackColor = Color.Black;
+                    ctlMDI.BackColor = Color.Aqua;
                 }
                 catch (InvalidCastException)
                 {
@@ -62,13 +62,7 @@ namespace ControlInsumos
 		{
             Control_Inventario.GUI.FormMantenedorCentroCosto cc = new Control_Inventario.GUI.FormMantenedorCentroCosto();
 			cc.Show();
-		}
-		
-		void EmpresaToolStripMenuItemClick(object sender, EventArgs e)
-		{
-			GUI.formMantenedorEmpresa me = new ControlInsumos.GUI.formMantenedorEmpresa();
-			me.Show();
-		}
+        }
 		
 		void TimerHoraTick(object sender, EventArgs e)
 		{
@@ -96,6 +90,25 @@ namespace ControlInsumos
         {
             Control_Inventario.GUI.Registro_Insumos r = new Control_Inventario.GUI.Registro_Insumos();
             r.ShowDialog();
+        }
+
+        private void crearToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            GUI.formMantenedorEmpresa me = new ControlInsumos.GUI.formMantenedorEmpresa();
+            me.Show();
+            
+        }
+
+        private void modificarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Control_Inventario.GUI.MantenedorEmpresa_Modificar em = new Control_Inventario.GUI.MantenedorEmpresa_Modificar();
+            em.Show();
+        }
+
+        private void eliminarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Control_Inventario.GUI.MantenedorEmpresa_Eliminar el = new Control_Inventario.GUI.MantenedorEmpresa_Eliminar();
+            el.Show();
         }
 	}
 }

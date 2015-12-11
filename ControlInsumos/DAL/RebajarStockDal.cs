@@ -29,7 +29,7 @@ namespace ControlInsumos.DAL
 		public int insertRebaja(DLL.RebajarStock r)
 		{
             //Insertará en la BD la rebaja, esto retornará un número el cual indicará el resultado de la consulta
-            string insert = "INSERT INTO rebajarStock VALUES (" + r.IdRebajarStock + "," + r.IdItem + "," + r.IdLocal + "," + r.Cantidad + ");";
+            string insert = "INSERT INTO rebajarStock VALUES (" + r.IdRebajarStock + "," + r.IdItem + "," + r.IdLocal + "," + r.Cantidad + ",'" + r.Fecha + "');";
             return b.executecommand(insert);
       
 			
