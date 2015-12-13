@@ -33,15 +33,19 @@ namespace Control_Inventario.GUI
                 ControlInsumos.DLL.Empresa e = new ControlInsumos.DLL.Empresa();
                 e.IdEmpresa                  = int.Parse(cboxEmpresas.SelectedValue.ToString());
                 e.Nombre                     = txtNuevoNombre.Text;
-                int res                      = empresaDal.updateNombreEmpresa(e);
-
-                switch (res)
+                DialogResult dialogResult = MessageBox.Show("¿Estas seguro de modificar la Empresa?", "Mantenedor Empresa", MessageBoxButtons.YesNo,MessageBoxIcon.Question);
+                if (dialogResult == DialogResult.Yes)
                 {
-                    case 1: MessageBox.Show("Cambios Realizados exitosamente!", "Mantenedor Empresa", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        limpiar();                    
-                        break;
-                    default: MessageBox.Show("Error: " + res, "Mantenedor Empresa", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        break;
+                    int res = empresaDal.updateNombreEmpresa(e);
+
+                    switch (res)
+                    {
+                        case 1: MessageBox.Show("Cambios Realizados exitosamente!", "Mantenedor Empresa", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            limpiar();
+                            break;
+                        default: MessageBox.Show("Error: " + res, "Mantenedor Empresa", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            break;
+                    }
                 }
             }
             catch (Exception e)

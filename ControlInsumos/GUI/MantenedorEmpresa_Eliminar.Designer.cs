@@ -68,9 +68,10 @@
             // lblEmpresa
             // 
             this.lblEmpresa.AutoSize = true;
+            this.lblEmpresa.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEmpresa.Location = new System.Drawing.Point(6, 30);
             this.lblEmpresa.Name = "lblEmpresa";
-            this.lblEmpresa.Size = new System.Drawing.Size(48, 13);
+            this.lblEmpresa.Size = new System.Drawing.Size(55, 13);
             this.lblEmpresa.TabIndex = 0;
             this.lblEmpresa.Text = "Empresa";
             // 
@@ -80,8 +81,11 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(263, 107);
             this.Controls.Add(this.groupBox1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "MantenedorEmpresa_Eliminar";
-            this.Text = "MantenedorEmpresa_Eliminar";
+            this.Text = "Eliminar Empresa";
             this.Click += new System.EventHandler(this.MantenedorEmpresa_Eliminar_Click);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

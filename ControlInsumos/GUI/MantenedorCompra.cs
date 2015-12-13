@@ -57,7 +57,8 @@ namespace ControlInsumos.GUI
 				c.IdArticulo 		= int.Parse(cboxArticulo.SelectedValue.ToString());
 				c.IdItem 			= int.Parse(cboxItem.SelectedValue.ToString());
 				c.Cantidad 			= int.Parse(txtCantidad.Text);
-				c.Precio 			= int.Parse(txtPrecio.Text);
+                double precio = Convert.ToDouble(txtPrecio.Text.Replace(".", ",").Replace(",",","));
+                c.Precio = (txtPrecio.Text.Replace(".", ".").Replace(",", "."));
 				int resultado = c.insertCompra(c);
 					switch (resultado) 
 					{
@@ -143,18 +144,7 @@ namespace ControlInsumos.GUI
 		
 		void TxtPrecioKeyPress(object sender, KeyPressEventArgs e)
 		{
-			if (Char.IsDigit(e.KeyChar))
-            {
-                e.Handled = false;
-            }
-            else if (Char.IsControl(e.KeyChar))
-            {
-                e.Handled = false;
-            }
-            else
-            {
-                e.Handled = true;
-            }
+			
 		}
 
 		

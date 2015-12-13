@@ -161,5 +161,10 @@ namespace ControlInsumos.GUI
         {
             dgvItems.DataSource = b.SelectDataTable(rebajaDal.loadDataGV(cboxItem.Text));
         }
+
+        private void cboxItem_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            dgvItems.DataSource = b.SelectDataTable(rebajaDal.loadDataGV(cboxItem.Text));
+        }
     }
 }

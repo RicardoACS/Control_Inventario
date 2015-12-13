@@ -75,7 +75,7 @@ namespace Control_Inventario.GUI
             this.groupBox1.Location = new System.Drawing.Point(11, 12);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(223, 346);
-            this.groupBox1.TabIndex = 100;
+            this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Ingrese Datos";
             // 
@@ -213,14 +213,16 @@ namespace Control_Inventario.GUI
             // 
             this.dgvRegistroInsumos.CausesValidation = false;
             this.dgvRegistroInsumos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvRegistroInsumos.GridColor = System.Drawing.SystemColors.ActiveBorder;
             this.dgvRegistroInsumos.ImeMode = System.Windows.Forms.ImeMode.Off;
             this.dgvRegistroInsumos.Location = new System.Drawing.Point(240, 12);
             this.dgvRegistroInsumos.MultiSelect = false;
             this.dgvRegistroInsumos.Name = "dgvRegistroInsumos";
-            this.dgvRegistroInsumos.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
+            this.dgvRegistroInsumos.ReadOnly = true;
+            this.dgvRegistroInsumos.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dgvRegistroInsumos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvRegistroInsumos.Size = new System.Drawing.Size(422, 346);
-            this.dgvRegistroInsumos.TabIndex = 0;
+            this.dgvRegistroInsumos.TabIndex = 1;
             // 
             // Registro_Insumos
             // 
@@ -231,6 +233,7 @@ namespace Control_Inventario.GUI
             this.Controls.Add(this.dgvRegistroInsumos);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "Registro_Insumos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Insumos";

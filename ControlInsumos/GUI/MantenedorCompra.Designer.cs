@@ -38,6 +38,7 @@ namespace ControlInsumos.GUI
 		{
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fromIngresarCompra));
             this.Datos_Compra = new System.Windows.Forms.GroupBox();
+            this.dtFecha = new System.Windows.Forms.DateTimePicker();
             this.txtPrecio = new System.Windows.Forms.TextBox();
             this.cboxItem = new System.Windows.Forms.ComboBox();
             this.txtCantidad = new System.Windows.Forms.TextBox();
@@ -51,7 +52,6 @@ namespace ControlInsumos.GUI
             this.label1 = new System.Windows.Forms.Label();
             this.btnIngresar = new System.Windows.Forms.Button();
             this.btnSalir = new System.Windows.Forms.Button();
-            this.dtFecha = new System.Windows.Forms.DateTimePicker();
             this.Datos_Compra.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -75,6 +75,15 @@ namespace ControlInsumos.GUI
             this.Datos_Compra.TabIndex = 0;
             this.Datos_Compra.TabStop = false;
             this.Datos_Compra.Text = "Datos Compra";
+            // 
+            // dtFecha
+            // 
+            this.dtFecha.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtFecha.Location = new System.Drawing.Point(63, 17);
+            this.dtFecha.Name = "dtFecha";
+            this.dtFecha.Size = new System.Drawing.Size(101, 20);
+            this.dtFecha.TabIndex = 1;
+            this.dtFecha.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TxtFechaKeyDown);
             // 
             // txtPrecio
             // 
@@ -199,15 +208,6 @@ namespace ControlInsumos.GUI
             this.btnSalir.UseVisualStyleBackColor = true;
             this.btnSalir.Click += new System.EventHandler(this.BtnSalirClick);
             // 
-            // dtFecha
-            // 
-            this.dtFecha.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtFecha.Location = new System.Drawing.Point(63, 17);
-            this.dtFecha.Name = "dtFecha";
-            this.dtFecha.Size = new System.Drawing.Size(101, 20);
-            this.dtFecha.TabIndex = 1;
-            this.dtFecha.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TxtFechaKeyDown);
-            // 
             // fromIngresarCompra
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -219,6 +219,7 @@ namespace ControlInsumos.GUI
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "fromIngresarCompra";
             this.Text = "Mantenedor Compra";
             this.Datos_Compra.ResumeLayout(false);

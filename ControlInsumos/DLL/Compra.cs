@@ -19,7 +19,7 @@ namespace ControlInsumos.DLL
 		private int idArticulo;
 		private int idItem;
 		private int cantidad;
-		private int precio;
+		private string precio;
 		public Compra()
 		{
 			
@@ -53,8 +53,9 @@ namespace ControlInsumos.DLL
 			get { return cantidad; }
 			set { cantidad = value; }
 		}
-		
-		public int Precio {
+
+        public string Precio
+        {
 			get { return precio; }
 			set { precio = value; }
 		}

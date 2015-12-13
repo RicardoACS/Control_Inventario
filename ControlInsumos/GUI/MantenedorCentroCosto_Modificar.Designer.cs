@@ -1,6 +1,6 @@
 ﻿namespace Control_Inventario.GUI
 {
-    partial class FormMantenedorCentroCosto
+    partial class MantenedorCentroCosto_Modificar
     {
         /// <summary>
         /// Required designer variable.
@@ -28,12 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMantenedorCentroCosto));
-            this.btnSalir = new System.Windows.Forms.Button();
-            this.btnRegistrar = new System.Windows.Forms.Button();
+            this.btnModificar = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtNCC = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.cboxCC = new System.Windows.Forms.ComboBox();
             this.txtNombre = new System.Windows.Forms.TextBox();
-            this.txtCentroCosto = new System.Windows.Forms.TextBox();
             this.cboxEmpresa = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -41,69 +41,78 @@
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // btnSalir
+            // btnModificar
             // 
-            this.btnSalir.Location = new System.Drawing.Point(157, 134);
-            this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Size = new System.Drawing.Size(75, 23);
-            this.btnSalir.TabIndex = 5;
-            this.btnSalir.Text = "Salir";
-            this.btnSalir.UseVisualStyleBackColor = true;
-            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
-            // 
-            // btnRegistrar
-            // 
-            this.btnRegistrar.Location = new System.Drawing.Point(43, 134);
-            this.btnRegistrar.Name = "btnRegistrar";
-            this.btnRegistrar.Size = new System.Drawing.Size(75, 23);
-            this.btnRegistrar.TabIndex = 4;
-            this.btnRegistrar.Text = "Registrar";
-            this.btnRegistrar.UseVisualStyleBackColor = true;
-            this.btnRegistrar.Click += new System.EventHandler(this.btnRegistrar_Click);
+            this.btnModificar.Location = new System.Drawing.Point(98, 165);
+            this.btnModificar.Name = "btnModificar";
+            this.btnModificar.Size = new System.Drawing.Size(75, 23);
+            this.btnModificar.TabIndex = 1;
+            this.btnModificar.Text = "Modificar";
+            this.btnModificar.UseVisualStyleBackColor = true;
+            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.txtNCC);
+            this.groupBox1.Controls.Add(this.label4);
+            this.groupBox1.Controls.Add(this.cboxCC);
             this.groupBox1.Controls.Add(this.txtNombre);
-            this.groupBox1.Controls.Add(this.txtCentroCosto);
             this.groupBox1.Controls.Add(this.cboxEmpresa);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(259, 116);
-            this.groupBox1.TabIndex = 3;
+            this.groupBox1.Size = new System.Drawing.Size(259, 144);
+            this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Datos Local";
+            this.groupBox1.Text = "Datos para modificar Local";
+            // 
+            // txtNCC
+            // 
+            this.txtNCC.Location = new System.Drawing.Point(102, 108);
+            this.txtNCC.MaxLength = 4;
+            this.txtNCC.Name = "txtNCC";
+            this.txtNCC.Size = new System.Drawing.Size(144, 20);
+            this.txtNCC.TabIndex = 4;
+            // 
+            // label4
+            // 
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(6, 111);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(100, 23);
+            this.label4.TabIndex = 7;
+            this.label4.Text = "Nuevo N°";
+            // 
+            // cboxCC
+            // 
+            this.cboxCC.FormattingEnabled = true;
+            this.cboxCC.Location = new System.Drawing.Point(102, 25);
+            this.cboxCC.Name = "cboxCC";
+            this.cboxCC.Size = new System.Drawing.Size(144, 21);
+            this.cboxCC.TabIndex = 1;
             // 
             // txtNombre
             // 
-            this.txtNombre.Location = new System.Drawing.Point(102, 82);
+            this.txtNombre.Location = new System.Drawing.Point(102, 79);
             this.txtNombre.MaxLength = 20;
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(144, 20);
-            this.txtNombre.TabIndex = 5;
-            // 
-            // txtCentroCosto
-            // 
-            this.txtCentroCosto.Location = new System.Drawing.Point(102, 56);
-            this.txtCentroCosto.MaxLength = 4;
-            this.txtCentroCosto.Name = "txtCentroCosto";
-            this.txtCentroCosto.Size = new System.Drawing.Size(144, 20);
-            this.txtCentroCosto.TabIndex = 4;
+            this.txtNombre.TabIndex = 3;
             // 
             // cboxEmpresa
             // 
             this.cboxEmpresa.FormattingEnabled = true;
-            this.cboxEmpresa.Location = new System.Drawing.Point(102, 28);
+            this.cboxEmpresa.Location = new System.Drawing.Point(102, 52);
             this.cboxEmpresa.Name = "cboxEmpresa";
             this.cboxEmpresa.Size = new System.Drawing.Size(144, 21);
-            this.cboxEmpresa.TabIndex = 3;
+            this.cboxEmpresa.TabIndex = 2;
             // 
             // label3
             // 
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(6, 31);
+            this.label3.Location = new System.Drawing.Point(6, 55);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(100, 23);
             this.label3.TabIndex = 2;
@@ -112,35 +121,33 @@
             // label2
             // 
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(6, 85);
+            this.label2.Location = new System.Drawing.Point(6, 82);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(100, 23);
             this.label2.TabIndex = 1;
-            this.label2.Text = "Nombre";
+            this.label2.Text = "Nuevo Nombre";
             // 
             // label1
             // 
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(6, 59);
+            this.label1.Location = new System.Drawing.Point(6, 28);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(100, 23);
             this.label1.TabIndex = 0;
-            this.label1.Text = "N° Centro Costo";
+            this.label1.Text = "Centro Costo";
             // 
-            // FormMantenedorCentroCosto
+            // MantenedorCentroCosto_Modificar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(284, 165);
-            this.Controls.Add(this.btnSalir);
-            this.Controls.Add(this.btnRegistrar);
+            this.ClientSize = new System.Drawing.Size(284, 200);
+            this.Controls.Add(this.btnModificar);
             this.Controls.Add(this.groupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "FormMantenedorCentroCosto";
-            this.Text = "Mantenedor Centro Costo";
+            this.Name = "MantenedorCentroCosto_Modificar";
+            this.Text = "Modificar Centro Costo";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
@@ -149,14 +156,15 @@
 
         #endregion
 
-        private System.Windows.Forms.Button btnSalir;
-        private System.Windows.Forms.Button btnRegistrar;
+        private System.Windows.Forms.Button btnModificar;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.TextBox txtNombre;
-        private System.Windows.Forms.TextBox txtCentroCosto;
         private System.Windows.Forms.ComboBox cboxEmpresa;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox txtNCC;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.ComboBox cboxCC;
     }
 }

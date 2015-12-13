@@ -32,7 +32,7 @@ namespace ControlInsumos
                     ctlMDI = (MdiClient)ctl;
 
                     // Set the BackColor of the MdiClient control.
-                    ctlMDI.BackColor = Color.Aqua;
+                    ctlMDI.BackColor = Color.LightSkyBlue;
                 }
                 catch (InvalidCastException)
                 {
@@ -42,13 +42,13 @@ namespace ControlInsumos
         }
 		void ArticuloToolStripMenuItemClick(object sender, EventArgs e)
 		{
-			GUI.formIngresarArticulo art = new ControlInsumos.GUI.formIngresarArticulo();
-			art.Show();
+			
 		}
 		
 		void ItemToolStripMenuItemClick(object sender, EventArgs e)
 		{
 			GUI.fromIngresarItem ingresarItem = new ControlInsumos.GUI.fromIngresarItem();
+            ingresarItem.MdiParent = this;
 			ingresarItem.Show();
 		}
 		
@@ -60,8 +60,7 @@ namespace ControlInsumos
 		
 		void CentroCostoToolStripMenuItemClick(object sender, EventArgs e)
 		{
-            Control_Inventario.GUI.FormMantenedorCentroCosto cc = new Control_Inventario.GUI.FormMantenedorCentroCosto();
-			cc.Show();
+            
         }
 		
 		void TimerHoraTick(object sender, EventArgs e)
@@ -95,6 +94,7 @@ namespace ControlInsumos
         private void crearToolStripMenuItem_Click(object sender, EventArgs e)
         {
             GUI.formMantenedorEmpresa me = new ControlInsumos.GUI.formMantenedorEmpresa();
+            me.MdiParent = this;
             me.Show();
             
         }
@@ -102,13 +102,50 @@ namespace ControlInsumos
         private void modificarToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Control_Inventario.GUI.MantenedorEmpresa_Modificar em = new Control_Inventario.GUI.MantenedorEmpresa_Modificar();
+            em.MdiParent = this;
             em.Show();
         }
 
         private void eliminarToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Control_Inventario.GUI.MantenedorEmpresa_Eliminar el = new Control_Inventario.GUI.MantenedorEmpresa_Eliminar();
+            el.MdiParent = this;
             el.Show();
+        }
+
+        private void crearToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            Control_Inventario.GUI.FormMantenedorCentroCosto cc = new Control_Inventario.GUI.FormMantenedorCentroCosto();
+            cc.MdiParent = this;
+            cc.Show();
+        }
+
+        private void modificarToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            Control_Inventario.GUI.MantenedorCentroCosto_Modificar cc = new Control_Inventario.GUI.MantenedorCentroCosto_Modificar();
+            cc.MdiParent = this;
+            cc.Show();       
+        }
+
+        private void eliminarToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            Control_Inventario.GUI.MantenedorCentroCosto_Eliminar cc = new Control_Inventario.GUI.MantenedorCentroCosto_Eliminar();
+            cc.MdiParent = this;
+            cc.Show();
+        }
+
+        private void crearToolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            GUI.formIngresarArticulo art = new ControlInsumos.GUI.formIngresarArticulo();
+            art.MdiParent = this;
+            art.Show();
+        }
+
+        private void modificarToolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            Control_Inventario.GUI.Articulo_Modificar art = new Control_Inventario.GUI.Articulo_Modificar();
+            art.MdiParent = this;
+            art.Show();
         }
 	}
 }

@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.lblEmpresa = new System.Windows.Forms.Label();
-            this.lblNuevoNombre = new System.Windows.Forms.Label();
-            this.cboxEmpresas = new System.Windows.Forms.ComboBox();
-            this.txtNuevoNombre = new System.Windows.Forms.TextBox();
             this.btnModificar = new System.Windows.Forms.Button();
+            this.txtNuevoNombre = new System.Windows.Forms.TextBox();
+            this.cboxEmpresas = new System.Windows.Forms.ComboBox();
+            this.lblNuevoNombre = new System.Windows.Forms.Label();
+            this.lblEmpresa = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -51,39 +51,6 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Ingrese Datos";
             // 
-            // lblEmpresa
-            // 
-            this.lblEmpresa.AutoSize = true;
-            this.lblEmpresa.Location = new System.Drawing.Point(7, 30);
-            this.lblEmpresa.Name = "lblEmpresa";
-            this.lblEmpresa.Size = new System.Drawing.Size(48, 13);
-            this.lblEmpresa.TabIndex = 0;
-            this.lblEmpresa.Text = "Empresa";
-            // 
-            // lblNuevoNombre
-            // 
-            this.lblNuevoNombre.AutoSize = true;
-            this.lblNuevoNombre.Location = new System.Drawing.Point(6, 58);
-            this.lblNuevoNombre.Name = "lblNuevoNombre";
-            this.lblNuevoNombre.Size = new System.Drawing.Size(79, 13);
-            this.lblNuevoNombre.TabIndex = 1;
-            this.lblNuevoNombre.Text = "Nuevo Nombre";
-            // 
-            // cboxEmpresas
-            // 
-            this.cboxEmpresas.FormattingEnabled = true;
-            this.cboxEmpresas.Location = new System.Drawing.Point(103, 27);
-            this.cboxEmpresas.Name = "cboxEmpresas";
-            this.cboxEmpresas.Size = new System.Drawing.Size(134, 21);
-            this.cboxEmpresas.TabIndex = 2;
-            // 
-            // txtNuevoNombre
-            // 
-            this.txtNuevoNombre.Location = new System.Drawing.Point(103, 55);
-            this.txtNuevoNombre.Name = "txtNuevoNombre";
-            this.txtNuevoNombre.Size = new System.Drawing.Size(134, 20);
-            this.txtNuevoNombre.TabIndex = 3;
-            // 
             // btnModificar
             // 
             this.btnModificar.Location = new System.Drawing.Point(79, 91);
@@ -94,6 +61,41 @@
             this.btnModificar.UseVisualStyleBackColor = true;
             this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
             // 
+            // txtNuevoNombre
+            // 
+            this.txtNuevoNombre.Location = new System.Drawing.Point(103, 55);
+            this.txtNuevoNombre.Name = "txtNuevoNombre";
+            this.txtNuevoNombre.Size = new System.Drawing.Size(134, 20);
+            this.txtNuevoNombre.TabIndex = 3;
+            // 
+            // cboxEmpresas
+            // 
+            this.cboxEmpresas.FormattingEnabled = true;
+            this.cboxEmpresas.Location = new System.Drawing.Point(103, 27);
+            this.cboxEmpresas.Name = "cboxEmpresas";
+            this.cboxEmpresas.Size = new System.Drawing.Size(134, 21);
+            this.cboxEmpresas.TabIndex = 2;
+            // 
+            // lblNuevoNombre
+            // 
+            this.lblNuevoNombre.AutoSize = true;
+            this.lblNuevoNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNuevoNombre.Location = new System.Drawing.Point(6, 58);
+            this.lblNuevoNombre.Name = "lblNuevoNombre";
+            this.lblNuevoNombre.Size = new System.Drawing.Size(91, 13);
+            this.lblNuevoNombre.TabIndex = 1;
+            this.lblNuevoNombre.Text = "Nuevo Nombre";
+            // 
+            // lblEmpresa
+            // 
+            this.lblEmpresa.AutoSize = true;
+            this.lblEmpresa.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEmpresa.Location = new System.Drawing.Point(7, 30);
+            this.lblEmpresa.Name = "lblEmpresa";
+            this.lblEmpresa.Size = new System.Drawing.Size(55, 13);
+            this.lblEmpresa.TabIndex = 0;
+            this.lblEmpresa.Text = "Empresa";
+            // 
             // MantenedorEmpresa_Modificar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -102,6 +104,7 @@
             this.Controls.Add(this.groupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "MantenedorEmpresa_Modificar";
             this.Text = "Modificar una Empresa";
             this.groupBox1.ResumeLayout(false);

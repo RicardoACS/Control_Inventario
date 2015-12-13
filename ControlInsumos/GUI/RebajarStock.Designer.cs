@@ -89,6 +89,7 @@ namespace ControlInsumos.GUI
             this.cboxItem.Name = "cboxItem";
             this.cboxItem.Size = new System.Drawing.Size(195, 21);
             this.cboxItem.TabIndex = 2;
+            this.cboxItem.SelectedIndexChanged += new System.EventHandler(this.cboxItem_SelectedIndexChanged);
             this.cboxItem.TextChanged += new System.EventHandler(this.CboxItemTextChanged);
             // 
             // cboxCentroCosto

@@ -18,6 +18,7 @@ namespace Control_Inventario.GUI
         }
 
         ControlInsumos.DAL.EmpresaDal empresaDal = new ControlInsumos.DAL.EmpresaDal();
+        ControlInsumos.DAL.CentroCostoDal centroCostoDal = new ControlInsumos.DAL.CentroCostoDal();
         public void cargarEmpresa()
         {
             cboxEmpresas.DataSource = empresaDal.listEmpresa();
@@ -32,15 +33,20 @@ namespace Control_Inventario.GUI
             {
                 ControlInsumos.DLL.Empresa e = new ControlInsumos.DLL.Empresa();
                 int id  = int.Parse(cboxEmpresas.SelectedValue.ToString());
-                int res = empresaDal.deleteEmpresa(id);
-
-                switch (res)
+                DialogResult dialogResult = MessageBox.Show("¿Estas seguro de eliminar esta Empresa?", "Modificar CC", MessageBoxButtons.YesNo,MessageBoxIcon.Question);
+                if (dialogResult == DialogResult.Yes)
                 {
-                    case 1: MessageBox.Show("Empresa Eliminada", "Mantenedor Empresa", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        cargarEmpresa();
-                        break;
-                    default: MessageBox.Show("Error: " + res, "Mantenedor Empresa", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        break;
+                    int res = empresaDal.deleteEmpresa(id);
+
+                    switch (res)
+                    {
+                        case 1: MessageBox.Show("Empresa Eliminada", "Mantenedor Empresa", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            centroCostoDal.eliminarCCXEmpresa(id);
+                            cargarEmpresa();
+                            break;
+                        default: MessageBox.Show("Indique el N°: " + res + "Al administrado", "Mantenedor Empresa", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            break;
+                    }
                 }
             }
             catch (Exception e)

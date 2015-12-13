@@ -51,5 +51,10 @@ namespace ControlInsumos.DAL
 			 return null;	
 			}
 		}
+        public int modificarNombreArt(string nombre, int idArt)
+        {
+            string sql = "UPDATE articulo SET descripcion = '" + nombre + "' WHERE idArticulo = " + idArt + ";";
+            return b.executecommand(sql);
+        }
 	}
 }

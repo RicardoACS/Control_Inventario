@@ -97,6 +97,24 @@
     <Compile Include="GUI\FormMantenedorCentroCosto.Designer.cs">
       <DependentUpon>FormMantenedorCentroCosto.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\MantenedorArticulo_Modificar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\MantenedorArticulo_Modificar.Designer.cs">
+      <DependentUpon>MantenedorArticulo_Modificar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\MantenedorCentroCosto_Eliminar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\MantenedorCentroCosto_Eliminar.Designer.cs">
+      <DependentUpon>MantenedorCentroCosto_Eliminar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\MantenedorCentroCosto_Modificar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\MantenedorCentroCosto_Modificar.Designer.cs">
+      <DependentUpon>MantenedorCentroCosto_Modificar.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\MantenedorEmpresa_Eliminar.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -160,6 +178,15 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="GUI\FormMantenedorCentroCosto.resx">
       <DependentUpon>FormMantenedorCentroCosto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\MantenedorArticulo_Modificar.resx">
+      <DependentUpon>MantenedorArticulo_Modificar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\MantenedorCentroCosto_Eliminar.resx">
+      <DependentUpon>MantenedorCentroCosto_Eliminar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\MantenedorCentroCosto_Modificar.resx">
+      <DependentUpon>MantenedorCentroCosto_Modificar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\MantenedorEmpresa_Eliminar.resx">
       <DependentUpon>MantenedorEmpresa_Eliminar.cs</DependentUpon>

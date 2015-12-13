@@ -41,5 +41,10 @@ namespace Control_Inventario.DAL
             int max = int.Parse(b.selectstring(sql));
             return max;
         }
+        public int eliminarRegistro(int idLocal)
+        {
+            string sql = "DELETE FROM insumos WHERE Idlocal = " + idLocal + ";";
+            return b.executecommand(sql);
+        }
     }
 }

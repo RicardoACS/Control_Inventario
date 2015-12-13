@@ -75,7 +75,7 @@ namespace ControlInsumos.GUI
             // 
             // artBtnCrear
             // 
-            this.artBtnCrear.Location = new System.Drawing.Point(19, 99);
+            this.artBtnCrear.Location = new System.Drawing.Point(151, 99);
             this.artBtnCrear.Name = "artBtnCrear";
             this.artBtnCrear.Size = new System.Drawing.Size(75, 23);
             this.artBtnCrear.TabIndex = 1;
@@ -85,7 +85,7 @@ namespace ControlInsumos.GUI
             // 
             // artBtnSalir
             // 
-            this.artBtnSalir.Location = new System.Drawing.Point(152, 99);
+            this.artBtnSalir.Location = new System.Drawing.Point(21, 99);
             this.artBtnSalir.Name = "artBtnSalir";
             this.artBtnSalir.Size = new System.Drawing.Size(75, 23);
             this.artBtnSalir.TabIndex = 2;
@@ -101,6 +101,7 @@ namespace ControlInsumos.GUI
             this.Controls.Add(this.artBtnSalir);
             this.Controls.Add(this.artBtnCrear);
             this.Controls.Add(this.groupBox1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;

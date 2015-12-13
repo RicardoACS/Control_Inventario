@@ -48,6 +48,10 @@ namespace ControlInsumos.DAL
             count = int.Parse(b.selectstring(sql));
             return count;
         }
-
+        public int eliminarRegistro(int idLocal)
+        {
+            string sql = "DELETE FROM rebajarStock WHERE Idlocal = " + idLocal + ";";
+            return b.executecommand(sql);
+        }
 	}
 }
