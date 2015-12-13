@@ -251,14 +251,14 @@ namespace ControlInsumos
             // crearToolStripMenuItem2
             // 
             this.crearToolStripMenuItem2.Name = "crearToolStripMenuItem2";
-            this.crearToolStripMenuItem2.Size = new System.Drawing.Size(152, 22);
+            this.crearToolStripMenuItem2.Size = new System.Drawing.Size(125, 22);
             this.crearToolStripMenuItem2.Text = "Crear";
             this.crearToolStripMenuItem2.Click += new System.EventHandler(this.crearToolStripMenuItem2_Click);
             // 
             // modificarToolStripMenuItem2
             // 
             this.modificarToolStripMenuItem2.Name = "modificarToolStripMenuItem2";
-            this.modificarToolStripMenuItem2.Size = new System.Drawing.Size(152, 22);
+            this.modificarToolStripMenuItem2.Size = new System.Drawing.Size(125, 22);
             this.modificarToolStripMenuItem2.Text = "Modificar";
             this.modificarToolStripMenuItem2.Click += new System.EventHandler(this.modificarToolStripMenuItem2_Click);
             // 
@@ -276,8 +276,9 @@ namespace ControlInsumos
             // crearToolStripMenuItem3
             // 
             this.crearToolStripMenuItem3.Name = "crearToolStripMenuItem3";
-            this.crearToolStripMenuItem3.Size = new System.Drawing.Size(125, 22);
+            this.crearToolStripMenuItem3.Size = new System.Drawing.Size(152, 22);
             this.crearToolStripMenuItem3.Text = "Crear";
+            this.crearToolStripMenuItem3.Click += new System.EventHandler(this.crearToolStripMenuItem3_Click);
             // 
             // modificarToolStripMenuItem3
             // 
@@ -285,7 +286,7 @@ namespace ControlInsumos
             this.itemToolStripMenuItem1,
             this.precioToolStripMenuItem});
             this.modificarToolStripMenuItem3.Name = "modificarToolStripMenuItem3";
-            this.modificarToolStripMenuItem3.Size = new System.Drawing.Size(125, 22);
+            this.modificarToolStripMenuItem3.Size = new System.Drawing.Size(152, 22);
             this.modificarToolStripMenuItem3.Text = "Modificar";
             // 
             // itemToolStripMenuItem1
@@ -315,8 +316,9 @@ namespace ControlInsumos
             // ingresarToolStripMenuItem1
             // 
             this.ingresarToolStripMenuItem1.Name = "ingresarToolStripMenuItem1";
-            this.ingresarToolStripMenuItem1.Size = new System.Drawing.Size(125, 22);
+            this.ingresarToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
             this.ingresarToolStripMenuItem1.Text = "Ingresar";
+            this.ingresarToolStripMenuItem1.Click += new System.EventHandler(this.ingresarToolStripMenuItem1_Click);
             // 
             // modificarToolStripMenuItem4
             // 

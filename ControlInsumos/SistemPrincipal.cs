@@ -47,15 +47,12 @@ namespace ControlInsumos
 		
 		void ItemToolStripMenuItemClick(object sender, EventArgs e)
 		{
-			GUI.fromIngresarItem ingresarItem = new ControlInsumos.GUI.fromIngresarItem();
-            ingresarItem.MdiParent = this;
-			ingresarItem.Show();
+			
 		}
 		
 		void CompraToolStripMenuItemClick(object sender, EventArgs e)
 		{
-			GUI.fromIngresarCompra ingresarCompra = new ControlInsumos.GUI.fromIngresarCompra();
-			ingresarCompra.ShowDialog();
+			
 		}
 		
 		void CentroCostoToolStripMenuItemClick(object sender, EventArgs e)
@@ -146,6 +143,19 @@ namespace ControlInsumos
             Control_Inventario.GUI.Articulo_Modificar art = new Control_Inventario.GUI.Articulo_Modificar();
             art.MdiParent = this;
             art.Show();
+        }
+
+        private void crearToolStripMenuItem3_Click(object sender, EventArgs e)
+        {
+            GUI.fromIngresarItem ingresarItem = new ControlInsumos.GUI.fromIngresarItem();
+            ingresarItem.MdiParent = this;
+            ingresarItem.Show();
+        }
+
+        private void ingresarToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            GUI.fromIngresarCompra ingresarCompra = new ControlInsumos.GUI.fromIngresarCompra();
+            ingresarCompra.ShowDialog();
         }
 	}
 }
