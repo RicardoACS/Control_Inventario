@@ -157,5 +157,12 @@ namespace ControlInsumos
             GUI.fromIngresarCompra ingresarCompra = new ControlInsumos.GUI.fromIngresarCompra();
             ingresarCompra.ShowDialog();
         }
+
+        private void modificarToolStripMenuItem3_Click(object sender, EventArgs e)
+        {
+            Control_Inventario.GUI.MantenedorItem_Modificar it = new Control_Inventario.GUI.MantenedorItem_Modificar();
+            it.MdiParent = this;
+            it.Show();
+        }
 	}
 }

@@ -54,7 +54,7 @@ namespace ControlInsumos.GUI
 			}
 			catch (Exception e) 
 			{
-				MessageBox.Show("decimelo: "+ e.Message,"Mantención Centros de Costos",MessageBoxButtons.OK,MessageBoxIcon.Information);
+				MessageBox.Show("Error: "+ e.Message,"Mantención Centros de Costos",MessageBoxButtons.OK,MessageBoxIcon.Information);
 						
 			}
 		}

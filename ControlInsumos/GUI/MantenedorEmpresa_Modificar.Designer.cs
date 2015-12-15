@@ -39,24 +39,23 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.btnModificar);
             this.groupBox1.Controls.Add(this.txtNuevoNombre);
             this.groupBox1.Controls.Add(this.cboxEmpresas);
             this.groupBox1.Controls.Add(this.lblNuevoNombre);
             this.groupBox1.Controls.Add(this.lblEmpresa);
             this.groupBox1.Location = new System.Drawing.Point(13, 13);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(246, 126);
+            this.groupBox1.Size = new System.Drawing.Size(246, 93);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Ingrese Datos";
             // 
             // btnModificar
             // 
-            this.btnModificar.Location = new System.Drawing.Point(79, 91);
+            this.btnModificar.Location = new System.Drawing.Point(91, 112);
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.Size = new System.Drawing.Size(75, 23);
-            this.btnModificar.TabIndex = 4;
+            this.btnModificar.TabIndex = 1;
             this.btnModificar.Text = "Modificar";
             this.btnModificar.UseVisualStyleBackColor = true;
             this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
@@ -67,6 +66,7 @@
             this.txtNuevoNombre.Name = "txtNuevoNombre";
             this.txtNuevoNombre.Size = new System.Drawing.Size(134, 20);
             this.txtNuevoNombre.TabIndex = 3;
+            this.txtNuevoNombre.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtNuevoNombre_KeyDown);
             // 
             // cboxEmpresas
             // 
@@ -75,6 +75,7 @@
             this.cboxEmpresas.Name = "cboxEmpresas";
             this.cboxEmpresas.Size = new System.Drawing.Size(134, 21);
             this.cboxEmpresas.TabIndex = 2;
+            this.cboxEmpresas.KeyDown += new System.Windows.Forms.KeyEventHandler(this.cboxEmpresas_KeyDown);
             // 
             // lblNuevoNombre
             // 
@@ -100,7 +101,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(278, 158);
+            this.ClientSize = new System.Drawing.Size(278, 144);
+            this.Controls.Add(this.btnModificar);
             this.Controls.Add(this.groupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;

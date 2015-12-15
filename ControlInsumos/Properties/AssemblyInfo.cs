@@ -10,13 +10,13 @@ using System.Resources;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("Control_Inventario")]
+[assembly: AssemblyTitle("Control Inventario")]
 [assembly: AssemblyDescription("Control Inventario")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("Ricardo Carrasco S.-")]
-[assembly: AssemblyProduct("Control_Inventario")]
+[assembly: AssemblyCompany("Not Null Ltda.")]
+[assembly: AssemblyProduct("Control Inventario")]
 [assembly: AssemblyCopyright("Copyright 2015 - 2050")]
-[assembly: AssemblyTrademark("")]
+[assembly: AssemblyTrademark("Not Null Ltda.")]
 [assembly: AssemblyCulture("")]
 
 // This sets the default COM visibility of types in the assembly to invisible.

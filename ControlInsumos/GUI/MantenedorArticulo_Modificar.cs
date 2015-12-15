@@ -65,5 +65,21 @@ namespace Control_Inventario.GUI
         {
             modificarCC();
         }
+
+        private void cboxArticulos_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                this.SelectNextControl(cboxArticulos, true, true, true, true);
+            }
+        }
+
+        private void artTxtArticulo_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                this.SelectNextControl(artTxtArticulo, true, true, true, true);
+            }
+        }
     }
 }

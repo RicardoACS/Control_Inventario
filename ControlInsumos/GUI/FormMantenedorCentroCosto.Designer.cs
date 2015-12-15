@@ -43,20 +43,20 @@
             // 
             // btnSalir
             // 
-            this.btnSalir.Location = new System.Drawing.Point(157, 134);
+            this.btnSalir.Location = new System.Drawing.Point(31, 134);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(75, 23);
-            this.btnSalir.TabIndex = 5;
+            this.btnSalir.TabIndex = 2;
             this.btnSalir.Text = "Salir";
             this.btnSalir.UseVisualStyleBackColor = true;
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
             // btnRegistrar
             // 
-            this.btnRegistrar.Location = new System.Drawing.Point(43, 134);
+            this.btnRegistrar.Location = new System.Drawing.Point(159, 134);
             this.btnRegistrar.Name = "btnRegistrar";
             this.btnRegistrar.Size = new System.Drawing.Size(75, 23);
-            this.btnRegistrar.TabIndex = 4;
+            this.btnRegistrar.TabIndex = 1;
             this.btnRegistrar.Text = "Registrar";
             this.btnRegistrar.UseVisualStyleBackColor = true;
             this.btnRegistrar.Click += new System.EventHandler(this.btnRegistrar_Click);
@@ -72,7 +72,7 @@
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(259, 116);
-            this.groupBox1.TabIndex = 3;
+            this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos Local";
             // 
@@ -82,7 +82,8 @@
             this.txtNombre.MaxLength = 20;
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(144, 20);
-            this.txtNombre.TabIndex = 5;
+            this.txtNombre.TabIndex = 2;
+            this.txtNombre.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtNombre_KeyDown);
             // 
             // txtCentroCosto
             // 
@@ -90,7 +91,9 @@
             this.txtCentroCosto.MaxLength = 4;
             this.txtCentroCosto.Name = "txtCentroCosto";
             this.txtCentroCosto.Size = new System.Drawing.Size(144, 20);
-            this.txtCentroCosto.TabIndex = 4;
+            this.txtCentroCosto.TabIndex = 1;
+            this.txtCentroCosto.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtCentroCosto_KeyDown);
+            this.txtCentroCosto.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCentroCosto_KeyPress);
             // 
             // cboxEmpresa
             // 
@@ -98,7 +101,8 @@
             this.cboxEmpresa.Location = new System.Drawing.Point(102, 28);
             this.cboxEmpresa.Name = "cboxEmpresa";
             this.cboxEmpresa.Size = new System.Drawing.Size(144, 21);
-            this.cboxEmpresa.TabIndex = 3;
+            this.cboxEmpresa.TabIndex = 0;
+            this.cboxEmpresa.KeyDown += new System.Windows.Forms.KeyEventHandler(this.cboxEmpresa_KeyDown);
             // 
             // label3
             // 

@@ -40,7 +40,7 @@
             this.btnEliminar.Location = new System.Drawing.Point(93, 85);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(75, 23);
-            this.btnEliminar.TabIndex = 3;
+            this.btnEliminar.TabIndex = 1;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = true;
             this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
@@ -52,7 +52,7 @@
             this.groupBox1.Location = new System.Drawing.Point(13, 12);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(259, 67);
-            this.groupBox1.TabIndex = 2;
+            this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Indique CC a Eliminar";
             // 
@@ -63,6 +63,7 @@
             this.cboxCC.Name = "cboxCC";
             this.cboxCC.Size = new System.Drawing.Size(144, 21);
             this.cboxCC.TabIndex = 1;
+            this.cboxCC.KeyDown += new System.Windows.Forms.KeyEventHandler(this.cboxCC_KeyDown);
             // 
             // label1
             // 

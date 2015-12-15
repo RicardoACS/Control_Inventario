@@ -15,6 +15,15 @@ namespace Control_Inventario.DAL
     public class InsumosDal
     {
         BaseDeDatosLite b = new BaseDeDatosLite();
+
+        //Modificar Registro Insumo
+        public string nroGuia;
+        public string fecha;
+        public string centroCosto;
+        public string nombreCC;
+        public string cantidad;
+        //Fin modificar
+
         public string loadDataGV(string item)
         {
             //Cargará el DataView con los datos
@@ -45,6 +54,33 @@ namespace Control_Inventario.DAL
         {
             string sql = "DELETE FROM insumos WHERE Idlocal = " + idLocal + ";";
             return b.executecommand(sql);
+        }
+
+        public int modificarRegistro(DLL.Insumo i)
+        {
+            string sql = "UPDATE insumos SET nroGuia = " + i.NroGuia + ", fechaGuia = '" + i.FechaGuia + "', cantidad = " + i.Cantidad + " , idLocal = " + i.IdLocal + " WHERE idInsumos = " + i.IdInsumos + ";";
+            return b.executecommand(sql);
+        }
+
+        public int eliminarRegistroXIDInsumos(int idInsumos)
+        {
+            string sql = "DELETE FROM insumos WHERE idInsumos = " + idInsumos + ";";
+            return b.executecommand(sql);
+        }
+
+
+        public void modificarDGV(string idRegistroInsumos)
+        {
+            string returnNroGuia    = "SELECT nroGuia FROM insumos WHERE idInsumos = " + idRegistroInsumos + ";";
+            string returnFechaGuia  = "SELECT fechaGuia FROM insumos WHERE idInsumos = " + idRegistroInsumos + ";";
+            string returnCC         = "SELECT idLocal FROM insumos WHERE idInsumos = " + idRegistroInsumos + ";";
+            string returnCantidad   = "SELECT cantidad FROM insumos WHERE idInsumos = " + idRegistroInsumos + ";";
+            string returnNombreCC   = "SELECT c.nombreCentroCosto FROM insumos i INNER JOIN centroCosto c ON i.idLocal = c.idLocal WHERE i.idInsumos = " + idRegistroInsumos + ";";
+            nroGuia                 = b.selectstring(returnNroGuia);
+            fecha                   = b.selectstring(returnFechaGuia);
+            centroCosto             = b.selectstring(returnCC);
+            nombreCC                = b.selectstring(returnNombreCC);
+            cantidad                = b.selectstring(returnCantidad);
         }
     }
 }

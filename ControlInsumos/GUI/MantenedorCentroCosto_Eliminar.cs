@@ -34,7 +34,7 @@ namespace Control_Inventario.GUI
             {
                 int idLocal = int.Parse(cboxCC.SelectedValue.ToString());
 
-                DialogResult dialogResult = MessageBox.Show("¿Estas seguro de modificar el Centro de Costo?", "Modificar CC", MessageBoxButtons.YesNo,MessageBoxIcon.Question);
+                DialogResult dialogResult = MessageBox.Show("¿Estas seguro de modificar el Centro de Costo " + cboxCC.Text + "?", "Modificar CC", MessageBoxButtons.YesNo,MessageBoxIcon.Question);
                 if (dialogResult == DialogResult.Yes)
                 {
                     int res = centroCostoDal.eliminarCC(idLocal);
@@ -57,6 +57,14 @@ namespace Control_Inventario.GUI
             {
                 
                 
+            }
+        }
+
+        private void cboxCC_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                this.SelectNextControl(cboxCC, true, true, true, true);
             }
         }
     }

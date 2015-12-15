@@ -49,5 +49,11 @@ namespace ControlInsumos.DAL
 			 return null;	
 			}
 		}
+
+        public int modificarItem(DLL.Item i)
+        {
+            string sql = "UPDATE item SET descripcion = '" + i.Descripcion + "', idArticulo = " + i.IdArticulo + " WHERE idItem = " + i.IdItem + ";";
+            return b.executecommand(sql);
+        }
 	}
 }

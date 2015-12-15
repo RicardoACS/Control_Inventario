@@ -65,7 +65,7 @@ namespace ControlInsumos.GUI
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(261, 93);
-            this.groupBox1.TabIndex = 1;
+            this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos Item";
             // 
@@ -97,20 +97,20 @@ namespace ControlInsumos.GUI
             // 
             // btnIngresar
             // 
-            this.btnIngresar.Location = new System.Drawing.Point(41, 120);
+            this.btnIngresar.Location = new System.Drawing.Point(173, 111);
             this.btnIngresar.Name = "btnIngresar";
             this.btnIngresar.Size = new System.Drawing.Size(75, 23);
-            this.btnIngresar.TabIndex = 2;
-            this.btnIngresar.Text = "Ingresar";
+            this.btnIngresar.TabIndex = 1;
+            this.btnIngresar.Text = "Registrar";
             this.btnIngresar.UseVisualStyleBackColor = true;
             this.btnIngresar.Click += new System.EventHandler(this.BtnIngresarClick);
             // 
             // btnSalir
             // 
-            this.btnSalir.Location = new System.Drawing.Point(164, 120);
+            this.btnSalir.Location = new System.Drawing.Point(39, 111);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(75, 23);
-            this.btnSalir.TabIndex = 3;
+            this.btnSalir.TabIndex = 2;
             this.btnSalir.Text = "Salir";
             this.btnSalir.UseVisualStyleBackColor = true;
             this.btnSalir.Click += new System.EventHandler(this.BtnSalirClick);

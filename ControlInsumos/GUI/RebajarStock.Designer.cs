@@ -48,7 +48,6 @@ namespace ControlInsumos.GUI
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label4 = new System.Windows.Forms.Label();
             this.cboxArticulo = new System.Windows.Forms.ComboBox();
-            this.btnSalir = new System.Windows.Forms.Button();
             this.dgvItems = new System.Windows.Forms.DataGridView();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvItems)).BeginInit();
@@ -91,6 +90,7 @@ namespace ControlInsumos.GUI
             this.cboxItem.TabIndex = 2;
             this.cboxItem.SelectedIndexChanged += new System.EventHandler(this.cboxItem_SelectedIndexChanged);
             this.cboxItem.TextChanged += new System.EventHandler(this.CboxItemTextChanged);
+            this.cboxItem.KeyDown += new System.Windows.Forms.KeyEventHandler(this.cboxItem_KeyDown);
             // 
             // cboxCentroCosto
             // 
@@ -101,6 +101,7 @@ namespace ControlInsumos.GUI
             this.cboxCentroCosto.Name = "cboxCentroCosto";
             this.cboxCentroCosto.Size = new System.Drawing.Size(195, 21);
             this.cboxCentroCosto.TabIndex = 3;
+            this.cboxCentroCosto.KeyDown += new System.Windows.Forms.KeyEventHandler(this.cboxCentroCosto_KeyDown);
             // 
             // txtCantidad
             // 
@@ -109,14 +110,15 @@ namespace ControlInsumos.GUI
             this.txtCantidad.Name = "txtCantidad";
             this.txtCantidad.Size = new System.Drawing.Size(195, 20);
             this.txtCantidad.TabIndex = 4;
+            this.txtCantidad.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtCantidad_KeyDown);
             // 
             // btnRebajar
             // 
             this.btnRebajar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRebajar.Location = new System.Drawing.Point(148, 229);
+            this.btnRebajar.Location = new System.Drawing.Point(132, 229);
             this.btnRebajar.Name = "btnRebajar";
-            this.btnRebajar.Size = new System.Drawing.Size(55, 23);
-            this.btnRebajar.TabIndex = 7;
+            this.btnRebajar.Size = new System.Drawing.Size(80, 23);
+            this.btnRebajar.TabIndex = 5;
             this.btnRebajar.Text = "Rebajar";
             this.btnRebajar.UseVisualStyleBackColor = true;
             this.btnRebajar.Click += new System.EventHandler(this.BtnRebajarClick);
@@ -124,10 +126,10 @@ namespace ControlInsumos.GUI
             // btnActualizar
             // 
             this.btnActualizar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnActualizar.Location = new System.Drawing.Point(78, 229);
+            this.btnActualizar.Location = new System.Drawing.Point(17, 229);
             this.btnActualizar.Name = "btnActualizar";
-            this.btnActualizar.Size = new System.Drawing.Size(64, 23);
-            this.btnActualizar.TabIndex = 8;
+            this.btnActualizar.Size = new System.Drawing.Size(76, 23);
+            this.btnActualizar.TabIndex = 6;
             this.btnActualizar.Text = "Actualizar";
             this.btnActualizar.UseVisualStyleBackColor = true;
             this.btnActualizar.Click += new System.EventHandler(this.BtnActualizarClick);
@@ -136,7 +138,6 @@ namespace ControlInsumos.GUI
             // 
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.cboxArticulo);
-            this.groupBox1.Controls.Add(this.btnSalir);
             this.groupBox1.Controls.Add(this.txtCantidad);
             this.groupBox1.Controls.Add(this.btnActualizar);
             this.groupBox1.Controls.Add(this.label1);
@@ -148,7 +149,7 @@ namespace ControlInsumos.GUI
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(223, 276);
-            this.groupBox1.TabIndex = 9;
+            this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Ingrese Datos";
             // 
@@ -172,17 +173,7 @@ namespace ControlInsumos.GUI
             this.cboxArticulo.TabIndex = 1;
             this.cboxArticulo.SelectedIndexChanged += new System.EventHandler(this.CboxArticuloTextChanged);
             this.cboxArticulo.TextChanged += new System.EventHandler(this.CboxArticuloTextChanged);
-            // 
-            // btnSalir
-            // 
-            this.btnSalir.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSalir.Location = new System.Drawing.Point(6, 229);
-            this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Size = new System.Drawing.Size(64, 23);
-            this.btnSalir.TabIndex = 9;
-            this.btnSalir.Text = "Salir";
-            this.btnSalir.UseVisualStyleBackColor = true;
-            this.btnSalir.Click += new System.EventHandler(this.BtnSalirClick);
+            this.cboxArticulo.KeyDown += new System.Windows.Forms.KeyEventHandler(this.cboxArticulo_KeyDown);
             // 
             // dgvItems
             // 
@@ -196,7 +187,7 @@ namespace ControlInsumos.GUI
             this.dgvItems.ReadOnly = true;
             this.dgvItems.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
             this.dgvItems.Size = new System.Drawing.Size(403, 276);
-            this.dgvItems.TabIndex = 99;
+            this.dgvItems.TabIndex = 1;
             // 
             // formRebajarStock
             // 
@@ -227,8 +218,7 @@ namespace ControlInsumos.GUI
 		private System.Windows.Forms.ComboBox cboxCentroCosto;
 		private System.Windows.Forms.TextBox txtCantidad;
 		private System.Windows.Forms.Button btnRebajar;
-		private System.Windows.Forms.Button btnActualizar;
-		private System.Windows.Forms.Button btnSalir;
+        private System.Windows.Forms.Button btnActualizar;
 		private System.Windows.Forms.GroupBox groupBox1;
 		private System.Windows.Forms.Label label3;
 		private System.Windows.Forms.Label label2;

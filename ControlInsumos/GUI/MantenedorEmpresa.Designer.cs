@@ -47,20 +47,20 @@ namespace ControlInsumos.GUI
             // 
             // btnSalir
             // 
-            this.btnSalir.Location = new System.Drawing.Point(190, 79);
+            this.btnSalir.Location = new System.Drawing.Point(28, 79);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(75, 23);
-            this.btnSalir.TabIndex = 5;
+            this.btnSalir.TabIndex = 2;
             this.btnSalir.Text = "Salir";
             this.btnSalir.UseVisualStyleBackColor = true;
             this.btnSalir.Click += new System.EventHandler(this.BtnSalirClick);
             // 
             // btnRegistrar
             // 
-            this.btnRegistrar.Location = new System.Drawing.Point(25, 79);
+            this.btnRegistrar.Location = new System.Drawing.Point(169, 79);
             this.btnRegistrar.Name = "btnRegistrar";
             this.btnRegistrar.Size = new System.Drawing.Size(75, 23);
-            this.btnRegistrar.TabIndex = 4;
+            this.btnRegistrar.TabIndex = 1;
             this.btnRegistrar.Text = "Registrar";
             this.btnRegistrar.UseVisualStyleBackColor = true;
             this.btnRegistrar.Click += new System.EventHandler(this.BtnRegistrarClick);
@@ -72,7 +72,7 @@ namespace ControlInsumos.GUI
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(259, 61);
-            this.groupBox1.TabIndex = 3;
+            this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos Empresa";
             // 

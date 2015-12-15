@@ -106,7 +106,7 @@ namespace ControlInsumos.GUI
                     {
                         if (compraDal.updateCompra(fechaMinima, int.Parse(cboxItem.SelectedValue.ToString()), stockProducto - int.Parse(txtCantidad.Text)) == 1)
                         {
-                            MessageBox.Show("Producto rebajado", "Rebajar Stock", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            //MessageBox.Show("Producto rebajado", "Rebajar Stock", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             rebajaDal.insertRebaja(r);
                             dgvItems.DataSource = b.SelectDataTable(rebajaDal.loadDataGV(cboxItem.Text));
                         }
@@ -165,6 +165,38 @@ namespace ControlInsumos.GUI
         private void cboxItem_SelectedIndexChanged(object sender, EventArgs e)
         {
             dgvItems.DataSource = b.SelectDataTable(rebajaDal.loadDataGV(cboxItem.Text));
+        }
+
+        private void cboxArticulo_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                this.SelectNextControl(cboxArticulo, true, true, true, true);
+            }
+        }
+
+        private void cboxItem_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                this.SelectNextControl(cboxItem, true, true, true, true);
+            }
+        }
+
+        private void cboxCentroCosto_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                this.SelectNextControl(cboxCentroCosto, true, true, true, true);
+            }
+        }
+
+        private void txtCantidad_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                this.SelectNextControl(txtCantidad, true, true, true, true);
+            }
         }
     }
 }

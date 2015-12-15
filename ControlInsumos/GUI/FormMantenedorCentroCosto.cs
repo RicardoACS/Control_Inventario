@@ -85,6 +85,46 @@ namespace Control_Inventario.GUI
         {
             Dispose();
         }
+
+        private void txtCentroCosto_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (Char.IsDigit(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else if (Char.IsControl(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void cboxEmpresa_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                this.SelectNextControl(cboxEmpresa, true, true, true, true);
+            }
+        }
+
+        private void txtCentroCosto_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                this.SelectNextControl(txtCentroCosto, true, true, true, true);
+            }
+        }
+
+        private void txtNombre_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                this.SelectNextControl(txtNombre, true, true, true, true);
+            }
+        }
 	}
     
 }

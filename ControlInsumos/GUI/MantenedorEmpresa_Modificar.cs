@@ -33,7 +33,7 @@ namespace Control_Inventario.GUI
                 ControlInsumos.DLL.Empresa e = new ControlInsumos.DLL.Empresa();
                 e.IdEmpresa                  = int.Parse(cboxEmpresas.SelectedValue.ToString());
                 e.Nombre                     = txtNuevoNombre.Text;
-                DialogResult dialogResult = MessageBox.Show("¿Estas seguro de modificar la Empresa?", "Mantenedor Empresa", MessageBoxButtons.YesNo,MessageBoxIcon.Question);
+                DialogResult dialogResult = MessageBox.Show("¿Estas seguro de modificar la Empresa " + cboxEmpresas.Text + "?", "Mantenedor Empresa", MessageBoxButtons.YesNo,MessageBoxIcon.Question);
                 if (dialogResult == DialogResult.Yes)
                 {
                     int res = empresaDal.updateNombreEmpresa(e);
@@ -64,6 +64,22 @@ namespace Control_Inventario.GUI
         private void btnModificar_Click(object sender, EventArgs e)
         {
             modificarEmpresa();
+        }
+
+        private void cboxEmpresas_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                this.SelectNextControl(cboxEmpresas, true, true, true, true);
+            }
+        }
+
+        private void txtNuevoNombre_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                this.SelectNextControl(txtNuevoNombre, true, true, true, true);
+            }
         }
     }
 }

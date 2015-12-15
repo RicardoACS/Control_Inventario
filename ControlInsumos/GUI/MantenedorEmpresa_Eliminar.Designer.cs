@@ -52,7 +52,7 @@
             this.btnEliminar.Location = new System.Drawing.Point(77, 60);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(75, 23);
-            this.btnEliminar.TabIndex = 4;
+            this.btnEliminar.TabIndex = 1;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = true;
             this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
@@ -63,7 +63,8 @@
             this.cboxEmpresas.Location = new System.Drawing.Point(77, 27);
             this.cboxEmpresas.Name = "cboxEmpresas";
             this.cboxEmpresas.Size = new System.Drawing.Size(134, 21);
-            this.cboxEmpresas.TabIndex = 2;
+            this.cboxEmpresas.TabIndex = 0;
+            this.cboxEmpresas.KeyDown += new System.Windows.Forms.KeyEventHandler(this.cboxEmpresas_KeyDown);
             // 
             // lblEmpresa
             // 

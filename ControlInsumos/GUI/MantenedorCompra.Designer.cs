@@ -193,7 +193,7 @@ namespace ControlInsumos.GUI
             this.btnIngresar.Location = new System.Drawing.Point(170, 192);
             this.btnIngresar.Name = "btnIngresar";
             this.btnIngresar.Size = new System.Drawing.Size(75, 23);
-            this.btnIngresar.TabIndex = 0;
+            this.btnIngresar.TabIndex = 1;
             this.btnIngresar.Text = "Ingresar";
             this.btnIngresar.UseVisualStyleBackColor = true;
             this.btnIngresar.Click += new System.EventHandler(this.BtnIngresarClick);
@@ -203,7 +203,7 @@ namespace ControlInsumos.GUI
             this.btnSalir.Location = new System.Drawing.Point(44, 192);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(75, 23);
-            this.btnSalir.TabIndex = 1;
+            this.btnSalir.TabIndex = 2;
             this.btnSalir.Text = "Salir";
             this.btnSalir.UseVisualStyleBackColor = true;
             this.btnSalir.Click += new System.EventHandler(this.BtnSalirClick);

@@ -67,6 +67,7 @@
             this.cboxArticulos.Name = "cboxArticulos";
             this.cboxArticulos.Size = new System.Drawing.Size(138, 21);
             this.cboxArticulos.TabIndex = 1;
+            this.cboxArticulos.KeyDown += new System.Windows.Forms.KeyEventHandler(this.cboxArticulos_KeyDown);
             // 
             // label1
             // 
@@ -83,6 +84,7 @@
             this.artTxtArticulo.Name = "artTxtArticulo";
             this.artTxtArticulo.Size = new System.Drawing.Size(138, 20);
             this.artTxtArticulo.TabIndex = 2;
+            this.artTxtArticulo.KeyDown += new System.Windows.Forms.KeyEventHandler(this.artTxtArticulo_KeyDown);
             // 
             // artLblArticulo
             // 

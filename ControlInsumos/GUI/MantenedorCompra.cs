@@ -87,7 +87,7 @@ namespace ControlInsumos.GUI
 			//txtNumeroDoc.Clear();
 			txtCantidad.Clear();
 			txtPrecio.Clear();
-			dtFecha.Focus();
+			cboxArticulo.Focus();
 			//cboxArticulo.SelectedIndex = -1;
 			//cboxItem.Text = null;
 		}

@@ -51,7 +51,7 @@ namespace Control_Inventario.GUI
                 cc.IdEmpresa        = int.Parse(cboxEmpresa.SelectedValue.ToString());
                 cc.Nombre           = txtNCC.Text + " - " +txtNombre.Text;
                 cc.IdCC             = int.Parse(txtNCC.Text);
-                DialogResult dialogResult = MessageBox.Show("¿Estas seguro de modificar el Centro de Costo?", "Modificar CC", MessageBoxButtons.YesNo,MessageBoxIcon.Question);
+                DialogResult dialogResult = MessageBox.Show("¿Estas seguro de modificar el Centro de Costo " + cboxEmpresa + "?", "Modificar CC", MessageBoxButtons.YesNo,MessageBoxIcon.Question);
                 if (dialogResult == DialogResult.Yes)
                 {          
                     int res             = centroCostoDal.modificarCC(cc, idCCOriginal);
@@ -87,6 +87,54 @@ namespace Control_Inventario.GUI
         private void btnModificar_Click(object sender, EventArgs e)
         {
             modificarCC();
+        }
+
+        private void cboxCC_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                this.SelectNextControl(cboxCC, true, true, true, true);
+            }
+        }
+
+        private void cboxEmpresa_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                this.SelectNextControl(cboxEmpresa, true, true, true, true);
+            }
+        }
+
+        private void txtNombre_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                this.SelectNextControl(txtNombre, true, true, true, true);
+            }
+        }
+
+        private void txtNCC_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                this.SelectNextControl(txtNCC, true, true, true, true);
+            }
+        }
+
+        private void txtNCC_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (Char.IsDigit(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else if (Char.IsControl(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
+            }
         }
     }
 }

@@ -33,7 +33,7 @@ namespace Control_Inventario.GUI
             {
                 ControlInsumos.DLL.Empresa e = new ControlInsumos.DLL.Empresa();
                 int id  = int.Parse(cboxEmpresas.SelectedValue.ToString());
-                DialogResult dialogResult = MessageBox.Show("¿Estas seguro de eliminar esta Empresa?", "Modificar CC", MessageBoxButtons.YesNo,MessageBoxIcon.Question);
+                DialogResult dialogResult = MessageBox.Show("¿Estas seguro de eliminar la Empresa " + cboxEmpresas.Text + "?", "Modificar CC", MessageBoxButtons.YesNo,MessageBoxIcon.Question);
                 if (dialogResult == DialogResult.Yes)
                 {
                     int res = empresaDal.deleteEmpresa(id);
@@ -63,6 +63,14 @@ namespace Control_Inventario.GUI
         private void btnEliminar_Click(object sender, EventArgs e)
         {
             eliminarEmpresa();
+        }
+
+        private void cboxEmpresas_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                this.SelectNextControl(cboxEmpresas, true, true, true, true);
+            }
         }
     }
 }

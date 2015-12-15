@@ -37,6 +37,7 @@ namespace Control_Inventario.GUI
 		private void InitializeComponent()
 		{
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtID = new System.Windows.Forms.TextBox();
             this.dtFechaGuia = new System.Windows.Forms.DateTimePicker();
             this.label6 = new System.Windows.Forms.Label();
             this.txtGuia = new System.Windows.Forms.TextBox();
@@ -52,12 +53,17 @@ namespace Control_Inventario.GUI
             this.cboxCentroCosto = new System.Windows.Forms.ComboBox();
             this.cboxItem = new System.Windows.Forms.ComboBox();
             this.dgvRegistroInsumos = new System.Windows.Forms.DataGridView();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.btnEliminar = new System.Windows.Forms.Button();
+            this.btnEditar = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvRegistroInsumos)).BeginInit();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.txtID);
             this.groupBox1.Controls.Add(this.dtFechaGuia);
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.txtGuia);
@@ -72,12 +78,21 @@ namespace Control_Inventario.GUI
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.cboxCentroCosto);
             this.groupBox1.Controls.Add(this.cboxItem);
-            this.groupBox1.Location = new System.Drawing.Point(11, 12);
+            this.groupBox1.Location = new System.Drawing.Point(11, 13);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(223, 346);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Ingrese Datos";
+            // 
+            // txtID
+            // 
+            this.txtID.Enabled = false;
+            this.txtID.Location = new System.Drawing.Point(191, 17);
+            this.txtID.Name = "txtID";
+            this.txtID.Size = new System.Drawing.Size(16, 20);
+            this.txtID.TabIndex = 14;
+            this.txtID.Visible = false;
             // 
             // dtFechaGuia
             // 
@@ -86,6 +101,7 @@ namespace Control_Inventario.GUI
             this.dtFechaGuia.Name = "dtFechaGuia";
             this.dtFechaGuia.Size = new System.Drawing.Size(195, 20);
             this.dtFechaGuia.TabIndex = 1;
+            this.dtFechaGuia.KeyDown += new System.Windows.Forms.KeyEventHandler(this.dtFechaGuia_KeyDown);
             // 
             // label6
             // 
@@ -103,6 +119,8 @@ namespace Control_Inventario.GUI
             this.txtGuia.Name = "txtGuia";
             this.txtGuia.Size = new System.Drawing.Size(195, 20);
             this.txtGuia.TabIndex = 0;
+            this.txtGuia.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtGuia_KeyDown);
+            this.txtGuia.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtGuia_KeyPress);
             // 
             // label5
             // 
@@ -116,7 +134,7 @@ namespace Control_Inventario.GUI
             // label4
             // 
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(12, 108);
+            this.label4.Location = new System.Drawing.Point(12, 157);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(117, 15);
             this.label4.TabIndex = 10;
@@ -126,11 +144,12 @@ namespace Control_Inventario.GUI
             // 
             this.cboxArticulo.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             this.cboxArticulo.FormattingEnabled = true;
-            this.cboxArticulo.Location = new System.Drawing.Point(12, 126);
+            this.cboxArticulo.Location = new System.Drawing.Point(12, 175);
             this.cboxArticulo.Name = "cboxArticulo";
             this.cboxArticulo.Size = new System.Drawing.Size(195, 21);
-            this.cboxArticulo.TabIndex = 2;
+            this.cboxArticulo.TabIndex = 4;
             this.cboxArticulo.SelectedIndexChanged += new System.EventHandler(this.cboxArticulo_SelectedIndexChanged);
+            this.cboxArticulo.KeyDown += new System.Windows.Forms.KeyEventHandler(this.cboxArticulo_KeyDown);
             // 
             // txtCantidad
             // 
@@ -138,7 +157,9 @@ namespace Control_Inventario.GUI
             this.txtCantidad.MaxLength = 20;
             this.txtCantidad.Name = "txtCantidad";
             this.txtCantidad.Size = new System.Drawing.Size(195, 20);
-            this.txtCantidad.TabIndex = 5;
+            this.txtCantidad.TabIndex = 6;
+            this.txtCantidad.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtCantidad_KeyDown);
+            this.txtCantidad.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCantidad_KeyPress);
             // 
             // btnActualizar
             // 
@@ -146,7 +167,7 @@ namespace Control_Inventario.GUI
             this.btnActualizar.Location = new System.Drawing.Point(24, 311);
             this.btnActualizar.Name = "btnActualizar";
             this.btnActualizar.Size = new System.Drawing.Size(64, 23);
-            this.btnActualizar.TabIndex = 6;
+            this.btnActualizar.TabIndex = 8;
             this.btnActualizar.Text = "Actualizar";
             this.btnActualizar.UseVisualStyleBackColor = true;
             this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
@@ -154,7 +175,7 @@ namespace Control_Inventario.GUI
             // label1
             // 
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(12, 150);
+            this.label1.Location = new System.Drawing.Point(12, 201);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(117, 15);
             this.label1.TabIndex = 1;
@@ -174,7 +195,7 @@ namespace Control_Inventario.GUI
             // label2
             // 
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(12, 193);
+            this.label2.Location = new System.Drawing.Point(12, 110);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(117, 15);
             this.label2.TabIndex = 2;
@@ -194,20 +215,21 @@ namespace Control_Inventario.GUI
             this.cboxCentroCosto.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
             this.cboxCentroCosto.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cboxCentroCosto.FormattingEnabled = true;
-            this.cboxCentroCosto.Location = new System.Drawing.Point(12, 212);
+            this.cboxCentroCosto.Location = new System.Drawing.Point(12, 129);
             this.cboxCentroCosto.Name = "cboxCentroCosto";
             this.cboxCentroCosto.Size = new System.Drawing.Size(195, 21);
-            this.cboxCentroCosto.TabIndex = 4;
+            this.cboxCentroCosto.TabIndex = 3;
+            this.cboxCentroCosto.KeyDown += new System.Windows.Forms.KeyEventHandler(this.cboxCentroCosto_KeyDown);
             // 
             // cboxItem
             // 
-            this.cboxItem.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             this.cboxItem.FormattingEnabled = true;
-            this.cboxItem.Location = new System.Drawing.Point(12, 168);
+            this.cboxItem.Location = new System.Drawing.Point(12, 219);
             this.cboxItem.Name = "cboxItem";
             this.cboxItem.Size = new System.Drawing.Size(195, 21);
-            this.cboxItem.TabIndex = 3;
+            this.cboxItem.TabIndex = 5;
             this.cboxItem.SelectedIndexChanged += new System.EventHandler(this.cboxItem_SelectedIndexChanged);
+            this.cboxItem.KeyDown += new System.Windows.Forms.KeyEventHandler(this.cboxItem_KeyDown);
             // 
             // dgvRegistroInsumos
             // 
@@ -215,20 +237,52 @@ namespace Control_Inventario.GUI
             this.dgvRegistroInsumos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvRegistroInsumos.GridColor = System.Drawing.SystemColors.ActiveBorder;
             this.dgvRegistroInsumos.ImeMode = System.Windows.Forms.ImeMode.Off;
-            this.dgvRegistroInsumos.Location = new System.Drawing.Point(240, 12);
-            this.dgvRegistroInsumos.MultiSelect = false;
+            this.dgvRegistroInsumos.Location = new System.Drawing.Point(240, 55);
             this.dgvRegistroInsumos.Name = "dgvRegistroInsumos";
             this.dgvRegistroInsumos.ReadOnly = true;
             this.dgvRegistroInsumos.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dgvRegistroInsumos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvRegistroInsumos.Size = new System.Drawing.Size(422, 346);
+            this.dgvRegistroInsumos.Size = new System.Drawing.Size(422, 303);
             this.dgvRegistroInsumos.TabIndex = 1;
+            this.dgvRegistroInsumos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvRegistroInsumos_CellClick_1);
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.btnEliminar);
+            this.groupBox2.Controls.Add(this.btnEditar);
+            this.groupBox2.Location = new System.Drawing.Point(240, 12);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(422, 40);
+            this.groupBox2.TabIndex = 2;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Editar o Eliminar";
+            // 
+            // btnEliminar
+            // 
+            this.btnEliminar.Location = new System.Drawing.Point(239, 14);
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.Size = new System.Drawing.Size(75, 23);
+            this.btnEliminar.TabIndex = 1;
+            this.btnEliminar.Text = "Eliminar";
+            this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
+            // 
+            // btnEditar
+            // 
+            this.btnEditar.Location = new System.Drawing.Point(105, 14);
+            this.btnEditar.Name = "btnEditar";
+            this.btnEditar.Size = new System.Drawing.Size(75, 23);
+            this.btnEditar.TabIndex = 0;
+            this.btnEditar.Text = "Editar";
+            this.btnEditar.UseVisualStyleBackColor = true;
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
             // Registro_Insumos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(675, 371);
+            this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.dgvRegistroInsumos);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -241,6 +295,7 @@ namespace Control_Inventario.GUI
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvRegistroInsumos)).EndInit();
+            this.groupBox2.ResumeLayout(false);
             this.ResumeLayout(false);
 
 		}
@@ -260,5 +315,9 @@ namespace Control_Inventario.GUI
         private System.Windows.Forms.Label label6;
 		private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.DateTimePicker dtFechaGuia;
+        private System.Windows.Forms.TextBox txtID;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.Button btnEliminar;
+        private System.Windows.Forms.Button btnEditar;
 	}
 }

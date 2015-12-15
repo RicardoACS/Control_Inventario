@@ -75,6 +75,8 @@
             this.txtNCC.Name = "txtNCC";
             this.txtNCC.Size = new System.Drawing.Size(144, 20);
             this.txtNCC.TabIndex = 4;
+            this.txtNCC.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtNCC_KeyDown);
+            this.txtNCC.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNCC_KeyPress);
             // 
             // label4
             // 
@@ -92,6 +94,7 @@
             this.cboxCC.Name = "cboxCC";
             this.cboxCC.Size = new System.Drawing.Size(144, 21);
             this.cboxCC.TabIndex = 1;
+            this.cboxCC.KeyDown += new System.Windows.Forms.KeyEventHandler(this.cboxCC_KeyDown);
             // 
             // txtNombre
             // 
@@ -100,6 +103,7 @@
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(144, 20);
             this.txtNombre.TabIndex = 3;
+            this.txtNombre.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtNombre_KeyDown);
             // 
             // cboxEmpresa
             // 
@@ -108,6 +112,7 @@
             this.cboxEmpresa.Name = "cboxEmpresa";
             this.cboxEmpresa.Size = new System.Drawing.Size(144, 21);
             this.cboxEmpresa.TabIndex = 2;
+            this.cboxEmpresa.KeyDown += new System.Windows.Forms.KeyEventHandler(this.cboxEmpresa_KeyDown);
             // 
             // label3
             // 
