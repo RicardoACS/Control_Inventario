@@ -82,5 +82,11 @@ namespace Control_Inventario.DAL
             nombreCC                = b.selectstring(returnNombreCC);
             cantidad                = b.selectstring(returnCantidad);
         }
+
+        public string reporteInsumos()
+        {
+            string sql = "SELECT * FROM insumos";
+            return sql;
+        }
     }
 }

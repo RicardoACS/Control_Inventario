@@ -33,7 +33,7 @@ namespace ControlInsumos.DAL
 			try 
 			{
 			List<DLL.Item> listaItem = new List<ControlInsumos.DLL.Item>();
-			SQLiteCommand sql = new SQLiteCommand("SELECT * FROM item WHERE idArticulo = " + idArt + ";", conn.connection());
+			SQLiteCommand sql = new SQLiteCommand("SELECT * FROM item WHERE idArticulo = " + idArt + " ORDER BY 2;", conn.connection());
 			SQLiteDataReader reader = sql.ExecuteReader();
                while (reader.Read())
                {

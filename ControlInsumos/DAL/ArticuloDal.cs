@@ -35,7 +35,7 @@ namespace ControlInsumos.DAL
 			try 
 			{
 			List<DLL.Articulo> listaArt = new List<ControlInsumos.DLL.Articulo>();
-			SQLiteCommand sql = new SQLiteCommand("SELECT * FROM articulo", conn.connection());
+			SQLiteCommand sql = new SQLiteCommand("SELECT * FROM articulo ORDER BY 2", conn.connection());
 			SQLiteDataReader reader = sql.ExecuteReader();
                while (reader.Read())
                {

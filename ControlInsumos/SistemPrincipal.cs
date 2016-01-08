@@ -15,6 +15,9 @@ namespace ControlInsumos
 	/// </summary>
 	public partial class MainForm : Form
 	{
+        BaseDeDatosLite b                                = new BaseDeDatosLite();
+        Control_Inventario.DLL.InformeExcel informeExcel = new Control_Inventario.DLL.InformeExcel();
+        Control_Inventario.DAL.InsumosDal insumosDal     = new Control_Inventario.DAL.InsumosDal();
 		public MainForm()
 		{
 			InitializeComponent();
@@ -163,6 +166,12 @@ namespace ControlInsumos
             Control_Inventario.GUI.MantenedorItem_Modificar it = new Control_Inventario.GUI.MantenedorItem_Modificar();
             it.MdiParent = this;
             it.Show();
+        }
+
+        private void totalAFacturarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            dgvInformes.DataSource = b.SelectDataTable(insumosDal.reporteInsumos());
+            informeExcel.informeExcel(dgvInformes, "Informe Insumos " + DateTime.Now);
         }
 	}
 }

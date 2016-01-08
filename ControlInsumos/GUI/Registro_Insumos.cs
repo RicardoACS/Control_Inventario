@@ -310,11 +310,8 @@ namespace Control_Inventario.GUI
             dtFechaGuia.Text = DateTime.Now.ToShortDateString();
             cboxCentroCosto.SelectedIndex = -1;
             txtCantidad.Clear();
+            txtID.Clear();
         }
-
-
-
-
 
         private void txtGuia_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -394,6 +391,11 @@ namespace Control_Inventario.GUI
             {
                 this.SelectNextControl(txtCantidad, true, true, true, true);
             }
+        }
+
+        private void dgvRegistroInsumos_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
 	}
 }

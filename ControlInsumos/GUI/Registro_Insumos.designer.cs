@@ -245,6 +245,7 @@ namespace Control_Inventario.GUI
             this.dgvRegistroInsumos.Size = new System.Drawing.Size(422, 303);
             this.dgvRegistroInsumos.TabIndex = 1;
             this.dgvRegistroInsumos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvRegistroInsumos_CellClick_1);
+            this.dgvRegistroInsumos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvRegistroInsumos_CellContentClick);
             // 
             // groupBox2
             // 
