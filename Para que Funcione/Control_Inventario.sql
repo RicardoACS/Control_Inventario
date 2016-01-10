@@ -1,4 +1,4 @@
-/** SQL Antartica **/
+
 CREATE TABLE articulo
 (
 idArticulo INT PRIMARY KEY,
@@ -32,14 +32,13 @@ CONSTRAINT fk_centro_empresa foreign key (idEmpresa) references empresa (idEmpre
 
 CREATE TABLE compras
 (
-idCompras INT,
 numeroDoc INT,
 fecha VARCHAR(20),
 idArticulo INT,
 idItem INT,
 cantidad INT,
 precio INT,
-CONSTRAINT pk_idCompras PRIMARY KEY (idCompras),
+CONSTRAINT pk_numeroDoc PRIMARY KEY (numeroDoc),
 CONSTRAINT fk_compras_articulo foreign key (idArticulo) references articulo (idArticulo),
 CONSTRAINT fk_compras_item foreign key (idItem) references item (idItem)
 );
@@ -98,4 +97,15 @@ FROM rebajarStock r INNER JOIN item i ON r.idItem = i.idItem
 SELECT r.idItem 'Rebajar ID', i.idItem 'ID', i.descripcion, c.nombreCentroCosto
 FROM rebajarStock r INNER JOIN item i ON r.idItem = i.idItem
 INNER JOIN centroCosto c ON c.idLocal = r.idLocal;
+
+/** CONSULTA SOBRE INSUMOS **/
+
+SELECT ce.nombreCentroCosto AS 'Local', a.descripcion AS 'Articulo', ins.cantidad AS 'Cantidad', c.precio AS 'Valor Unitario', (c.precio * ins.cantidad) AS 'Total'
+FROM insumos ins
+INNER JOIN centroCosto ce ON ins.idLocal = ce.idLocal
+INNER JOIN item i ON ins.idItem = i.idItem
+LEFT JOIN compras c ON i.idItem = c.IdItem
+INNER JOIN articulo a ON a.idArticulo = ins.idArticulo
+GROUP BY 1
+ORDER BY 1;
 

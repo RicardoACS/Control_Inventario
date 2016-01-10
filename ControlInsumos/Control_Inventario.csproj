@@ -49,6 +49,21 @@
     <CheckForOverflowUnderflow>False</CheckForOverflowUnderflow>
     <DefineConstants>TRACE</DefineConstants>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Resources\icon.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>false</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <TargetZone>LocalIntranet</TargetZone>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>false</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>Properties\app.manifest</ApplicationManifest>
+  </PropertyGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.Targets" />
   <ItemGroup>
     <Reference Include="BaseDeDatosLite">
@@ -102,6 +117,18 @@
     </Compile>
     <Compile Include="GUI\FormMantenedorCentroCosto.Designer.cs">
       <DependentUpon>FormMantenedorCentroCosto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\informeConsumo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\informeConsumo.Designer.cs">
+      <DependentUpon>informeConsumo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\informeStockDisponible.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\informeStockDisponible.Designer.cs">
+      <DependentUpon>informeStockDisponible.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\MantenedorArticulo_Modificar.cs">
       <SubType>Form</SubType>
@@ -191,6 +218,12 @@
     <EmbeddedResource Include="GUI\FormMantenedorCentroCosto.resx">
       <DependentUpon>FormMantenedorCentroCosto.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\informeConsumo.resx">
+      <DependentUpon>informeConsumo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\informeStockDisponible.resx">
+      <DependentUpon>informeStockDisponible.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\MantenedorArticulo_Modificar.resx">
       <DependentUpon>MantenedorArticulo_Modificar.cs</DependentUpon>
     </EmbeddedResource>
@@ -249,6 +282,7 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Properties\app.manifest" />
     <None Include="Resources\business.ico" />
   </ItemGroup>
   <ItemGroup>
@@ -294,5 +328,8 @@
       <Isolated>False</Isolated>
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon.ico" />
   </ItemGroup>
 </Project>

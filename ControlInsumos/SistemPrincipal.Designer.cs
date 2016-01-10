@@ -71,8 +71,10 @@ namespace ControlInsumos
             this.devoluciónToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.insumosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.informesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.totalAFacturarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.stockDisponibleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuStockDisponible = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuConsumido = new System.Windows.Forms.ToolStripMenuItem();
+            this.totalAFacturarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.timerHora = new System.Windows.Forms.Timer(this.components);
             this.dgvInformes = new System.Windows.Forms.DataGridView();
             this.statusStrip1.SuspendLayout();
@@ -332,7 +334,7 @@ namespace ControlInsumos
             // 
             this.devolucionToolStripMenuItem.Image = global::Control_Inventario.Properties.Resources.updateCarro;
             this.devolucionToolStripMenuItem.Name = "devolucionToolStripMenuItem";
-            this.devolucionToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.devolucionToolStripMenuItem.Size = new System.Drawing.Size(134, 22);
             this.devolucionToolStripMenuItem.Text = "Rebajar";
             this.devolucionToolStripMenuItem.Click += new System.EventHandler(this.DevolucionToolStripMenuItemClick);
             // 
@@ -340,24 +342,48 @@ namespace ControlInsumos
             // 
             this.devoluciónToolStripMenuItem1.Image = global::Control_Inventario.Properties.Resources.devolucionCarro;
             this.devoluciónToolStripMenuItem1.Name = "devoluciónToolStripMenuItem1";
-            this.devoluciónToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.devoluciónToolStripMenuItem1.Size = new System.Drawing.Size(134, 22);
             this.devoluciónToolStripMenuItem1.Text = "Devolución";
             // 
             // insumosToolStripMenuItem
             // 
             this.insumosToolStripMenuItem.Name = "insumosToolStripMenuItem";
-            this.insumosToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.insumosToolStripMenuItem.Size = new System.Drawing.Size(134, 22);
             this.insumosToolStripMenuItem.Text = "Insumos";
             this.insumosToolStripMenuItem.Click += new System.EventHandler(this.insumosToolStripMenuItem_Click);
             // 
             // informesToolStripMenuItem
             // 
             this.informesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.totalAFacturarToolStripMenuItem,
-            this.stockDisponibleToolStripMenuItem});
+            this.stockDisponibleToolStripMenuItem,
+            this.totalAFacturarToolStripMenuItem});
             this.informesToolStripMenuItem.Name = "informesToolStripMenuItem";
             this.informesToolStripMenuItem.Size = new System.Drawing.Size(66, 20);
             this.informesToolStripMenuItem.Text = "Informes";
+            // 
+            // stockDisponibleToolStripMenuItem
+            // 
+            this.stockDisponibleToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.menuStockDisponible,
+            this.menuConsumido});
+            this.stockDisponibleToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("stockDisponibleToolStripMenuItem.Image")));
+            this.stockDisponibleToolStripMenuItem.Name = "stockDisponibleToolStripMenuItem";
+            this.stockDisponibleToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.stockDisponibleToolStripMenuItem.Text = "Consultas";
+            // 
+            // menuStockDisponible
+            // 
+            this.menuStockDisponible.Name = "menuStockDisponible";
+            this.menuStockDisponible.Size = new System.Drawing.Size(174, 22);
+            this.menuStockDisponible.Text = "Stock Disponible";
+            this.menuStockDisponible.Click += new System.EventHandler(this.menuStockDisponible_Click);
+            // 
+            // menuConsumido
+            // 
+            this.menuConsumido.Name = "menuConsumido";
+            this.menuConsumido.Size = new System.Drawing.Size(174, 22);
+            this.menuConsumido.Text = "Consumo Mensual";
+            this.menuConsumido.Click += new System.EventHandler(this.menuConsumido_Click);
             // 
             // totalAFacturarToolStripMenuItem
             // 
@@ -366,13 +392,6 @@ namespace ControlInsumos
             this.totalAFacturarToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.totalAFacturarToolStripMenuItem.Text = "Insumos";
             this.totalAFacturarToolStripMenuItem.Click += new System.EventHandler(this.totalAFacturarToolStripMenuItem_Click);
-            // 
-            // stockDisponibleToolStripMenuItem
-            // 
-            this.stockDisponibleToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("stockDisponibleToolStripMenuItem.Image")));
-            this.stockDisponibleToolStripMenuItem.Name = "stockDisponibleToolStripMenuItem";
-            this.stockDisponibleToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.stockDisponibleToolStripMenuItem.Text = "Toner";
             // 
             // timerHora
             // 
@@ -449,5 +468,7 @@ namespace ControlInsumos
         private System.Windows.Forms.ToolStripMenuItem elimarToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem insumosToolStripMenuItem;
         private System.Windows.Forms.DataGridView dgvInformes;
+        private System.Windows.Forms.ToolStripMenuItem menuStockDisponible;
+        private System.Windows.Forms.ToolStripMenuItem menuConsumido;
 	}
 }
