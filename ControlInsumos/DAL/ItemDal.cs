@@ -28,6 +28,13 @@ namespace ControlInsumos.DAL
 			count = int.Parse(b.selectstring(sql));
 			return count;
 		}
+        public int maxItem()
+        {
+            int count = 0;
+            string sql = "SELECT MAX(idItem)+1 FROM item;";
+            count = int.Parse(b.selectstring(sql));
+            return count;
+        }
 		public List<DLL.Item> listItem(int idArt)
 		{
 			try 

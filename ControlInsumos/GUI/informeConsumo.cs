@@ -57,9 +57,8 @@ namespace Control_Inventario.GUI
                 Excel._Worksheet worksheet = null;
 
                 // see the excel sheet behind the program
-
                 app.Visible = false;
-
+                                  
                 // get the reference of first sheet. By default its name is Sheet1.
 
                 // store its reference to worksheet

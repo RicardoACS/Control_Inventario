@@ -35,7 +35,14 @@ namespace ControlInsumos.GUI
                 if(txtDescripcion.Text.Length > 0)
                 {
 				    DLL.Item i = new ControlInsumos.DLL.Item();
-				    i.IdItem 		= itemDal.countItem();
+                    if (itemDal.countItem() <= 1)
+                    {
+                        i.IdItem = itemDal.countItem();
+                    }
+                    else
+                    {
+                        i.IdItem = itemDal.maxItem();
+                    }			    
 				    i.Descripcion 	= txtDescripcion.Text;
 				    i.IdArticulo 	= int.Parse(cboxArticulo.SelectedValue.ToString());
 				

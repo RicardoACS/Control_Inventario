@@ -124,6 +124,12 @@
     <Compile Include="GUI\informeConsumo.Designer.cs">
       <DependentUpon>informeConsumo.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\InformeReporteInsumos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\InformeReporteInsumos.Designer.cs">
+      <DependentUpon>InformeReporteInsumos.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\informeStockDisponible.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -220,6 +226,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\informeConsumo.resx">
       <DependentUpon>informeConsumo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\InformeReporteInsumos.resx">
+      <DependentUpon>InformeReporteInsumos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\informeStockDisponible.resx">
       <DependentUpon>informeStockDisponible.cs</DependentUpon>

@@ -30,13 +30,20 @@ namespace ControlInsumos.DAL
             return count;
 
         }
+        public int maxArt()
+        {
+            int count = 0;
+            string sql = "SELECT MAX(idArticulo)+1  FROM articulo";
+            count = int.Parse(b.selectstring(sql));
+            return count;
 
+        }
         public List<DLL.Articulo> listArt()
         {
             try
             {
                 List<DLL.Articulo> listaArt = new List<ControlInsumos.DLL.Articulo>();
-                SQLiteCommand sql = new SQLiteCommand("SELECT * FROM articulo WHERE idArticulo > 1 ORDER BY 2", conn.connection());
+                SQLiteCommand sql = new SQLiteCommand("SELECT * FROM articulo WHERE idArticulo > 0 ORDER BY 2", conn.connection());
                 SQLiteDataReader reader = sql.ExecuteReader();
                 while (reader.Read())
                 {

@@ -76,10 +76,8 @@ namespace ControlInsumos
             this.menuConsumido = new System.Windows.Forms.ToolStripMenuItem();
             this.totalAFacturarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.timerHora = new System.Windows.Forms.Timer(this.components);
-            this.dgvInformes = new System.Windows.Forms.DataGridView();
             this.statusStrip1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvInformes)).BeginInit();
             this.SuspendLayout();
             // 
             // statusStrip1
@@ -368,7 +366,7 @@ namespace ControlInsumos
             this.menuConsumido});
             this.stockDisponibleToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("stockDisponibleToolStripMenuItem.Image")));
             this.stockDisponibleToolStripMenuItem.Name = "stockDisponibleToolStripMenuItem";
-            this.stockDisponibleToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.stockDisponibleToolStripMenuItem.Size = new System.Drawing.Size(126, 22);
             this.stockDisponibleToolStripMenuItem.Text = "Consultas";
             // 
             // menuStockDisponible
@@ -389,7 +387,7 @@ namespace ControlInsumos
             // 
             this.totalAFacturarToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("totalAFacturarToolStripMenuItem.Image")));
             this.totalAFacturarToolStripMenuItem.Name = "totalAFacturarToolStripMenuItem";
-            this.totalAFacturarToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.totalAFacturarToolStripMenuItem.Size = new System.Drawing.Size(126, 22);
             this.totalAFacturarToolStripMenuItem.Text = "Insumos";
             this.totalAFacturarToolStripMenuItem.Click += new System.EventHandler(this.totalAFacturarToolStripMenuItem_Click);
             // 
@@ -397,22 +395,12 @@ namespace ControlInsumos
             // 
             this.timerHora.Tick += new System.EventHandler(this.TimerHoraTick);
             // 
-            // dgvInformes
-            // 
-            this.dgvInformes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvInformes.Location = new System.Drawing.Point(381, 27);
-            this.dgvInformes.Name = "dgvInformes";
-            this.dgvInformes.Size = new System.Drawing.Size(38, 28);
-            this.dgvInformes.TabIndex = 4;
-            this.dgvInformes.Visible = false;
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightBlue;
             this.ClientSize = new System.Drawing.Size(465, 262);
-            this.Controls.Add(this.dgvInformes);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.menuStrip1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -426,7 +414,6 @@ namespace ControlInsumos
             this.statusStrip1.PerformLayout();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvInformes)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -467,7 +454,6 @@ namespace ControlInsumos
         private System.Windows.Forms.ToolStripMenuItem modificarToolStripMenuItem4;
         private System.Windows.Forms.ToolStripMenuItem elimarToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem insumosToolStripMenuItem;
-        private System.Windows.Forms.DataGridView dgvInformes;
         private System.Windows.Forms.ToolStripMenuItem menuStockDisponible;
         private System.Windows.Forms.ToolStripMenuItem menuConsumido;
 	}

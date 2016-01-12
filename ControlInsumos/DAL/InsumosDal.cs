@@ -83,7 +83,7 @@ namespace Control_Inventario.DAL
             cantidad = b.selectstring(returnCantidad);
         }
 
-        public string reporteInsumos(int repeteciones, string nombreArticulo)
+        public string reporteInsumos(int repeteciones, string nombreArticulo, string desde, string hasta)
         {
             for (int i = repeteciones; i <= repeteciones; i++)
             {
@@ -96,7 +96,7 @@ namespace Control_Inventario.DAL
                                + "INNER JOIN item i ON ins.idItem = i.idItem "
                                + "LEFT JOIN compras c ON i.idItem = c.IdItem "
                                + "INNER JOIN articulo a ON a.idArticulo = ins.idArticulo "
-                               + "GROUP BY 2 "
+                               + "WHERE ins.fechaGuia BETWEEN '" + desde + "' AND '" + hasta + "'"
                                + "ORDER BY 2;";
                     return sql;
                 }
@@ -107,7 +107,7 @@ namespace Control_Inventario.DAL
                             + "INNER JOIN item i ON ins.idItem = i.idItem "
                             + "LEFT JOIN compras c ON i.idItem = c.IdItem "
                             + "INNER JOIN articulo a ON a.idArticulo = ins.idArticulo "
-                            + "WHERE a.descripcion = '" + nombreArticulo + "' "
+                            + "WHERE (ins.fechaGuia BETWEEN '" + desde + "' AND '" + hasta + "') AND a.descripcion = '" + nombreArticulo + "' "
                             + "ORDER BY 4;";
                 return sql1;
             }

@@ -36,7 +36,15 @@ namespace ControlInsumos.GUI
 			{
 				if (artTxtArticulo.Text.Length > 0) 
 				{
-					art.IdArticulo = artDal.countArt();
+                    if (artDal.countArt() <= 1)
+                    {
+                        art.IdArticulo = artDal.countArt();
+                    }
+                    else
+                    {
+                        art.IdArticulo = artDal.maxArt();
+                    }
+					
 					art.NombreArticulo = artTxtArticulo.Text;
 					//Inserción de Articulo a la Base de datos
 					int resultado = art.insertArt(art);

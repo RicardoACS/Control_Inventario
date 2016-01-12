@@ -83,13 +83,13 @@ namespace ControlInsumos.DAL
         public string reporteConsumo(string fecha)
         {
             string sql = "SELECT SUBSTR(ce.nombreCentroCosto, 8, 100) AS 'Local', i.descripcion AS 'Item', "
-                       + "SUM(r.cantidad) AS 'Cantidad', c.precio AS 'Valor Unitario', (c.precio * SUM(r.cantidad)) AS 'Total' "
+                       + "r.cantidad AS 'Cantidad', c.precio AS 'Valor Unitario', (c.precio * r.cantidad) AS 'Total' "
                        + "FROM rebajarStock r "
                        + "INNER JOIN centroCosto ce ON r.idLocal = ce.idLocal "
                        + "INNER JOIN item i ON r.idItem = i.idItem "
                        + "INNER JOIN compras c ON c.idItem = i.IdItem "
                        + "WHERE r.fecha LIKE '%" + fecha + "%' "
-                       + "GROUP BY 1 "
+                       + "GROUP BY r.idRebajarStock "
                        + "ORDER BY 1;";
             return sql;
 
