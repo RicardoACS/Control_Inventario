@@ -17,13 +17,58 @@ namespace Control_Inventario.GUI
         }
         Control_Inventario.DAL.InsumosDal insumosDal = new Control_Inventario.DAL.InsumosDal();
         BaseDeDatosLite b = new BaseDeDatosLite();
+
+        public string mesDesde()
+        {
+            string mes = "00";
+            switch (cboxMesDesde.Text)
+            {
+                case "Enero"        : mes = "01"; break;
+                case "Febrero"      : mes = "02"; break;
+                case "Marzo"        : mes = "03"; break;
+                case "Abril"        : mes = "04"; break;
+                case "Mayo"         : mes = "05"; break;
+                case "Junio"        : mes = "06"; break;
+                case "Julio"        : mes = "07"; break;
+                case "Agosto"       : mes = "08"; break;
+                case "Septiembre"   : mes = "09"; break;
+                case "Octubre"      : mes = "10"; break;
+                case "Noviembre"    : mes = "11"; break;
+                case "Diciembre"    : mes = "12"; break;
+                default             : mes = "00"; break;
+            }
+            return mes;
+        }
+
+        public string mesHasta()
+        {
+            string mes = "00";
+            switch (cboxMesHasta.Text)
+            {
+                case "Enero"        : mes = "01"; break;
+                case "Febrero"      : mes = "02"; break;
+                case "Marzo"        : mes = "03"; break;
+                case "Abril"        : mes = "04"; break;
+                case "Mayo"         : mes = "05"; break;
+                case "Junio"        : mes = "06"; break;
+                case "Julio"        : mes = "07"; break;
+                case "Agosto"       : mes = "08"; break;
+                case "Septiembre"   : mes = "09"; break;
+                case "Octubre"      : mes = "10"; break;
+                case "Noviembre"    : mes = "11"; break;
+                case "Diciembre"    : mes = "12"; break;
+                default             : mes = "00"; break;
+            }
+            return mes;
+        }
+
         public void crearExcelReporteInsumos()
         {
             ControlInsumos.DAL.ArticuloDal artDal = new ControlInsumos.DAL.ArticuloDal();
 
             int veces = artDal.countArt();
-            string desde = cboxAñoDesde.Text + "-" + cboxMesDesde.Text + "-" + cboxDesde.Text;
-            string hasta = cboxAñoHasta.Text + "-" + cboxMesHasta.Text + "-" + cboxHasta.Text;
+            string desde = cboxAñoDesde.Text + "-" + mesDesde() + "-" + cboxDesde.Text;
+            string hasta = cboxAñoDesde.Text + "-" + mesHasta() + "-" + cboxHasta.Text;
 
             string nombreArchivo = "Reporte Insumos." + DateTime.Now.ToShortDateString();
             try
@@ -103,6 +148,51 @@ namespace Control_Inventario.GUI
         private void btnBuscar_Click(object sender, EventArgs e)
         {
             crearExcelReporteInsumos();
+        }
+
+        private void cboxAñoDesde_KeyDown(object sender, KeyEventArgs e)
+        {
+            //sirve para ir cambiando de control como el TAB
+            if (e.KeyCode == Keys.Enter)
+            {
+                this.SelectNextControl(cboxAñoDesde, true, true, true, true);
+            }
+        }
+
+        private void cboxDesde_KeyDown(object sender, KeyEventArgs e)
+        {
+            //sirve para ir cambiando de control como el TAB
+            if (e.KeyCode == Keys.Enter)
+            {
+                this.SelectNextControl(cboxDesde, true, true, true, true);
+            }
+        }
+
+        private void cboxHasta_KeyDown(object sender, KeyEventArgs e)
+        {
+            //sirve para ir cambiando de control como el TAB
+            if (e.KeyCode == Keys.Enter)
+            {
+                this.SelectNextControl(cboxHasta, true, true, true, true);
+            }
+        }
+
+        private void cboxMesDesde_KeyDown(object sender, KeyEventArgs e)
+        {
+            //sirve para ir cambiando de control como el TAB
+            if (e.KeyCode == Keys.Enter)
+            {
+                this.SelectNextControl(cboxMesDesde, true, true, true, true);
+            }
+        }
+
+        private void cboxMesHasta_KeyDown(object sender, KeyEventArgs e)
+        {
+            //sirve para ir cambiando de control como el TAB
+            if (e.KeyCode == Keys.Enter)
+            {
+                this.SelectNextControl(cboxMesHasta, true, true, true, true);
+            }
         }
     }
 }

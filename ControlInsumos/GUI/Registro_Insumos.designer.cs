@@ -56,9 +56,13 @@ namespace Control_Inventario.GUI
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnEditar = new System.Windows.Forms.Button();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.cboxMes = new System.Windows.Forms.ComboBox();
+            this.cboxAño = new System.Windows.Forms.ComboBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvRegistroInsumos)).BeginInit();
             this.groupBox2.SuspendLayout();
+            this.groupBox3.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -184,9 +188,9 @@ namespace Control_Inventario.GUI
             // btnRebajar
             // 
             this.btnRebajar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRebajar.Location = new System.Drawing.Point(143, 311);
+            this.btnRebajar.Location = new System.Drawing.Point(131, 311);
             this.btnRebajar.Name = "btnRebajar";
-            this.btnRebajar.Size = new System.Drawing.Size(55, 23);
+            this.btnRebajar.Size = new System.Drawing.Size(67, 23);
             this.btnRebajar.TabIndex = 7;
             this.btnRebajar.Text = "Asignar";
             this.btnRebajar.UseVisualStyleBackColor = true;
@@ -237,12 +241,12 @@ namespace Control_Inventario.GUI
             this.dgvRegistroInsumos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvRegistroInsumos.GridColor = System.Drawing.SystemColors.ActiveBorder;
             this.dgvRegistroInsumos.ImeMode = System.Windows.Forms.ImeMode.Off;
-            this.dgvRegistroInsumos.Location = new System.Drawing.Point(240, 55);
+            this.dgvRegistroInsumos.Location = new System.Drawing.Point(240, 68);
             this.dgvRegistroInsumos.Name = "dgvRegistroInsumos";
             this.dgvRegistroInsumos.ReadOnly = true;
             this.dgvRegistroInsumos.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dgvRegistroInsumos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvRegistroInsumos.Size = new System.Drawing.Size(422, 303);
+            this.dgvRegistroInsumos.Size = new System.Drawing.Size(422, 290);
             this.dgvRegistroInsumos.TabIndex = 1;
             this.dgvRegistroInsumos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvRegistroInsumos_CellClick_1);
             this.dgvRegistroInsumos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvRegistroInsumos_CellContentClick);
@@ -251,16 +255,16 @@ namespace Control_Inventario.GUI
             // 
             this.groupBox2.Controls.Add(this.btnEliminar);
             this.groupBox2.Controls.Add(this.btnEditar);
-            this.groupBox2.Location = new System.Drawing.Point(240, 12);
+            this.groupBox2.Location = new System.Drawing.Point(413, 13);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(422, 40);
-            this.groupBox2.TabIndex = 2;
+            this.groupBox2.Size = new System.Drawing.Size(250, 49);
+            this.groupBox2.TabIndex = 3;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Editar o Eliminar";
             // 
             // btnEliminar
             // 
-            this.btnEliminar.Location = new System.Drawing.Point(239, 14);
+            this.btnEliminar.Location = new System.Drawing.Point(157, 19);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(75, 23);
             this.btnEliminar.TabIndex = 1;
@@ -270,7 +274,7 @@ namespace Control_Inventario.GUI
             // 
             // btnEditar
             // 
-            this.btnEditar.Location = new System.Drawing.Point(105, 14);
+            this.btnEditar.Location = new System.Drawing.Point(41, 19);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(75, 23);
             this.btnEditar.TabIndex = 0;
@@ -278,11 +282,90 @@ namespace Control_Inventario.GUI
             this.btnEditar.UseVisualStyleBackColor = true;
             this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.cboxAño);
+            this.groupBox3.Controls.Add(this.cboxMes);
+            this.groupBox3.Location = new System.Drawing.Point(240, 13);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(167, 49);
+            this.groupBox3.TabIndex = 2;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Mes a Trabajar";
+            // 
+            // cboxMes
+            // 
+            this.cboxMes.FormattingEnabled = true;
+            this.cboxMes.Items.AddRange(new object[] {
+            "Enero",
+            "Febrero",
+            "Marzo",
+            "Abril",
+            "Mayo",
+            "Junio",
+            "Julio",
+            "Agosto",
+            "Septiembre",
+            "Octubre",
+            "Noviembre",
+            "Diciembre"});
+            this.cboxMes.Location = new System.Drawing.Point(6, 21);
+            this.cboxMes.Name = "cboxMes";
+            this.cboxMes.Size = new System.Drawing.Size(82, 21);
+            this.cboxMes.TabIndex = 0;
+            this.cboxMes.SelectedIndexChanged += new System.EventHandler(this.cboxMes_SelectedIndexChanged);
+            // 
+            // cboxAño
+            // 
+            this.cboxAño.FormattingEnabled = true;
+            this.cboxAño.Items.AddRange(new object[] {
+            "2016",
+            "2017",
+            "2018",
+            "2019",
+            "2020",
+            "2021",
+            "2022",
+            "2023",
+            "2024",
+            "2025",
+            "2026",
+            "2027",
+            "2028",
+            "2029",
+            "2030",
+            "2031",
+            "2032",
+            "2033",
+            "2034",
+            "2035",
+            "2036",
+            "2037",
+            "2038",
+            "2039",
+            "2040",
+            "2041",
+            "2042",
+            "2043",
+            "2044",
+            "2045",
+            "2046",
+            "2047",
+            "2048",
+            "2049",
+            "2050"});
+            this.cboxAño.Location = new System.Drawing.Point(94, 21);
+            this.cboxAño.Name = "cboxAño";
+            this.cboxAño.Size = new System.Drawing.Size(58, 21);
+            this.cboxAño.TabIndex = 1;
+            this.cboxAño.SelectedIndexChanged += new System.EventHandler(this.cboxAño_SelectedIndexChanged);
+            // 
             // Registro_Insumos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(675, 371);
+            this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.dgvRegistroInsumos);
@@ -297,6 +380,7 @@ namespace Control_Inventario.GUI
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvRegistroInsumos)).EndInit();
             this.groupBox2.ResumeLayout(false);
+            this.groupBox3.ResumeLayout(false);
             this.ResumeLayout(false);
 
 		}
@@ -320,5 +404,8 @@ namespace Control_Inventario.GUI
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.Button btnEditar;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.ComboBox cboxMes;
+        private System.Windows.Forms.ComboBox cboxAño;
 	}
 }

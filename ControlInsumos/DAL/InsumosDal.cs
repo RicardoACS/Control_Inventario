@@ -24,12 +24,12 @@ namespace Control_Inventario.DAL
         public string cantidad;
         //Fin modificar
 
-        public string loadDataGV(string item)
+        public string loadDataGV(string item, string fecha)
         {
             //Cargará el DataView con los datos
             string select = "SELECT i.idInsumos AS 'ID', i.fechaGuia AS 'Fecha' , i.nroGuia AS 'Guía', substr(c.nombreCentroCosto,8,20) AS 'Local', i.cantidad AS 'Cantidad',  CAST(round(i.cantidad * c.precio,0) AS INT) AS 'Total' "
                           + "FROM insumos i INNER JOIN centroCosto c ON i.idLocal = c.idLocal INNER JOIN item it ON i.idItem = it.idItem LEFT JOIN compras c ON c.idItem = it.idItem "
-                          + "WHERE it.descripcion = '" + item + "';";
+                          + "WHERE it.descripcion = '" + item + "' AND i.fechaGuia LIKE '%" + fecha + "%';";
 
             return select;
         }

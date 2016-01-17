@@ -39,11 +39,35 @@ namespace Control_Inventario.GUI
             cargarItem();
             txtGuia.Focus();
             cargarCC();
+            cargarCboxFechas();
+        }
+
+        public void cargarCboxFechas()
+        {
+            cboxAño.Text = DateTime.Now.Year.ToString();
+            cboxMes.Text = "mes";
+            switch(DateTime.Now.Month)
+            {
+                case 1: cboxMes.Text = "Enero"; break;
+                case 2: cboxMes.Text = "Febrero"; break;
+                case 3: cboxMes.Text = "Marzo"; break;
+                case 4: cboxMes.Text = "Abril"; break;
+                case 5: cboxMes.Text = "Mayo"; break;
+                case 6: cboxMes.Text = "Junio"; break;
+                case 7: cboxMes.Text = "Julio"; break;
+                case 8: cboxMes.Text = "Agosto"; break;
+                case 9: cboxMes.Text = "Septiembre"; break;
+                case 10: cboxMes.Text = "Octubre"; break;
+                case 11: cboxMes.Text = "Noviembre"; break;
+                case 12: cboxMes.Text = "Diciembre"; break;
+            }
+            
         }
         public void cargarDGV()
         {
+            string fecha = cboxAño.Text + "-" + mes();
             //Carga de los elementos en la GUI
-            dgvRegistroInsumos.DataSource = b.SelectDataTable(insumosDal.loadDataGV(cboxItem.Text));
+            dgvRegistroInsumos.DataSource = b.SelectDataTable(insumosDal.loadDataGV(cboxItem.Text, fecha));
             //Elimina primera fila [*] del DataView
             dgvRegistroInsumos.RowHeadersVisible = false;
             //Ancho de las columnas
@@ -85,6 +109,28 @@ namespace Control_Inventario.GUI
             cboxCentroCosto.DisplayMember = "Nombre";
             cboxCentroCosto.ValueMember = "IdCC";
             cboxCentroCosto.SelectedValue = -1;
+        }
+
+        public string mes()
+        {
+            string mes = "00";
+            switch (cboxMes.Text)
+            {
+                case "Enero": mes = "01"; break;
+                case "Febrero": mes = "02"; break;
+                case "Marzo": mes = "03"; break;
+                case "Abril": mes = "04"; break;
+                case "Mayo": mes = "05"; break;
+                case "Junio": mes = "06"; break;
+                case "Julio": mes = "07"; break;
+                case "Agosto": mes = "08"; break;
+                case "Septiembre": mes = "09"; break;
+                case "Octubre": mes = "10"; break;
+                case "Noviembre": mes = "11"; break;
+                case "Diciembre": mes = "12"; break;
+                default: mes = "00"; break;
+            }
+            return mes;
         }
 
         public void insertInsumos()
@@ -396,6 +442,16 @@ namespace Control_Inventario.GUI
         private void dgvRegistroInsumos_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void cboxMes_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            cargarDGV();
+        }
+
+        private void cboxAño_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            cargarDGV();
         }
 	}
 }
