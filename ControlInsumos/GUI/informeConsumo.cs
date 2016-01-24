@@ -17,23 +17,47 @@ namespace Control_Inventario.GUI
         }
 
         BaseDeDatosLite b = new BaseDeDatosLite();
+
+        public string mes()
+        {
+            string mes = "00";
+            switch (cboxMes.Text)
+            {
+                case "Enero": mes = "01"; break;
+                case "Febrero": mes = "02"; break;
+                case "Marzo": mes = "03"; break;
+                case "Abril": mes = "04"; break;
+                case "Mayo": mes = "05"; break;
+                case "Junio": mes = "06"; break;
+                case "Julio": mes = "07"; break;
+                case "Agosto": mes = "08"; break;
+                case "Septiembre": mes = "09"; break;
+                case "Octubre": mes = "10"; break;
+                case "Noviembre": mes = "11"; break;
+                case "Diciembre": mes = "12"; break;
+                default: mes = "00"; break;
+            }
+            return mes;
+        }
+
         public void crearExcelReporteStock()
         {
             ControlInsumos.DAL.RebajarStockDal rebajarStockDal = new ControlInsumos.DAL.RebajarStockDal();
 
             string nombreArchivo = "";
-
-            switch (cboxMes.Text)
+            string fecha = cboxAño.Text + "-" + mes();
+            dgvInforme.DataSource = b.SelectDataTable(rebajarStockDal.reporteConsumo(fecha));
+            switch (mes())
             {
-                case "1" : nombreArchivo = "Reporte Consumo Enero " + cboxAño.Text; break;
-                case "2" : nombreArchivo = "Reporte Consumo Febrero " + cboxAño.Text; break;
-                case "3" : nombreArchivo = "Reporte Consumo Marzo " + cboxAño.Text; break;
-                case "4" : nombreArchivo = "Reporte Consumo Abril " + cboxAño.Text; break;
-                case "5" : nombreArchivo = "Reporte Consumo Mayo " + cboxAño.Text; break;
-                case "6" : nombreArchivo = "Reporte Consumo Junio " + cboxAño.Text; break;
-                case "7" : nombreArchivo = "Reporte Consumo Julio " + cboxAño.Text; break;
-                case "8" : nombreArchivo = "Reporte Consumo Agosto " + cboxAño.Text; break;
-                case "9" : nombreArchivo = "Reporte Consumo Septiembre " + cboxAño.Text; break;
+                case "01" : nombreArchivo = "Reporte Consumo Enero " + cboxAño.Text; break;
+                case "02" : nombreArchivo = "Reporte Consumo Febrero " + cboxAño.Text; break;
+                case "03" : nombreArchivo = "Reporte Consumo Marzo " + cboxAño.Text; break;
+                case "04" : nombreArchivo = "Reporte Consumo Abril " + cboxAño.Text; break;
+                case "05" : nombreArchivo = "Reporte Consumo Mayo " + cboxAño.Text; break;
+                case "06" : nombreArchivo = "Reporte Consumo Junio " + cboxAño.Text; break;
+                case "07" : nombreArchivo = "Reporte Consumo Julio " + cboxAño.Text; break;
+                case "08" : nombreArchivo = "Reporte Consumo Agosto " + cboxAño.Text; break;
+                case "09" : nombreArchivo = "Reporte Consumo Septiembre " + cboxAño.Text; break;
                 case "10": nombreArchivo = "Reporte Consumo Octubre " + cboxAño.Text; break;
                 case "11": nombreArchivo = "Reporte Consumo Noviembre " + cboxAño.Text; break;
                 case "12": nombreArchivo = "Reporte Consumo Diciembre " + cboxAño.Text; break;
@@ -42,6 +66,9 @@ namespace Control_Inventario.GUI
             
             try
             {
+
+                
+
                 // creating Excel Application
 
                 Excel._Application app = new Excel.Application();
@@ -62,9 +89,6 @@ namespace Control_Inventario.GUI
                 // get the reference of first sheet. By default its name is Sheet1.
 
                 // store its reference to worksheet
-
-                string fecha = cboxMes.Text + "-" + cboxAño.Text;
-                dgvInforme.DataSource = b.SelectDataTable(rebajarStockDal.reporteConsumo(fecha));
 
                 worksheet = (Excel._Worksheet)workbook.Sheets["hoja1"];
 
@@ -101,7 +125,7 @@ namespace Control_Inventario.GUI
             }
             catch (Exception e)
             {
-
+                MessageBox.Show(e.Message);
             }
         }
 

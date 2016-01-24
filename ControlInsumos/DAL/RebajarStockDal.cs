@@ -29,7 +29,8 @@ namespace ControlInsumos.DAL
 		public int insertRebaja(DLL.RebajarStock r)
 		{
             //Insertará en la BD la rebaja, esto retornará un número el cual indicará el resultado de la consulta
-            string insert = "INSERT INTO rebajarStock VALUES (" + r.IdRebajarStock + "," + r.IdItem + "," + r.IdLocal + "," + r.Cantidad + ",'" + r.Fecha + "');";
+            string insert = "INSERT INTO rebajarStock VALUES (" + r.IdRebajarStock + "," + r.IdItem + "," 
+                          +  r.IdLocal + "," + r.Cantidad + ",'" + r.Fecha + "'," + r.NroGuia + ",'" + r.FechaGuia + "');";
             return b.executecommand(insert);
       
 			
@@ -88,7 +89,7 @@ namespace ControlInsumos.DAL
                        + "INNER JOIN centroCosto ce ON r.idLocal = ce.idLocal "
                        + "INNER JOIN item i ON r.idItem = i.idItem "
                        + "INNER JOIN compras c ON c.idItem = i.IdItem "
-                       + "WHERE r.fecha LIKE '%" + fecha + "%' "
+                       + "WHERE r.fechaGuia LIKE '%" + fecha + "%' "
                        + "GROUP BY r.idRebajarStock "
                        + "ORDER BY 1;";
             return sql;

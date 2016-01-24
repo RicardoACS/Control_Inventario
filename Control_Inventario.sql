@@ -98,3 +98,8 @@ SELECT r.idItem 'Rebajar ID', i.idItem 'ID', i.descripcion, c.nombreCentroCosto
 FROM rebajarStock r INNER JOIN item i ON r.idItem = i.idItem
 INNER JOIN centroCosto c ON c.idLocal = r.idLocal;
 
+
+/** ALTER **/
+
+ALTER TABLE rebajarStock ADD COLUMN nroGuia INT
+ALTER TABLE rebajarStock ADD COLUMN fechaGuia DATE

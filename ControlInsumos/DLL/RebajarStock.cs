@@ -17,6 +17,8 @@ namespace ControlInsumos.DLL
 		private int idLocal;
 		private int cantidad;
         private string fecha;
+        private int nroGuia;
+        private string fechaGuia;  
 		
 		public RebajarStock()
 		{
@@ -31,6 +33,19 @@ namespace ControlInsumos.DLL
 			this.idLocal = idLocal;
 			this.cantidad = cantidad;
 		}
+
+        public string FechaGuia
+        {
+            get { return fechaGuia; }
+            set { fechaGuia = value; }
+        }
+
+
+        public int NroGuia
+        {
+            get { return nroGuia; }
+            set { nroGuia = value; }
+        }
 
         public string Fecha
         {

@@ -76,6 +76,18 @@ namespace Control_Inventario.GUI
             dgvRegistroInsumos.Columns[2].Width = 68;
             dgvRegistroInsumos.Columns[4].Width = 68;
             dgvRegistroInsumos.Columns[5].Width = 85;
+
+            //Alineamineto de las columnas
+            dgvRegistroInsumos.Columns[0].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dgvRegistroInsumos.Columns[1].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dgvRegistroInsumos.Columns[2].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+            dgvRegistroInsumos.Columns[3].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dgvRegistroInsumos.Columns[4].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+            dgvRegistroInsumos.Columns[5].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+
+            //Número
+            dgvRegistroInsumos.Columns[4].DefaultCellStyle.Format = "N0";
+            dgvRegistroInsumos.Columns[5].DefaultCellStyle.Format = "N0";
         }
         public void cargarItem()
         {
