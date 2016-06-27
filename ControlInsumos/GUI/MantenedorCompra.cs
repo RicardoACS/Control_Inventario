@@ -33,10 +33,18 @@ namespace ControlInsumos.GUI
 		}
 		public void cargarItem()
 		{
-			cboxItem.DataSource = itemDal.listItem(cboxArticulo.SelectedIndex+1);
-			cboxItem.DisplayMember = "Descripcion";
-            cboxItem.ValueMember = "IdItem";
-            cboxItem.SelectedIndex = -1;
+            try
+            {
+                cboxItem.SelectedIndex = -1;
+                cboxItem.DataSource = itemDal.listItem(int.Parse(cboxArticulo.SelectedValue.ToString()));
+			    cboxItem.DisplayMember = "Descripcion";
+                cboxItem.ValueMember = "IdItem";
+            }
+            catch(Exception)
+            {
+
+            }
+            
 		}
 		public void insertCompra()			
 		{

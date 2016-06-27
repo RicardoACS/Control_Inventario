@@ -10,17 +10,21 @@ using System.Windows.Forms;
 
 namespace ControlInsumos
 {
-	/// <summary>
-	/// Description of MainForm.
-	/// </summary>
-	public partial class MainForm : Form
-	{
-		public MainForm()
-		{
-			InitializeComponent();
+    /// <summary>
+    /// Description of MainForm.
+    /// </summary>
+    public partial class MainForm : Form
+    {
+        BaseDeDatosLite b = new BaseDeDatosLite();
+        Control_Inventario.DLL.InformeExcel informeExcel = new Control_Inventario.DLL.InformeExcel();
+        Control_Inventario.DAL.InsumosDal insumosDal = new Control_Inventario.DAL.InsumosDal();
+
+        public MainForm()
+        {
+            InitializeComponent();
             cambiarColorMdi();
-			timerHora.Enabled = true;         
-		}
+            timerHora.Enabled = true;
+        }
         MdiClient ctlMDI;
         private void cambiarColorMdi()
         {
@@ -40,41 +44,41 @@ namespace ControlInsumos
                 }
             }
         }
-		void ArticuloToolStripMenuItemClick(object sender, EventArgs e)
-		{
-			
-		}
-		
-		void ItemToolStripMenuItemClick(object sender, EventArgs e)
-		{
-			
-		}
-		
-		void CompraToolStripMenuItemClick(object sender, EventArgs e)
-		{
-			
-		}
-		
-		void CentroCostoToolStripMenuItemClick(object sender, EventArgs e)
-		{
-            
+        void ArticuloToolStripMenuItemClick(object sender, EventArgs e)
+        {
+
         }
-		
-		void TimerHoraTick(object sender, EventArgs e)
-		{
-			toolStripStatusLabel1.Text =  DateTime.Now.ToString("hh:mm");
-			toolStripStatusLabel2.Text =  DateTime.Now.ToString("dd/MM/yyyy");
-		}
-		
-		void DevolucionToolStripMenuItemClick(object sender, EventArgs e)
-		{
-			GUI.formRebajarStock r = new ControlInsumos.GUI.formRebajarStock();
-			r.ShowDialog();
-		}
+
+        void ItemToolStripMenuItemClick(object sender, EventArgs e)
+        {
+
+        }
+
+        void CompraToolStripMenuItemClick(object sender, EventArgs e)
+        {
+
+        }
+
+        void CentroCostoToolStripMenuItemClick(object sender, EventArgs e)
+        {
+
+        }
+
+        void TimerHoraTick(object sender, EventArgs e)
+        {
+            toolStripStatusLabel1.Text = DateTime.Now.ToString("hh:mm");
+            toolStripStatusLabel2.Text = DateTime.Now.ToString("dd/MM/yyyy");
+        }
+
+        void DevolucionToolStripMenuItemClick(object sender, EventArgs e)
+        {
+            GUI.formRebajarStock r = new ControlInsumos.GUI.formRebajarStock();
+            r.ShowDialog();
+        }
 
         private void sistemaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            
+
         }
 
         private void salirToolStripMenuItem_Click(object sender, EventArgs e)
@@ -93,7 +97,7 @@ namespace ControlInsumos
             GUI.formMantenedorEmpresa me = new ControlInsumos.GUI.formMantenedorEmpresa();
             me.MdiParent = this;
             me.Show();
-            
+
         }
 
         private void modificarToolStripMenuItem_Click(object sender, EventArgs e)
@@ -121,7 +125,7 @@ namespace ControlInsumos
         {
             Control_Inventario.GUI.MantenedorCentroCosto_Modificar cc = new Control_Inventario.GUI.MantenedorCentroCosto_Modificar();
             cc.MdiParent = this;
-            cc.Show();       
+            cc.Show();
         }
 
         private void eliminarToolStripMenuItem1_Click(object sender, EventArgs e)
@@ -164,5 +168,28 @@ namespace ControlInsumos
             it.MdiParent = this;
             it.Show();
         }
-	}
+
+        private void totalAFacturarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+            Control_Inventario.GUI.InformeReporteInsumos iri = new Control_Inventario.GUI.InformeReporteInsumos();
+            iri.MdiParent = this;
+            iri.Show();
+
+        }
+
+        private void menuStockDisponible_Click(object sender, EventArgs e)
+        {
+            Control_Inventario.GUI.informeStockDisponible isd = new Control_Inventario.GUI.informeStockDisponible();
+            isd.MdiParent = this;
+            isd.Show();
+        }
+
+        private void menuConsumido_Click(object sender, EventArgs e)
+        {
+            Control_Inventario.GUI.informeConsumo ic = new Control_Inventario.GUI.informeConsumo();
+            ic.MdiParent = this;
+            ic.Show();
+        }
+    }
 }

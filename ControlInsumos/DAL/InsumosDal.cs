@@ -24,12 +24,12 @@ namespace Control_Inventario.DAL
         public string cantidad;
         //Fin modificar
 
-        public string loadDataGV(string item)
+        public string loadDataGV(string item, string fecha)
         {
             //Cargará el DataView con los datos
             string select = "SELECT i.idInsumos AS 'ID', i.fechaGuia AS 'Fecha' , i.nroGuia AS 'Guía', substr(c.nombreCentroCosto,8,20) AS 'Local', i.cantidad AS 'Cantidad',  CAST(round(i.cantidad * c.precio,0) AS INT) AS 'Total' "
                           + "FROM insumos i INNER JOIN centroCosto c ON i.idLocal = c.idLocal INNER JOIN item it ON i.idItem = it.idItem LEFT JOIN compras c ON c.idItem = it.idItem "
-                          + "WHERE it.descripcion = '" + item + "';";
+                          + "WHERE it.descripcion = '" + item + "' AND i.fechaGuia LIKE '%" + fecha + "%';";
 
             return select;
         }
@@ -71,16 +71,47 @@ namespace Control_Inventario.DAL
 
         public void modificarDGV(string idRegistroInsumos)
         {
-            string returnNroGuia    = "SELECT nroGuia FROM insumos WHERE idInsumos = " + idRegistroInsumos + ";";
-            string returnFechaGuia  = "SELECT fechaGuia FROM insumos WHERE idInsumos = " + idRegistroInsumos + ";";
-            string returnCC         = "SELECT idLocal FROM insumos WHERE idInsumos = " + idRegistroInsumos + ";";
-            string returnCantidad   = "SELECT cantidad FROM insumos WHERE idInsumos = " + idRegistroInsumos + ";";
-            string returnNombreCC   = "SELECT c.nombreCentroCosto FROM insumos i INNER JOIN centroCosto c ON i.idLocal = c.idLocal WHERE i.idInsumos = " + idRegistroInsumos + ";";
-            nroGuia                 = b.selectstring(returnNroGuia);
-            fecha                   = b.selectstring(returnFechaGuia);
-            centroCosto             = b.selectstring(returnCC);
-            nombreCC                = b.selectstring(returnNombreCC);
-            cantidad                = b.selectstring(returnCantidad);
+            string returnNroGuia = "SELECT nroGuia FROM insumos WHERE idInsumos = " + idRegistroInsumos + ";";
+            string returnFechaGuia = "SELECT fechaGuia FROM insumos WHERE idInsumos = " + idRegistroInsumos + ";";
+            string returnCC = "SELECT idLocal FROM insumos WHERE idInsumos = " + idRegistroInsumos + ";";
+            string returnCantidad = "SELECT cantidad FROM insumos WHERE idInsumos = " + idRegistroInsumos + ";";
+            string returnNombreCC = "SELECT c.nombreCentroCosto FROM insumos i INNER JOIN centroCosto c ON i.idLocal = c.idLocal WHERE i.idInsumos = " + idRegistroInsumos + ";";
+            nroGuia = b.selectstring(returnNroGuia);
+            fecha = b.selectstring(returnFechaGuia);
+            centroCosto = b.selectstring(returnCC);
+            nombreCC = b.selectstring(returnNombreCC);
+            cantidad = b.selectstring(returnCantidad);
+        }
+
+        public string reporteInsumos(int repeteciones, string nombreArticulo, string desde, string hasta)
+        {
+            for (int i = repeteciones; i <= repeteciones; i++)
+            {
+
+                if (i == 1)
+                {
+                    string sql = "SELECT ce.nombreCentroCosto AS 'Local', a.descripcion AS 'Articulo',  (c.precio * ins.cantidad) AS 'Total' "
+                               + "FROM insumos ins "
+                               + "INNER JOIN centroCosto ce ON ins.idLocal = ce.idLocal "
+                               + "INNER JOIN item i ON ins.idItem = i.idItem "
+                               + "LEFT JOIN compras c ON i.idItem = c.IdItem "
+                               + "INNER JOIN articulo a ON a.idArticulo = ins.idArticulo "
+                               + "WHERE ins.fechaGuia BETWEEN '" + desde + "' AND '" + hasta + "'"
+                               + "ORDER BY 2;";
+                    return sql;
+                }
+                string sql1 = "SELECT ins.nroGuia AS 'Guía', ins.fechaGuia AS 'Fecha',i.descripcion AS 'Descripción', "
+                            + "ce.nombreCentroCosto AS 'Local', ins.cantidad AS 'Cantidad', (c.precio * ins.cantidad) AS 'Total' "
+                            + "FROM insumos ins "
+                            + "INNER JOIN centroCosto ce ON ins.idLocal = ce.idLocal "
+                            + "INNER JOIN item i ON ins.idItem = i.idItem "
+                            + "LEFT JOIN compras c ON i.idItem = c.IdItem "
+                            + "INNER JOIN articulo a ON a.idArticulo = ins.idArticulo "
+                            + "WHERE (ins.fechaGuia BETWEEN '" + desde + "' AND '" + hasta + "') AND a.descripcion = '" + nombreArticulo + "' "
+                            + "ORDER BY 4;";
+                return sql1;
+            }
+            return null;
         }
     }
 }

@@ -28,12 +28,19 @@ namespace ControlInsumos.DAL
 			count = int.Parse(b.selectstring(sql));
 			return count;
 		}
+        public int maxItem()
+        {
+            int count = 0;
+            string sql = "SELECT MAX(idItem)+1 FROM item;";
+            count = int.Parse(b.selectstring(sql));
+            return count;
+        }
 		public List<DLL.Item> listItem(int idArt)
 		{
 			try 
 			{
 			List<DLL.Item> listaItem = new List<ControlInsumos.DLL.Item>();
-			SQLiteCommand sql = new SQLiteCommand("SELECT * FROM item WHERE idArticulo = " + idArt + ";", conn.connection());
+			SQLiteCommand sql = new SQLiteCommand("SELECT * FROM item WHERE idArticulo = " + idArt + " ORDER BY 2;", conn.connection());
 			SQLiteDataReader reader = sql.ExecuteReader();
                while (reader.Read())
                {

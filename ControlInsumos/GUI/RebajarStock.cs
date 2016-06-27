@@ -33,6 +33,19 @@ namespace ControlInsumos.GUI
             dgvItems.DataSource = b.SelectDataTable(rebajaDal.loadDataGV(cboxItem.Text));
             //Elimina primera fila [*] del DataView
             dgvItems.RowHeadersVisible = false;
+            //Ancho de las columnas
+            dgvItems.Columns[0].Width = 200; //Descripción
+            dgvItems.Columns[1].Width = 64; //Cantidad
+            dgvItems.Columns[2].Width = 80; //Fecha
+            dgvItems.Columns[3].Width = 55; //Precio
+            //Alineación de la columnas
+            dgvItems.Columns[1].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+            dgvItems.Columns[2].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dgvItems.Columns[3].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+            //Formato número de las columnas
+            dgvItems.Columns[1].DefaultCellStyle.Format = "N0";
+            dgvItems.Columns[3].DefaultCellStyle.Format = "N0";
+
             cargarArticulo();
             cargarItem();
             cboxArticulo.Focus();
@@ -94,10 +107,12 @@ namespace ControlInsumos.GUI
                 {
                     r.IdRebajarStock = rebajaDal.maxRebajaStock();
                 }
-                r.IdLocal = int.Parse(cboxCentroCosto.SelectedValue.ToString());
-                r.IdItem = int.Parse(cboxItem.SelectedValue.ToString());
-                r.Cantidad = int.Parse(txtCantidad.Text);
-                r.Fecha = DateTime.Now.ToString("dd/MM/yyyy");
+                r.IdLocal            = int.Parse(cboxCentroCosto.SelectedValue.ToString());
+                r.IdItem             = int.Parse(cboxItem.SelectedValue.ToString());
+                r.Cantidad           = int.Parse(txtCantidad.Text);
+                r.Fecha              = DateTime.Now.ToString("yyyy/MM/dd");
+                r.NroGuia            = int.Parse(txtGuia.Text);
+                r.FechaGuia          = DateTime.Parse(dtFechaGuia.Text).ToString("yyyy/MM/dd");
 
                 //Rebajar Stock
                 if (stockProducto >= r.Cantidad)
@@ -196,6 +211,22 @@ namespace ControlInsumos.GUI
             if (e.KeyCode == Keys.Enter)
             {
                 this.SelectNextControl(txtCantidad, true, true, true, true);
+            }
+        }
+
+        private void txtGuia_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                this.SelectNextControl(txtGuia, true, true, true, true);
+            }
+        }
+
+        private void dtFechaGuia_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                this.SelectNextControl(dtFechaGuia, true, true, true, true);
             }
         }
     }

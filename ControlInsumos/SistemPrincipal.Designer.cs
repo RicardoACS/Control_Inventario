@@ -71,8 +71,10 @@ namespace ControlInsumos
             this.devoluciónToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.insumosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.informesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.totalAFacturarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.stockDisponibleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuStockDisponible = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuConsumido = new System.Windows.Forms.ToolStripMenuItem();
+            this.totalAFacturarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.timerHora = new System.Windows.Forms.Timer(this.components);
             this.statusStrip1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
@@ -242,21 +244,21 @@ namespace ControlInsumos
             this.modificarToolStripMenuItem2});
             this.articuloToolStripMenuItem.Image = global::Control_Inventario.Properties.Resources.buyProduct;
             this.articuloToolStripMenuItem.Name = "articuloToolStripMenuItem";
-            this.articuloToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.articuloToolStripMenuItem.Size = new System.Drawing.Size(117, 22);
             this.articuloToolStripMenuItem.Text = "Artículo";
             this.articuloToolStripMenuItem.Click += new System.EventHandler(this.ArticuloToolStripMenuItemClick);
             // 
             // crearToolStripMenuItem2
             // 
             this.crearToolStripMenuItem2.Name = "crearToolStripMenuItem2";
-            this.crearToolStripMenuItem2.Size = new System.Drawing.Size(152, 22);
+            this.crearToolStripMenuItem2.Size = new System.Drawing.Size(125, 22);
             this.crearToolStripMenuItem2.Text = "Crear";
             this.crearToolStripMenuItem2.Click += new System.EventHandler(this.crearToolStripMenuItem2_Click);
             // 
             // modificarToolStripMenuItem2
             // 
             this.modificarToolStripMenuItem2.Name = "modificarToolStripMenuItem2";
-            this.modificarToolStripMenuItem2.Size = new System.Drawing.Size(152, 22);
+            this.modificarToolStripMenuItem2.Size = new System.Drawing.Size(125, 22);
             this.modificarToolStripMenuItem2.Text = "Modificar";
             this.modificarToolStripMenuItem2.Click += new System.EventHandler(this.modificarToolStripMenuItem2_Click);
             // 
@@ -267,21 +269,21 @@ namespace ControlInsumos
             this.modificarToolStripMenuItem3});
             this.itemToolStripMenuItem.Image = global::Control_Inventario.Properties.Resources.buyProduct;
             this.itemToolStripMenuItem.Name = "itemToolStripMenuItem";
-            this.itemToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.itemToolStripMenuItem.Size = new System.Drawing.Size(117, 22);
             this.itemToolStripMenuItem.Text = "Item";
             this.itemToolStripMenuItem.Click += new System.EventHandler(this.ItemToolStripMenuItemClick);
             // 
             // crearToolStripMenuItem3
             // 
             this.crearToolStripMenuItem3.Name = "crearToolStripMenuItem3";
-            this.crearToolStripMenuItem3.Size = new System.Drawing.Size(152, 22);
+            this.crearToolStripMenuItem3.Size = new System.Drawing.Size(125, 22);
             this.crearToolStripMenuItem3.Text = "Crear";
             this.crearToolStripMenuItem3.Click += new System.EventHandler(this.crearToolStripMenuItem3_Click);
             // 
             // modificarToolStripMenuItem3
             // 
             this.modificarToolStripMenuItem3.Name = "modificarToolStripMenuItem3";
-            this.modificarToolStripMenuItem3.Size = new System.Drawing.Size(152, 22);
+            this.modificarToolStripMenuItem3.Size = new System.Drawing.Size(125, 22);
             this.modificarToolStripMenuItem3.Text = "Modificar";
             this.modificarToolStripMenuItem3.Click += new System.EventHandler(this.modificarToolStripMenuItem3_Click);
             // 
@@ -293,27 +295,27 @@ namespace ControlInsumos
             this.elimarToolStripMenuItem});
             this.compraToolStripMenuItem.Image = global::Control_Inventario.Properties.Resources.buyProduct;
             this.compraToolStripMenuItem.Name = "compraToolStripMenuItem";
-            this.compraToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.compraToolStripMenuItem.Size = new System.Drawing.Size(117, 22);
             this.compraToolStripMenuItem.Text = "Compra";
             this.compraToolStripMenuItem.Click += new System.EventHandler(this.CompraToolStripMenuItemClick);
             // 
             // ingresarToolStripMenuItem1
             // 
             this.ingresarToolStripMenuItem1.Name = "ingresarToolStripMenuItem1";
-            this.ingresarToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.ingresarToolStripMenuItem1.Size = new System.Drawing.Size(125, 22);
             this.ingresarToolStripMenuItem1.Text = "Ingresar";
             this.ingresarToolStripMenuItem1.Click += new System.EventHandler(this.ingresarToolStripMenuItem1_Click);
             // 
             // modificarToolStripMenuItem4
             // 
             this.modificarToolStripMenuItem4.Name = "modificarToolStripMenuItem4";
-            this.modificarToolStripMenuItem4.Size = new System.Drawing.Size(152, 22);
+            this.modificarToolStripMenuItem4.Size = new System.Drawing.Size(125, 22);
             this.modificarToolStripMenuItem4.Text = "Modificar";
             // 
             // elimarToolStripMenuItem
             // 
             this.elimarToolStripMenuItem.Name = "elimarToolStripMenuItem";
-            this.elimarToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.elimarToolStripMenuItem.Size = new System.Drawing.Size(125, 22);
             this.elimarToolStripMenuItem.Text = "Eliminar";
             // 
             // ingresarToolStripMenuItem
@@ -351,25 +353,43 @@ namespace ControlInsumos
             // informesToolStripMenuItem
             // 
             this.informesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.totalAFacturarToolStripMenuItem,
-            this.stockDisponibleToolStripMenuItem});
+            this.stockDisponibleToolStripMenuItem,
+            this.totalAFacturarToolStripMenuItem});
             this.informesToolStripMenuItem.Name = "informesToolStripMenuItem";
             this.informesToolStripMenuItem.Size = new System.Drawing.Size(66, 20);
             this.informesToolStripMenuItem.Text = "Informes";
+            // 
+            // stockDisponibleToolStripMenuItem
+            // 
+            this.stockDisponibleToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.menuStockDisponible,
+            this.menuConsumido});
+            this.stockDisponibleToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("stockDisponibleToolStripMenuItem.Image")));
+            this.stockDisponibleToolStripMenuItem.Name = "stockDisponibleToolStripMenuItem";
+            this.stockDisponibleToolStripMenuItem.Size = new System.Drawing.Size(126, 22);
+            this.stockDisponibleToolStripMenuItem.Text = "Consultas";
+            // 
+            // menuStockDisponible
+            // 
+            this.menuStockDisponible.Name = "menuStockDisponible";
+            this.menuStockDisponible.Size = new System.Drawing.Size(174, 22);
+            this.menuStockDisponible.Text = "Stock Disponible";
+            this.menuStockDisponible.Click += new System.EventHandler(this.menuStockDisponible_Click);
+            // 
+            // menuConsumido
+            // 
+            this.menuConsumido.Name = "menuConsumido";
+            this.menuConsumido.Size = new System.Drawing.Size(174, 22);
+            this.menuConsumido.Text = "Consumo Mensual";
+            this.menuConsumido.Click += new System.EventHandler(this.menuConsumido_Click);
             // 
             // totalAFacturarToolStripMenuItem
             // 
             this.totalAFacturarToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("totalAFacturarToolStripMenuItem.Image")));
             this.totalAFacturarToolStripMenuItem.Name = "totalAFacturarToolStripMenuItem";
-            this.totalAFacturarToolStripMenuItem.Size = new System.Drawing.Size(161, 22);
-            this.totalAFacturarToolStripMenuItem.Text = "Total a facturar";
-            // 
-            // stockDisponibleToolStripMenuItem
-            // 
-            this.stockDisponibleToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("stockDisponibleToolStripMenuItem.Image")));
-            this.stockDisponibleToolStripMenuItem.Name = "stockDisponibleToolStripMenuItem";
-            this.stockDisponibleToolStripMenuItem.Size = new System.Drawing.Size(161, 22);
-            this.stockDisponibleToolStripMenuItem.Text = "Stock disponible";
+            this.totalAFacturarToolStripMenuItem.Size = new System.Drawing.Size(126, 22);
+            this.totalAFacturarToolStripMenuItem.Text = "Insumos";
+            this.totalAFacturarToolStripMenuItem.Click += new System.EventHandler(this.totalAFacturarToolStripMenuItem_Click);
             // 
             // timerHora
             // 
@@ -434,5 +454,7 @@ namespace ControlInsumos
         private System.Windows.Forms.ToolStripMenuItem modificarToolStripMenuItem4;
         private System.Windows.Forms.ToolStripMenuItem elimarToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem insumosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem menuStockDisponible;
+        private System.Windows.Forms.ToolStripMenuItem menuConsumido;
 	}
 }
