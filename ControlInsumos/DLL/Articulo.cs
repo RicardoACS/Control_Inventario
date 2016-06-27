@@ -18,6 +18,7 @@ namespace ControlInsumos.DLL
 		public Articulo()
 		{	
 
+
 		}	
 		
 		public Articulo(int idArticulo, string nombreArticulo)
