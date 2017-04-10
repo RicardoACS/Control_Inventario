@@ -159,11 +159,11 @@ namespace Control_Inventario.GUI
                 {
                     i.IdInsumos = insumosDal.maxInsumo();
                 }
-                i.NroGuia = int.Parse(txtGuia.Text);
-                string fechaGuia = DateTime.Parse(dtFechaGuia.Text).ToString("yyyy/MM/dd");
+                i.NroGuia = int.Parse(txtGuia.Text);            
+                string fechaGuia = dtFechaGuia.Value.ToString("yyyy-MM-dd HH:mm:ss"); ;
                 i.FechaGuia = fechaGuia;
                 i.Cantidad = int.Parse(txtCantidad.Text);
-                string fechaHoy = DateTime.Now.ToString("yyyy/MM/dd");
+                string fechaHoy = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
                 i.FechaRealizacion = fechaHoy;
                 i.IdArticulo = int.Parse(cboxArticulo.SelectedValue.ToString());
                 i.IdItem = int.Parse(cboxItem.SelectedValue.ToString());

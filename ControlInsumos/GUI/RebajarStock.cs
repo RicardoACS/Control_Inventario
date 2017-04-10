@@ -5,6 +5,7 @@
  */
 using System;
 using System.Drawing;
+using System.Globalization;
 using System.Windows.Forms;
 
 namespace ControlInsumos.GUI
@@ -110,9 +111,9 @@ namespace ControlInsumos.GUI
                 r.IdLocal            = int.Parse(cboxCentroCosto.SelectedValue.ToString());
                 r.IdItem             = int.Parse(cboxItem.SelectedValue.ToString());
                 r.Cantidad           = int.Parse(txtCantidad.Text);
-                r.Fecha              = DateTime.Now.ToString("yyyy/MM/dd");
+                r.Fecha              = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
                 r.NroGuia            = int.Parse(txtGuia.Text);
-                r.FechaGuia          = DateTime.Parse(dtFechaGuia.Text).ToString("yyyy/MM/dd");
+                r.FechaGuia          = dtFechaGuia.Value.ToString("yyyy-MM-dd HH:mm:ss");
 
                 //Rebajar Stock
                 if (stockProducto >= r.Cantidad)

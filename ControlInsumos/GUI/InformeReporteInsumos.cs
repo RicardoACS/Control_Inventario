@@ -100,6 +100,7 @@ namespace Control_Inventario.GUI
 
                     dgvInformes.DataSource = b.SelectDataTable(insumosDal.reporteInsumos(r, nombreArticulo, desde, hasta));
 
+                    worksheet = (Excel._Worksheet)workbook.Worksheets.Add();
                     worksheet = (Excel._Worksheet)workbook.Sheets["hoja" + r];
 
                     //worksheet = (Excel._Worksheet)workbook.ActiveSheet;
