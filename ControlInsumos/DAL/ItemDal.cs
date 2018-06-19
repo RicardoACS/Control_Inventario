@@ -62,5 +62,16 @@ namespace ControlInsumos.DAL
             string sql = "UPDATE item SET descripcion = '" + i.Descripcion + "', idArticulo = " + i.IdArticulo + " WHERE idItem = " + i.IdItem + ";";
             return b.executecommand(sql);
         }
-	}
+
+        public string reporteProductos()
+        {
+            string sql = "SELECT articulo.Descripcion Articulo, item.Descripcion Item "
+                        + "FROM item "
+                        + "INNER JOIN articulo "
+                        + "on item.idArticulo = articulo.idArticulo "
+                        + "order by 1";
+            return sql;
+
+        }
+    }
 }

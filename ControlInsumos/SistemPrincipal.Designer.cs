@@ -74,10 +74,13 @@ namespace ControlInsumos
             this.stockDisponibleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStockDisponible = new System.Windows.Forms.ToolStripMenuItem();
             this.menuConsumido = new System.Windows.Forms.ToolStripMenuItem();
+            this.productosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.totalAFacturarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.timerHora = new System.Windows.Forms.Timer(this.components);
+            this.dgvProductos = new System.Windows.Forms.DataGridView();
             this.statusStrip1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvProductos)).BeginInit();
             this.SuspendLayout();
             // 
             // statusStrip1
@@ -363,7 +366,8 @@ namespace ControlInsumos
             // 
             this.stockDisponibleToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.menuStockDisponible,
-            this.menuConsumido});
+            this.menuConsumido,
+            this.productosToolStripMenuItem});
             this.stockDisponibleToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("stockDisponibleToolStripMenuItem.Image")));
             this.stockDisponibleToolStripMenuItem.Name = "stockDisponibleToolStripMenuItem";
             this.stockDisponibleToolStripMenuItem.Size = new System.Drawing.Size(126, 22);
@@ -383,6 +387,13 @@ namespace ControlInsumos
             this.menuConsumido.Text = "Consumo Mensual";
             this.menuConsumido.Click += new System.EventHandler(this.menuConsumido_Click);
             // 
+            // productosToolStripMenuItem
+            // 
+            this.productosToolStripMenuItem.Name = "productosToolStripMenuItem";
+            this.productosToolStripMenuItem.Size = new System.Drawing.Size(174, 22);
+            this.productosToolStripMenuItem.Text = "Productos";
+            this.productosToolStripMenuItem.Click += new System.EventHandler(this.productosToolStripMenuItem_Click);
+            // 
             // totalAFacturarToolStripMenuItem
             // 
             this.totalAFacturarToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("totalAFacturarToolStripMenuItem.Image")));
@@ -395,12 +406,22 @@ namespace ControlInsumos
             // 
             this.timerHora.Tick += new System.EventHandler(this.TimerHoraTick);
             // 
+            // dgvProductos
+            // 
+            this.dgvProductos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvProductos.Location = new System.Drawing.Point(379, 49);
+            this.dgvProductos.Name = "dgvProductos";
+            this.dgvProductos.Size = new System.Drawing.Size(21, 21);
+            this.dgvProductos.TabIndex = 4;
+            this.dgvProductos.Visible = false;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightBlue;
             this.ClientSize = new System.Drawing.Size(465, 262);
+            this.Controls.Add(this.dgvProductos);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.menuStrip1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -414,6 +435,7 @@ namespace ControlInsumos
             this.statusStrip1.PerformLayout();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvProductos)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -456,5 +478,7 @@ namespace ControlInsumos
         private System.Windows.Forms.ToolStripMenuItem insumosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem menuStockDisponible;
         private System.Windows.Forms.ToolStripMenuItem menuConsumido;
-	}
+        private System.Windows.Forms.ToolStripMenuItem productosToolStripMenuItem;
+        private System.Windows.Forms.DataGridView dgvProductos;
+    }
 }

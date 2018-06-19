@@ -46,13 +46,13 @@ namespace ControlInsumos.GUI
             this.btnRebajar = new System.Windows.Forms.Button();
             this.btnActualizar = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.cboxArticulo = new System.Windows.Forms.ComboBox();
-            this.dgvItems = new System.Windows.Forms.DataGridView();
             this.dtFechaGuia = new System.Windows.Forms.DateTimePicker();
             this.label6 = new System.Windows.Forms.Label();
             this.txtGuia = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.cboxArticulo = new System.Windows.Forms.ComboBox();
+            this.dgvItems = new System.Windows.Forms.DataGridView();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvItems)).BeginInit();
             this.SuspendLayout();
@@ -90,7 +90,7 @@ namespace ControlInsumos.GUI
             this.cboxItem.FormattingEnabled = true;
             this.cboxItem.Location = new System.Drawing.Point(6, 167);
             this.cboxItem.Name = "cboxItem";
-            this.cboxItem.Size = new System.Drawing.Size(195, 21);
+            this.cboxItem.Size = new System.Drawing.Size(547, 21);
             this.cboxItem.TabIndex = 4;
             this.cboxItem.SelectedIndexChanged += new System.EventHandler(this.cboxItem_SelectedIndexChanged);
             this.cboxItem.TextChanged += new System.EventHandler(this.CboxItemTextChanged);
@@ -103,7 +103,7 @@ namespace ControlInsumos.GUI
             this.cboxCentroCosto.FormattingEnabled = true;
             this.cboxCentroCosto.Location = new System.Drawing.Point(6, 211);
             this.cboxCentroCosto.Name = "cboxCentroCosto";
-            this.cboxCentroCosto.Size = new System.Drawing.Size(195, 21);
+            this.cboxCentroCosto.Size = new System.Drawing.Size(547, 21);
             this.cboxCentroCosto.TabIndex = 5;
             this.cboxCentroCosto.KeyDown += new System.Windows.Forms.KeyEventHandler(this.cboxCentroCosto_KeyDown);
             // 
@@ -112,16 +112,16 @@ namespace ControlInsumos.GUI
             this.txtCantidad.Location = new System.Drawing.Point(6, 256);
             this.txtCantidad.MaxLength = 20;
             this.txtCantidad.Name = "txtCantidad";
-            this.txtCantidad.Size = new System.Drawing.Size(195, 20);
+            this.txtCantidad.Size = new System.Drawing.Size(547, 20);
             this.txtCantidad.TabIndex = 6;
             this.txtCantidad.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtCantidad_KeyDown);
             // 
             // btnRebajar
             // 
             this.btnRebajar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRebajar.Location = new System.Drawing.Point(121, 291);
+            this.btnRebajar.Location = new System.Drawing.Point(325, 291);
             this.btnRebajar.Name = "btnRebajar";
-            this.btnRebajar.Size = new System.Drawing.Size(80, 23);
+            this.btnRebajar.Size = new System.Drawing.Size(228, 23);
             this.btnRebajar.TabIndex = 7;
             this.btnRebajar.Text = "Rebajar";
             this.btnRebajar.UseVisualStyleBackColor = true;
@@ -132,7 +132,7 @@ namespace ControlInsumos.GUI
             this.btnActualizar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnActualizar.Location = new System.Drawing.Point(6, 291);
             this.btnActualizar.Name = "btnActualizar";
-            this.btnActualizar.Size = new System.Drawing.Size(76, 23);
+            this.btnActualizar.Size = new System.Drawing.Size(232, 23);
             this.btnActualizar.TabIndex = 8;
             this.btnActualizar.Text = "Actualizar";
             this.btnActualizar.UseVisualStyleBackColor = true;
@@ -156,53 +156,17 @@ namespace ControlInsumos.GUI
             this.groupBox1.Controls.Add(this.cboxItem);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(223, 326);
+            this.groupBox1.Size = new System.Drawing.Size(563, 326);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Ingrese Datos";
-            // 
-            // label4
-            // 
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(6, 107);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(117, 15);
-            this.label4.TabIndex = 10;
-            this.label4.Text = "Artículo";
-            this.label4.Click += new System.EventHandler(this.Label4Click);
-            // 
-            // cboxArticulo
-            // 
-            this.cboxArticulo.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
-            this.cboxArticulo.FormattingEnabled = true;
-            this.cboxArticulo.Location = new System.Drawing.Point(6, 125);
-            this.cboxArticulo.Name = "cboxArticulo";
-            this.cboxArticulo.Size = new System.Drawing.Size(195, 21);
-            this.cboxArticulo.TabIndex = 3;
-            this.cboxArticulo.SelectedIndexChanged += new System.EventHandler(this.CboxArticuloTextChanged);
-            this.cboxArticulo.TextChanged += new System.EventHandler(this.CboxArticuloTextChanged);
-            this.cboxArticulo.KeyDown += new System.Windows.Forms.KeyEventHandler(this.cboxArticulo_KeyDown);
-            // 
-            // dgvItems
-            // 
-            this.dgvItems.CausesValidation = false;
-            this.dgvItems.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvItems.Enabled = false;
-            this.dgvItems.ImeMode = System.Windows.Forms.ImeMode.Off;
-            this.dgvItems.Location = new System.Drawing.Point(241, 17);
-            this.dgvItems.MultiSelect = false;
-            this.dgvItems.Name = "dgvItems";
-            this.dgvItems.ReadOnly = true;
-            this.dgvItems.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
-            this.dgvItems.Size = new System.Drawing.Size(403, 326);
-            this.dgvItems.TabIndex = 1;
             // 
             // dtFechaGuia
             // 
             this.dtFechaGuia.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtFechaGuia.Location = new System.Drawing.Point(6, 78);
             this.dtFechaGuia.Name = "dtFechaGuia";
-            this.dtFechaGuia.Size = new System.Drawing.Size(195, 20);
+            this.dtFechaGuia.Size = new System.Drawing.Size(547, 20);
             this.dtFechaGuia.TabIndex = 2;
             this.dtFechaGuia.KeyDown += new System.Windows.Forms.KeyEventHandler(this.dtFechaGuia_KeyDown);
             // 
@@ -220,7 +184,7 @@ namespace ControlInsumos.GUI
             this.txtGuia.Location = new System.Drawing.Point(6, 37);
             this.txtGuia.MaxLength = 20;
             this.txtGuia.Name = "txtGuia";
-            this.txtGuia.Size = new System.Drawing.Size(195, 20);
+            this.txtGuia.Size = new System.Drawing.Size(547, 20);
             this.txtGuia.TabIndex = 1;
             this.txtGuia.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtGuia_KeyDown);
             // 
@@ -233,11 +197,47 @@ namespace ControlInsumos.GUI
             this.label5.TabIndex = 16;
             this.label5.Text = "Nª Guía";
             // 
+            // label4
+            // 
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(6, 107);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(117, 15);
+            this.label4.TabIndex = 10;
+            this.label4.Text = "Artículo";
+            this.label4.Click += new System.EventHandler(this.Label4Click);
+            // 
+            // cboxArticulo
+            // 
+            this.cboxArticulo.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.cboxArticulo.FormattingEnabled = true;
+            this.cboxArticulo.Location = new System.Drawing.Point(6, 125);
+            this.cboxArticulo.Name = "cboxArticulo";
+            this.cboxArticulo.Size = new System.Drawing.Size(547, 21);
+            this.cboxArticulo.TabIndex = 3;
+            this.cboxArticulo.SelectedIndexChanged += new System.EventHandler(this.CboxArticuloTextChanged);
+            this.cboxArticulo.TextChanged += new System.EventHandler(this.CboxArticuloTextChanged);
+            this.cboxArticulo.KeyDown += new System.Windows.Forms.KeyEventHandler(this.cboxArticulo_KeyDown);
+            // 
+            // dgvItems
+            // 
+            this.dgvItems.CausesValidation = false;
+            this.dgvItems.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvItems.Enabled = false;
+            this.dgvItems.ImeMode = System.Windows.Forms.ImeMode.Off;
+            this.dgvItems.Location = new System.Drawing.Point(581, 14);
+            this.dgvItems.MultiSelect = false;
+            this.dgvItems.Name = "dgvItems";
+            this.dgvItems.ReadOnly = true;
+            this.dgvItems.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
+            this.dgvItems.Size = new System.Drawing.Size(671, 326);
+            this.dgvItems.TabIndex = 1;
+            // 
             // formRebajarStock
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(653, 355);
+            this.ClientSize = new System.Drawing.Size(1264, 352);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.dgvItems);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));

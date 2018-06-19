@@ -35,7 +35,7 @@ namespace ControlInsumos.GUI
             //Elimina primera fila [*] del DataView
             dgvItems.RowHeadersVisible = false;
             //Ancho de las columnas
-            dgvItems.Columns[0].Width = 200; //Descripción
+            dgvItems.Columns[0].Width = 469; //Descripción
             dgvItems.Columns[1].Width = 64; //Cantidad
             dgvItems.Columns[2].Width = 80; //Fecha
             dgvItems.Columns[3].Width = 55; //Precio
@@ -125,6 +125,8 @@ namespace ControlInsumos.GUI
                             //MessageBox.Show("Producto rebajado", "Rebajar Stock", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             rebajaDal.insertRebaja(r);
                             dgvItems.DataSource = b.SelectDataTable(rebajaDal.loadDataGV(cboxItem.Text));
+                            cboxArticulo.Focus();
+                            txtCantidad.Clear();
                         }
                     }
                     else
