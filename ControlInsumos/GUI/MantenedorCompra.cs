@@ -61,7 +61,7 @@ namespace ControlInsumos.GUI
                     c.IdCompra = compraDal.maxCompra();
                 }
 				c.NumeroDoc 		= int.Parse(txtNumeroDoc.Text);
-                c.Fecha             = dtFecha.Text;
+                c.Fecha             = dtFecha.Value.ToString("yyyy-MM-dd");
 				c.IdArticulo 		= int.Parse(cboxArticulo.SelectedValue.ToString());
 				c.IdItem 			= int.Parse(cboxItem.SelectedValue.ToString());
 				c.Cantidad 			= int.Parse(txtCantidad.Text);
